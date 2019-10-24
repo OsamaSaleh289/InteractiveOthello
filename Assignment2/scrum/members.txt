@@ -1,4 +1,8 @@
 member1 name: Katrina Watson       email: katrina.watson@mail.utoronto.ca       utorid: watso166
-Member2 name:        email:        utorid:
+
+Member2 name: Jiaqi Chen       
+email: isabeljiaqi.chen@mail.utoronto.ca
+utorid:chenj628
+
 Member3 name:        email:        utorid:
 Member4 name:        email:        utorid:
