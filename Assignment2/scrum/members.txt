@@ -1,4 +1,4 @@
-Member1 name:        email:        utorid:
+member1 name: Katrina Watson       email: katrina.watson@mail.utoronto.ca       utorid: watso166
 Member2 name:        email:        utorid:
 Member3 name:        email:        utorid:
 Member4 name:        email:        utorid:
