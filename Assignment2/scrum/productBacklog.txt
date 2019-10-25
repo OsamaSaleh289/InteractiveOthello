@@ -1,8 +1,8 @@
-# User Stories/Bugs (add as appropriate), modify at each Sprint Planning Meeting
+	# User Stories/Bugs (add as appropriate), modify at each Sprint Planning Meeting
 # If a USER STORY is large, break it into smaller user stories.
 
 --------------------------------------------------------------------------
-TYPE     : BUG 0.01 : UTORID : STATUS : NotStarted (NotStarted,InProgress, Incomplete,Complete)
+TYPE     : BUG 0.01 : wronadom : STATUS : InProgress (NotStarted,InProgress, Incomplete,Complete)
 NAME     : Configure and use system
 OWNER    : 
 PRIORITY : (1,2,3)
