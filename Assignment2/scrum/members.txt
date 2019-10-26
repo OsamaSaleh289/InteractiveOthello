@@ -6,3 +6,6 @@ utorid:chenj628
 
 Member3 name: Dominik Wrona       email: dominik.wrona@mail.utoronto.ca       utorid: wronadom
 Member4 name:        email:        utorid:
+
+Coach name: Shubham Sharma
+Email: shub.sharma@mail.utoronto.ca
