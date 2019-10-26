@@ -5,7 +5,7 @@
 TYPE     : BUG 0.01 : wronadom : STATUS : Complete (NotStarted,InProgress, Incomplete,Complete)
 NAME     : Configure and use system
 OWNER    : 
-PRIORITY : (1,2,3)
+PRIORITY : 1
 ESTIMATE :    ACTUAL :  2 hrs or so (had some technical issues)
 ISSUE    : Member 1 
 - demonstrates that they have added, committed and pushed members.txt. 
