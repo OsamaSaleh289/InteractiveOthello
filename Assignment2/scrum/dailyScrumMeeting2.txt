@@ -1,5 +1,5 @@
 # Fill in, commit and push each day.
-Member name:      email:     utorid:   
+Member name: Jiaqi Chen    email:  isabeljiaqi.chen@mail.utoronto.ca   utorid: chenj628  
 
 Oct 17,2019
 	What I did yesterday:
@@ -47,9 +47,9 @@ Oct 25,2019
 	Obstacles I face:
 
 Oct 26,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Read the description and requirement of A2 and began to setup environment
+	What I will do today: finish bug BUG 0.03 and start do user stories
+	Obstacles I face: No obstacles yet
 
 Oct 27,2019
 	What I did yesterday:

@@ -2,12 +2,12 @@
 # If a USER STORY is large, break it into smaller user stories.
 
 --------------------------------------------------------------------------
-TYPE     : BUG 0.01 : wronadom : STATUS : InProgress (NotStarted,InProgress, Incomplete,Complete)
+TYPE     : BUG 0.01 : wronadom : STATUS : Complete (NotStarted,InProgress, Incomplete,Complete)
 NAME     : Configure and use system
 OWNER    : 
-PRIORITY : (1,2,3)
-ESTIMATE : (1 hour, 2 hours, 4 hours, 1 day, 2 days, 4 days)    ACTUAL :  
-ISSUE    : Member 1 
+PRIORITY : 1
+ESTIMATE :    ACTUAL :  2 hrs or so (had some technical issues)
+ISSUE    : Dominik Wrona 
 - demonstrates that they have added, committed and pushed members.txt. 
 - demonstrates that they can run OthelloControllerHumanVSHuman on their dev platform
 - demonstrates that they can run MVCApplication on their dev platform
@@ -24,12 +24,12 @@ ISSUE    : Member 2
 - demonstrates that they can run MVCApplication on their dev platform
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : BUG 0.03 : UTORID : STATUS : NotStarted (NotStarted,InProgress, Incomplete,Complete)
+TYPE     : BUG 0.03 : chenj628 : STATUS : Complete (NotStarted,InProgress, Incomplete,Complete)
 NAME     : Configure and use system
 OWNER    : 
 PRIORITY : (1,2,3)
-ESTIMATE : (1 hour, 2 hours, 4 hours, 1 day, 2 days, 4 days)    ACTUAL :  
-ISSUE    : Member 3
+ESTIMATE : (1 hour, 2 hours, 4 hours, 1 day, 2 days, 4 days)    ACTUAL :  2hours
+ISSUE    : Jiaqi Chen
 - demonstrates that they have added, committed and pushed members.txt. 
 - demonstrates that they can run OthelloControllerHumanVSHuman on their dev platform
 - demonstrates that they can run MVCApplication on their dev platform
@@ -46,11 +46,11 @@ ISSUE    : Member 4
 - demonstrates that they can run MVCApplication on their dev platform
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY 1.01 : UTORID : STATUS : NotStarted (NotStarted,InProgress, Incomplete,Complete)
+TYPE     : USER STORY 1.01 : wronadom : STATUS : Complete
 NAME     : OthelloGUI Click Registration
 OWNER    : 
 PRIORITY : (1,2,3)
-ESTIMATE : (1 hour, 2 hours, 4 hours, 1 day, 2 days, 4 days)    ACTUAL :  
+ESTIMATE : 1 hour    ACTUAL : 1 45 minutes 
 ISSUE    : User can now click on an 8x8 grid of buttons used by the 
 OthelloApplication. At this stage, a click results in a print out of 
 the (row,col) that the user clicked.
@@ -70,16 +70,7 @@ NOTE: Make sure that you are using good MVC principles in implementing this.
 If you didn't then file BUG 1.012 to fix the implementation.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY 1.012 : UTORID : STATUS : NotStarted (NotStarted,InProgress, Incomplete,Complete)
-NAME     : OthelloGUI 
-OWNER    : 
-PRIORITY : (1,2,3)
-ESTIMATE : (1 hour, 2 hours, 4 hours, 1 day, 2 days, 4 days)    ACTUAL :  
-ISSUE    : The users can now use the OthelloGUI created in US1.011
-for Human vs Human play. Now when the user clicks a button, the resulting
-board is printed on the console. 
---------------------------------------------------------------------------
---------------------------------------------------------------------------
+
 TYPE     : USER STORY 1.02 : UTORID : STATUS : NotStarted (NotStarted,InProgress, Incomplete,Complete)
 NAME     : Othello Board Human VS Human
 OWNER    : 

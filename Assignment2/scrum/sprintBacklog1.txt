@@ -4,3 +4,26 @@
 
 # Sprint 1 Oct 20-Oct 26, 2019
 # Sprint 1 Backlog UserStories go below
+
+-----------------------------------------------------------
+TYPE     : BUG 0.01 : wronadom : STATUS : Complete 
+NAME     : Configure and use system
+OWNER    : 
+PRIORITY : 1
+ESTIMATE :    ACTUAL :  2 hrs or so (had some technical issues)
+ISSUE    : Dominik Wrona
+- demonstrates that they have added, committed and pushed members.txt. 
+- demonstrates that they can run OthelloControllerHumanVSHuman on their dev platform
+- demonstrates that they can run MVCApplication on their dev platform
+-----------------------------------------------------------------
+
+--------------------------------------------------------------------------
+TYPE     : USER STORY 1.01 : wronadom : STATUS : Complete 
+NAME     : OthelloGUI Click Registration
+OWNER    : 
+PRIORITY : (1,2,3)
+ESTIMATE : 1 hour    ACTUAL :  1 45 minutes
+ISSUE    : User can now click on an 8x8 grid of buttons used by the 
+OthelloApplication. At this stage, a click results in a print out of 
+the (row,col) that the user clicked.
+--------------------------------------------------------------------------

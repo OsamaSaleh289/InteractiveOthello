@@ -1,5 +1,5 @@
 # Fill in, commit and push each day.
-Member name:      email:     utorid:   
+Member name: Dominik Wrona    email: dominik.wrona@mail.utoronto.ca    utorid: wronadom
 
 Oct 17,2019
 	What I did yesterday:
@@ -47,9 +47,9 @@ Oct 25,2019
 	Obstacles I face:
 
 Oct 26,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Began working on the Bug in ProductBacklog
+	What I will do today: Try and finish the Bug as well as the the first user stories
+	Obstacles I face: Imported project into Eclipse wrong somehow (red exclamation mark on parent file) so will have to redo that
 
 Oct 27,2019
 	What I did yesterday:

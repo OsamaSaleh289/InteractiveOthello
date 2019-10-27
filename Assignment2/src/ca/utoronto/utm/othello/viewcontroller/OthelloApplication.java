@@ -4,6 +4,7 @@ import ca.utoronto.utm.othello.model.*;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.geometry.Insets;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
@@ -27,12 +28,22 @@ public class OthelloApplication extends Application {
 		
 		// CONTROLLER
 		// CONTROLLER->MODEL hookup
+		ButtonPressEventHandler cpresshandler = new ButtonPressEventHandler(othello); 
 	
 		// VIEW
+		GridPane grid = new GridPane();
+		for (int row=0; row<8; row++) {
+			for (int col=0; col<8; col++) {
+				String b = "b" + Integer.toString(row) +Integer.toString(col);
+				Button button = new Button(b);
+				button.setOnAction(cpresshandler);
+				grid.add(button, col, row);
+			}
+		}
+		
 		// VIEW->CONTROLLER hookup
 		// MODEL->VIEW hookup
 		
-		GridPane grid = new GridPane();
 		
 		// SCENE
 		Scene scene = new Scene(grid); 
