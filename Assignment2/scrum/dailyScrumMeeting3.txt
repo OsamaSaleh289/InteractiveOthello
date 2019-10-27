@@ -1,53 +1,23 @@
 # Fill in, commit and push each day.
-Member name:      email:     utorid:   
-
-Oct 17,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
-
-Oct 18,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
-
-Oct 19,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
-
-Oct 20,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
-
-Oct 21,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
-
-Oct 22,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+Member name: Katrina Watson     email: katrina.watson@mail.utoronto.ca    utorid: watso166
 
 Oct 23,2019
-	What I did yesterday:
-	What I will do today:
+	What I did yesterday: N/A
+	What I will do today: Update mumbers.txt
 	Obstacles I face:
 
 Oct 24,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Updated mumbers.txt
+	What I will do today: Download A2 and get it working on Eclipse, start BUG 0.02
+	Obstacles I face: using laptop, so need to get javafx, java 11, working on my environment
 
 Oct 25,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Downloaded A2, java 11, javafx, got eclipse working with java 11
+	What I will do today: get eclipse working with javafx, finish BUG 0.02, do user story 1.012 or user story 1.02
+	Obstacles I face: getting project to run on windows
 
 Oct 26,2019
-	What I did yesterday:
+	What I did yesterday: BUG 0.02 Complete
 	What I will do today:
 	Obstacles I face:
 
