@@ -46,7 +46,7 @@ ISSUE    : Member 4
 - demonstrates that they can run MVCApplication on their dev platform
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY 1.01 : wronadom : STATUS : InProgress (NotStarted,InProgress, Incomplete,Complete)
+TYPE     : USER STORY 1.01 : wronadom : STATUS : InProgress 
 NAME     : OthelloGUI Click Registration
 OWNER    : 
 PRIORITY : (1,2,3)

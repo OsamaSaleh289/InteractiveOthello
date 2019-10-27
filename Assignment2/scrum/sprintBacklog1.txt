@@ -18,7 +18,7 @@ ISSUE    : Dominik Wrona
 -----------------------------------------------------------------
 
 --------------------------------------------------------------------------
-TYPE     : USER STORY 1.01 : wronadom : STATUS : NotStarted (NotStarted,InProgress, Incomplete,Complete)
+TYPE     : USER STORY 1.01 : wronadom : STATUS : InProgress 
 NAME     : OthelloGUI Click Registration
 OWNER    : 
 PRIORITY : (1,2,3)
