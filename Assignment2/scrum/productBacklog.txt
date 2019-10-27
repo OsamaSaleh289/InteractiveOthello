@@ -13,11 +13,11 @@ ISSUE    : Dominik Wrona
 - demonstrates that they can run MVCApplication on their dev platform
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : BUG 0.02 : watso166 : STATUS : InProgress (NotStarted,InProgress, Incomplete,Complete)
+TYPE     : BUG 0.02 : watso166 : STATUS : Complete (NotStarted,InProgress, Incomplete,Complete)
 NAME     : Configure and use system
 OWNER    : 
-PRIORITY : (1,2,3)
-ESTIMATE : (1 hour, 2 hours, 4 hours, 1 day, 2 days, 4 days)    ACTUAL :  
+PRIORITY : 1
+ESTIMATE : 1 day    ACTUAL : 3 hours (over 2 days)
 ISSUE    : Member 2 
 - demonstrates that they have added, committed and pushed members.txt. 
 - demonstrates that they can run OthelloControllerHumanVSHuman on their dev platform
