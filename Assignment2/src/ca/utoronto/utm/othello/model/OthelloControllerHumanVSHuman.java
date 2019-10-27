@@ -1,7 +1,7 @@
 package ca.utoronto.utm.othello.model;
 
-import ca.utoronto.utm.mvcexample.MCounter;
-import ca.utoronto.utm.util.Observable;
+import java.util.Observable;
+import java.util.Observer;
 
 /**
  * Run the main from this class to play two humans against eachother. Only
@@ -10,7 +10,7 @@ import ca.utoronto.utm.util.Observable;
  * @author arnold
  *
  */
-public class OthelloControllerHumanVSHuman extends OthelloControllerVerbose {
+public class OthelloControllerHumanVSHuman extends OthelloControllerVerbose implements Observer{
 
 	/**
 	 * Constructs a new OthelloController with a new Othello game, ready to play
@@ -22,11 +22,16 @@ public class OthelloControllerHumanVSHuman extends OthelloControllerVerbose {
 		this.player2 = new PlayerHuman(this.othello, OthelloBoard.P2);
 	}
 	
+	public Othello getOthello() {
+		return this.othello;
+	}
+
 	
 	@Override
-	public void update(java.util.Observable o, Object arg) {
-		OthelloControllerHumanVSHuman oc = new OthelloControllerHumanVSHuman();
-		oc.play();
+	public void update(Observable o,Object arg) {
+//		OthelloControllerHumanVSHuman oc = new OthelloControllerHumanVSHuman();
+		this.play();
+		//		System.out.println("Message: " + o.toString() + " has been " + arg);
 	}
 	/**
 	 * Run main to play two Humans against each other at the console.

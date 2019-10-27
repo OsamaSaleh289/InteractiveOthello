@@ -15,6 +15,14 @@ public class Move {
 	public int getCol() {
 		return col;
 	}
+	
+	public void setRow(int r) {
+		this.row = r;
+	}
+	public void setCol(int c) {
+		this.col = c;
+	}
+	
 	public String toString() {
 		return "("+this.row+","+this.col+")";
 	}
