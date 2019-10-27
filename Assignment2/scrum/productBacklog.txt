@@ -46,11 +46,11 @@ ISSUE    : Member 4
 - demonstrates that they can run MVCApplication on their dev platform
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY 1.01 : wronadom : STATUS : InProgress 
+TYPE     : USER STORY 1.01 : wronadom : STATUS : Complete
 NAME     : OthelloGUI Click Registration
 OWNER    : 
 PRIORITY : (1,2,3)
-ESTIMATE : 1 hour    ACTUAL :  
+ESTIMATE : 1 hour    ACTUAL : 1 45 minutes 
 ISSUE    : User can now click on an 8x8 grid of buttons used by the 
 OthelloApplication. At this stage, a click results in a print out of 
 the (row,col) that the user clicked.
