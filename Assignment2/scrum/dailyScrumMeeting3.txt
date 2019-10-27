@@ -13,7 +13,7 @@ Oct 24,2019
 
 Oct 25,2019
 	What I did yesterday: Downloaded A2, java 11, javafx, got eclipse working with java 11
-	What I will do today: get eclipse working with javafx, finish BUG 0.02, do user story 1.012 or user story 1.02
+	What I will do today: get eclipse working with javafx, finish BUG 0.02, do user story 1.02
 	Obstacles I face: getting project to run on windows
 
 Oct 26,2019
