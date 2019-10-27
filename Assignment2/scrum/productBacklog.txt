@@ -16,8 +16,8 @@ ISSUE    : Dominik Wrona
 TYPE     : BUG 0.02 : watso166 : STATUS : Complete (NotStarted,InProgress, Incomplete,Complete)
 NAME     : Configure and use system
 OWNER    : 
-PRIORITY : (1,2,3)
-ESTIMATE : 1 day    ACTUAL : 2 days 
+PRIORITY : 1
+ESTIMATE : 1 day    ACTUAL : 3 hours (over 2 days)
 ISSUE    : Member 2 
 - demonstrates that they have added, committed and pushed members.txt. 
 - demonstrates that they can run OthelloControllerHumanVSHuman on their dev platform
