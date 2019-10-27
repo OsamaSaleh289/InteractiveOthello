@@ -1,5 +1,7 @@
 package ca.utoronto.utm.othello.model;
 import ca.utoronto.utm.util.*;
+
+import java.util.Observable;
 import java.util.Random;
 
 /**
@@ -16,12 +18,13 @@ import java.util.Random;
  * @author arnold
  *
  */
-public class Othello {
+public class Othello extends Observable {
 	public static final int DIMENSION=8; // This is an 8x8 game
 
 	private OthelloBoard board=new OthelloBoard(Othello.DIMENSION);
 	private char whosTurn = OthelloBoard.P1;
 	private int numMoves = 0;
+	public Move currentMove = new Move(0,0);
 
 	/**
 	 * return P1,P2 or EMPTY depending on who moves next.
@@ -30,6 +33,22 @@ public class Othello {
 	 */
 	public char getWhosTurn() {
 		return this.whosTurn;
+	}
+	
+	public void setMove(int row, int col) {
+//		System.out.println("BBBBBB");
+		currentMove.setCol(col);
+		currentMove.setRow(row);
+//		System.out.println("currentmove is"+currentMove);
+		this.setChanged();
+		this.notifyObservers();
+	}
+	
+	public Move getMove(){
+//		int row = getMove("row: ");
+//		int col = getMove("col: ");
+//		System.out.println("getcurrent move is "+ currentMove);
+		return currentMove;
 	}
 	
 	/**

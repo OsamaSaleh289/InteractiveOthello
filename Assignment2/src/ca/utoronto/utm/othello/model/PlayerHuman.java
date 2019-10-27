@@ -18,7 +18,17 @@ public class PlayerHuman extends Player {
 	public PlayerHuman(Othello othello, char player) {
 		super(othello, player);
 	}
+//	private Move move;
 
+//	public void setMove(int row, int col) {
+//		move = new Move(row, col);
+//	}
+	
+//	public Move getMove(){
+////		int row = getMove("row: ");
+////		int col = getMove("col: ");
+//		return move;
+//	}
 	public Move getMove() {
 		int row = getMove("row: ");
 		int col = getMove("col: ");

@@ -1,6 +1,8 @@
 package ca.utoronto.utm.othello.model;
 
-public abstract class Player {
+import java.util.Observable;
+
+public abstract class Player  {
 	protected Othello othello;
 	protected char player;
 

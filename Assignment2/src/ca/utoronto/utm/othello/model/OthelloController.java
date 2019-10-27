@@ -14,21 +14,35 @@ public abstract class OthelloController {
 	}
 
 	public void play() {
-		while (!othello.isGameOver()) {
-			this.report();
+		if (!othello.isGameOver()) {
+//			System.out.println("CCCCCC");
+//			this.report();
 			
 			Move move=null;
 			char whosTurn = othello.getWhosTurn();
 			
-			if(whosTurn==OthelloBoard.P1)move = player1.getMove();
-			if(whosTurn==OthelloBoard.P2)move = player2.getMove();
-
-			this.reportMove(whosTurn, move);
-			othello.move(move.getRow(), move.getCol());
+//			if(whosTurn==OthelloBoard.P1)move = player1.getMove();
+//			if(whosTurn==OthelloBoard.P2)move = player2.getMove();
+			move = othello.getMove();
+//			System.out.println(move);
+			if(move != null) {
+				this.reportMove(whosTurn, move);
+				othello.move(move.getRow(), move.getCol());
+			}
+			this.report();
+//			this.reportMove(whosTurn, move);
+//			othello.move(move.getRow(), move.getCol());
+		}else {
+			this.reportFinal();
 		}
-		this.reportFinal();
+//		this.reportFinal();
 	}
 	protected void reportMove(char whosTurn, Move move) { }
 	protected void report() { }
 	protected void reportFinal() { }
+
+	public void update() {
+		// TODO Auto-generated method stub
+		
+	}
 }

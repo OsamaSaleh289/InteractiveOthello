@@ -56,11 +56,11 @@ OthelloApplication. At this stage, a click results in a print out of
 the (row,col) that the user clicked.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY 1.011 : UTORID : STATUS : NotStarted (NotStarted,InProgress, Incomplete,Complete)
+TYPE     : USER STORY 1.011 : chenj628 : STATUS : Complete (NotStarted,InProgress, Incomplete,Complete)
 NAME     : OthelloGUI Buttons Active, Console View
 OWNER    : 
 PRIORITY : (1,2,3)
-ESTIMATE : (1 hour, 2 hours, 4 hours, 1 day, 2 days, 4 days)    ACTUAL :  
+ESTIMATE : 2 hours  ACTUAL :  6 hours
 ISSUE    : The users can now use the OthelloGUI created in US1.01 
 for Human vs Human play. Now when the user clicks a button, the resulting
 board is printed on the console. This basically replaces the keyboard
