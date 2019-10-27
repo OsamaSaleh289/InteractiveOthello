@@ -1,6 +1,9 @@
 package ca.utoronto.utm.othello.model;
 
-public abstract class OthelloController {
+import java.util.Observable;
+import java.util.Observer;
+
+public abstract class OthelloController implements Observer{
 
 	protected Othello othello;
 	Player player1, player2;
@@ -9,19 +12,19 @@ public abstract class OthelloController {
 	 * Constructs a new OthelloController with a new Othello game, ready to play
 	 * with a user at the console.
 	 */
-	public OthelloController() {
+	public OthelloController () {
 		this.othello = new Othello();
 	}
 
 	public void play() {
-		while (!othello.isGameOver()) {
+		if (!othello.isGameOver()) {
 			this.report();
 			
 			Move move=null;
 			char whosTurn = othello.getWhosTurn();
-			
-			if(whosTurn==OthelloBoard.P1)move = player1.getMove();
-			if(whosTurn==OthelloBoard.P2)move = player2.getMove();
+			move = othello.getNewMove();
+//			if(whosTurn==OthelloBoard.P1)move = player1.getMove();
+//			if(whosTurn==OthelloBoard.P2)move = player2.getMove();
 
 			this.reportMove(whosTurn, move);
 			othello.move(move.getRow(), move.getCol());
@@ -31,4 +34,7 @@ public abstract class OthelloController {
 	protected void reportMove(char whosTurn, Move move) { }
 	protected void report() { }
 	protected void reportFinal() { }
+	
+
 }
+

@@ -14,6 +14,7 @@ class ButtonPressEventHandler implements EventHandler<ActionEvent> {
 		String text = button.getText();
 		String row = text.substring(1, 2);
 		String col = text.substring(2);
+		othello.getMove(row, col);
 		System.out.println("(" + row+","+col +")");
 	}
 }

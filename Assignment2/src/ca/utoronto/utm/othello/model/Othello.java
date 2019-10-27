@@ -1,5 +1,9 @@
 package ca.utoronto.utm.othello.model;
 import ca.utoronto.utm.util.*;
+
+import java.io.IOException;
+import java.util.Observable;
+import java.util.Observer;
 import java.util.Random;
 
 /**
@@ -16,12 +20,14 @@ import java.util.Random;
  * @author arnold
  *
  */
-public class Othello {
+public class Othello extends Observable{
 	public static final int DIMENSION=8; // This is an 8x8 game
 
 	private OthelloBoard board=new OthelloBoard(Othello.DIMENSION);
 	private char whosTurn = OthelloBoard.P1;
 	private int numMoves = 0;
+	private int newr = 0;
+	private int newc = 0;
 
 	/**
 	 * return P1,P2 or EMPTY depending on who moves next.
@@ -31,6 +37,13 @@ public class Othello {
 	public char getWhosTurn() {
 		return this.whosTurn;
 	}
+	
+	public Move getNewMove() {
+//		this.notifyObservers();
+		return new Move(this.newr, this.newc);
+		
+	}
+	
 	
 	/**
 	 * 
@@ -57,11 +70,56 @@ public class Othello {
 			char allowedMove = board.hasMove();
 			if(allowedMove!=OthelloBoard.BOTH)this.whosTurn=allowedMove;
 			this.numMoves++;
+//			this.notifyObservers();
 			return true;
 		} else {
 			return false;
 		}
 	}
+	
+//	public Move getMove() {
+////		int row = getMove("row: ");
+////		int col = getMove("col: ");
+//		Move move = 
+//		return new Move(row, col);
+//	}
+
+//	public int getMove(String message) {
+//		int move, lower = 0, upper = 7;
+//		while (true) {
+//			try {
+//				System.out.print(message);
+//				String line = PlayerHuman.stdin.readLine();
+//				move = Integer.parseInt(line);
+//				if (lower <= move && move <= upper) {
+//					return move;
+//				} else {
+//					System.out.println(INVALID_INPUT_MESSAGE);
+//				}
+//			} catch (IOException e) {
+//				System.out.println(INVALID_INPUT_MESSAGE);
+//				break;
+//			} catch (NumberFormatException e) {
+//				System.out.println(INVALID_INPUT_MESSAGE);
+//			}
+//		}
+//		return -1;
+//	}
+	
+//	public Move getMove() {
+//		int row = getMove("row: ");
+//		int col = getMove("col: ");
+//		return new Move(row, col);
+//	}
+//	
+	public void getMove(String r,String c) {
+		this.newr = Integer.parseInt(r);
+		this.newc = Integer.parseInt(c);
+		this.notifyObservers();
+		System.out.println("Enter here");
+		
+//		return new Move(row, col);
+}
 
 
 	/**
@@ -140,6 +198,20 @@ public class Othello {
 		}
 
 	}
+	
+	public synchronized void addObserver(Observer o) {
+		// Here we use "synchronized" because there could be multiple observers 
+		// being added to the same observable concurrently, synchronization is 
+		// needed to prevent concurrency issues.
+		
+		super.addObserver(o);
+		
+		// What's the difference if just use the parent's implementation 
+		// without adding the following two lines.
+		this.setChanged();
+		this.notifyObservers("observed");
+	}
+	
 }
 
 

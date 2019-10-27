@@ -3,6 +3,7 @@ package ca.utoronto.utm.othello.model;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Observer;
 
 /**
  * TODO: Document this class and make minimal changes as necessary.
@@ -10,7 +11,7 @@ import java.io.InputStreamReader;
  * @author arnold
  *
  */
-public class PlayerHuman extends Player {
+public class PlayerHuman extends Player{
 	private static final String INVALID_INPUT_MESSAGE = "Invalid number, please enter 1-8";
 	private static final String IO_ERROR_MESSAGE = "I/O Error";
 	private static BufferedReader stdin= new BufferedReader(new InputStreamReader(System.in));
@@ -46,6 +47,8 @@ public class PlayerHuman extends Player {
 		}
 		return -1;
 	}
+	
+
 }
 
 

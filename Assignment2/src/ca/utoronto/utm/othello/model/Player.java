@@ -1,5 +1,8 @@
 package ca.utoronto.utm.othello.model;
 
+import java.util.Observable;
+import java.util.Observer;
+
 public abstract class Player {
 	protected Othello othello;
 	protected char player;
@@ -12,4 +15,6 @@ public abstract class Player {
 		return this.player;
 	}
 	public abstract Move getMove();
+//	public abstract Move getMove(String r,String c);
+	
 }

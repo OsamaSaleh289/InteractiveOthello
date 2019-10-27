@@ -1,4 +1,6 @@
 package ca.utoronto.utm.othello.viewcontroller;
+import balloonmvc.Balloon;
+import balloonmvc.TextView;
 import ca.utoronto.utm.othello.model.*;
 
 import javafx.application.Application;
@@ -23,13 +25,17 @@ public class OthelloApplication extends Application {
 	public void start(Stage stage) throws Exception {
 		// Create and hook up the Model, View and the controller
 		
+	
+		
 		// MODEL
 		Othello othello=new Othello();
+
+		OthelloControllerHumanVSHuman oc = new OthelloControllerHumanVSHuman();
 		
 		// CONTROLLER
 		// CONTROLLER->MODEL hookup
 		ButtonPressEventHandler cpresshandler = new ButtonPressEventHandler(othello); 
-	
+		othello.addObserver(oc);
 		// VIEW
 		GridPane grid = new GridPane();
 		for (int row=0; row<8; row++) {
@@ -42,6 +48,8 @@ public class OthelloApplication extends Application {
 		}
 		
 		// VIEW->CONTROLLER hookup
+//		vIncButton.setOnAction(cpresshandler);
+//		vDecButton.setOnAction(cpresshandler);
 		// MODEL->VIEW hookup
 		
 		

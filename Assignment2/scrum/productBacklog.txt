@@ -56,7 +56,7 @@ OthelloApplication. At this stage, a click results in a print out of
 the (row,col) that the user clicked.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY 1.011 : UTORID : STATUS : NotStarted (NotStarted,InProgress, Incomplete,Complete)
+TYPE     : USER STORY 1.011 : chenj628 : STATUS : InProgress (NotStarted,InProgress, Incomplete,Complete)
 NAME     : OthelloGUI Buttons Active, Console View
 OWNER    : 
 PRIORITY : (1,2,3)
