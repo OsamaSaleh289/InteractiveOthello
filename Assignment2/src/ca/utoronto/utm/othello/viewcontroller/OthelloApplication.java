@@ -42,15 +42,16 @@ public class OthelloApplication extends Application {
 		GridPane grid = new GridPane();
 		for (int row=0; row<8; row++) {
 			for (int col=0; col<8; col++) {
-				String b = "b" + Integer.toString(row) +Integer.toString(col);
-				Button button = new Button(b);
+				Button button = new Button(othello.getToken(row, col)+"");
 				
 				button.setOnAction(cpresshandler);
-//				System.out.println("AAAAAA");
-				PrintEventHandler p = new PrintEventHandler(othello);
-//				button.setOnAction(p);
+				
+				PrintEventHandler p = new PrintEventHandler(othello, grid);
+				button.setOnAction(p);
 				button.addEventHandler(ActionEvent.ACTION, p);
+				
 				grid.add(button, col, row);
+				button.setPrefSize(28, 28);
 			}
 		}
 		// SCENE
@@ -63,7 +64,6 @@ public class OthelloApplication extends Application {
 	}
 
 	public static void main(String[] args) {
-//		System.out.println("SAAAAA");
 		OthelloApplication view = new OthelloApplication();
 		launch(args);
 	}

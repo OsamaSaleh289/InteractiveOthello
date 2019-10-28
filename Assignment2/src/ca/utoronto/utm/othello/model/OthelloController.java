@@ -26,14 +26,14 @@ public abstract class OthelloController {
 			move = othello.getMove();
 //			System.out.println(move);
 			if(move != null) {
-				this.reportMove(whosTurn, move);
+				//this.reportMove(whosTurn, move);
 				othello.move(move.getRow(), move.getCol());
 			}
-			this.report();
+			//this.report();
 //			this.reportMove(whosTurn, move);
 //			othello.move(move.getRow(), move.getCol());
 		}else {
-			this.reportFinal();
+			//this.reportFinal();
 		}
 //		this.reportFinal();
 	}

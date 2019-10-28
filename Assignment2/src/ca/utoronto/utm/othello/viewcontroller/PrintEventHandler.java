@@ -4,29 +4,34 @@ import ca.utoronto.utm.othello.model.Othello;
 import ca.utoronto.utm.othello.model.PlayerHuman;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
+import javafx.scene.layout.GridPane;
 
 public class PrintEventHandler implements EventHandler<ActionEvent>{
 	private Othello othello;
+	private GridPane grid;
 
-	PrintEventHandler(Othello othello) {
+	PrintEventHandler(Othello othello, GridPane grid) {
 		this.othello = othello;
+		this.grid = grid;
 	}
 
 	public void handle(ActionEvent event) {
-//		System.out.println("AAAAAAA");
-		Button button = (Button)event.getSource();
-		String text = button.getText();
-		String row = text.substring(1, 2);
-		String col = text.substring(2);
-//		System.out.println("col is" + col);
-		othello.setMove(Integer.parseInt(row), Integer.parseInt(col));
 		
+		Button button = (Button)event.getSource();
 
+		int row = GridPane.getRowIndex(button);
+		int col = GridPane.getColumnIndex(button);
 
-//		if (balloon.isPopped()) {
-//			Button jb = (Button) e.getSource();
-//			jb.setDisable(true);
-//		}
+		othello.setMove(row, col);
+				
+		for (Node child : grid.getChildren()) {
+			Button bttn = (Button) child;
+			int r = GridPane.getRowIndex(bttn);
+			int c = GridPane.getColumnIndex(bttn);
+			bttn.setText(this.othello.getToken(r, c)+"");
+		}
+		
 	}
 }

@@ -4,3 +4,15 @@
 
 # Sprint 2 Oct 27-Nov 02, 2019
 # Sprint 2 Backlog UserStories go below
+
+--------------------------------------------------------------------------
+
+TYPE     : USER STORY 1.02 : watso166 : STATUS : Completed (NotStarted,InProgress, Incomplete,Complete)
+NAME     : Othello Board Human VS Human
+OWNER    : 
+PRIORITY : (1,2,3)
+ESTIMATE : 4 hours   ACTUAL : 8 hours (counting redo after accidental git checkout to master from unsaved branch)
+ISSUE    : The users can now use the OthelloGUI created in US1.012 
+for Human vs Human play. The grid buttons simply show X and O text
+labels for the buttons. There is no longer a console display as in 1.012.
+--------------------------------------------------------------------------
