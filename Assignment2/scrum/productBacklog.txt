@@ -81,11 +81,11 @@ for Human vs Human play. The grid buttons simply show X and O text
 labels for the buttons. There is no longer a console display as in 1.012.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : BUG 1.021 : UTORID : STATUS : NotStarted (NotStarted,InProgress, Incomplete,Complete)
+TYPE     : BUG 1.021 : UTORID : wronadom STATUS : Complete (NotStarted,InProgress, Incomplete,Complete)
 NAME     : Check Architecture
 OWNER    : 
 PRIORITY : (1,2,3)
-ESTIMATE : (1 hour, 2 hours, 4 hours, 1 day, 2 days, 4 days)    ACTUAL :  
+ESTIMATE : 1 hour     ACTUAL :  30 minutes
 ISSUE    : If your code is not MVC right now, fix it to MVC. Pay the price
 now to create a good architecture, rather than clean up a lot of code later.
 --------------------------------------------------------------------------
