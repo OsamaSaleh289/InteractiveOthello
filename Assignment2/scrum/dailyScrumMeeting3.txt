@@ -13,23 +13,23 @@ Oct 24,2019
 
 Oct 25,2019
 	What I did yesterday: Downloaded A2, java 11, javafx, got eclipse working with java 11
-	What I will do today: get eclipse working with javafx, finish BUG 0.02, do user story 1.012 or user story 1.02
+	What I will do today: get eclipse working with javafx, finish BUG 0.02
 	Obstacles I face: getting project to run on windows
 
 Oct 26,2019
 	What I did yesterday: BUG 0.02 Complete
-	What I will do today:
+	What I will do today: wait for team members to finish their parts
 	Obstacles I face:
 
 Oct 27,2019
 	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I will do today: Start UserStory 1.02
+	Obstacles I face: git conflict
 
 Oct 28,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Started UserStory 1.02
+	What I will do today: Finish UserStory 1.02
+	Obstacles I face: had to redo after accidental git checkout to master from unsaved branch
 
 Oct 29,2019
 	What I did yesterday:

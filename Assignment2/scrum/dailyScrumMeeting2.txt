@@ -48,13 +48,13 @@ Oct 25,2019
 
 Oct 26,2019
 	What I did yesterday: Read the description and requirement of A2 and began to setup environment
-	What I will do today: finish bug BUG 0.03 and start do user stories
+	What I will do today: finish bug BUG 0.03 and start do user stories 1.011
 	Obstacles I face: No obstacles yet
 
 Oct 27,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: finish bug BUG 0.03 and start do user stories 1.011
+	What I will do today: finish user stories 1.011
+	Obstacles I face:No obstacles yet
 
 Oct 28,2019
 	What I did yesterday:
