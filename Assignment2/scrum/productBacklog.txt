@@ -90,11 +90,11 @@ ISSUE    : If your code is not MVC right now, fix it to MVC. Pay the price
 now to create a good architecture, rather than clean up a lot of code later.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY 1.03 : UTORID : zhuxuank STATUS : InProgress (NotStarted,InProgress, Incomplete,Complete)
+TYPE     : USER STORY 1.03 : wronadom : STATUS : NotStarted (NotStarted,InProgress, Incomplete,Complete)
 NAME     : Whos Next
 OWNER    : 
 PRIORITY : (1,2,3)
-ESTIMATE : 4 hours (1 hour, 2 hours, 4 hours, 1 day, 2 days, 4 days)    ACTUAL :  
+ESTIMATE : 1 hour 30 minutes    ACTUAL :  
 ISSUE    : When users play HumanVSHuman, the player that moves next is on display, 
 correctly showing the token of the next player to make a move.
 --------------------------------------------------------------------------
