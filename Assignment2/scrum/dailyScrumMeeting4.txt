@@ -1,5 +1,5 @@
 # Fill in, commit and push each day.
-Member name: Xuankui Zhu     email: xk.zhu@mail.utoronto.ca    utorid: zhuxuank
+Member name: Osama Saleh    email: osama.saleh@mail.utoronto.ca    utorid: salehosa
 
 Oct 17,2019
 	What I did yesterday:
@@ -67,9 +67,10 @@ Oct 29,2019
 	Obstacles I face:
 
 Oct 30,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: First day with new group. 
+	What I will do today: Finish US1.04 and US1.05. Review group members' code and get up to date 
+	with what has been accomplished so far
+	Obstacles I face: Getting accustomed to the observable/observer design pattern
 
 Oct 31,2019
 	What I did yesterday:
