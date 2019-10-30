@@ -32,18 +32,18 @@ Oct 22,2019
 	Obstacles I face:
 
 Oct 23,2019
-	What I did yesterday:
-	What I will do today:
+	What I did yesterday:N/A
+	What I will do today:start reading the requirement of A2
 	Obstacles I face:
 
 Oct 24,2019
-	What I did yesterday:
-	What I will do today:
+	What I did yesterday:start reading the requirement of A2
+	What I will do today:update the members.txt
 	Obstacles I face:
 
 Oct 25,2019
-	What I did yesterday:
-	What I will do today:
+	What I did yesterday:update the members.txt
+	What I will do today:N/A
 	Obstacles I face:
 
 Oct 26,2019
@@ -57,18 +57,18 @@ Oct 27,2019
 	Obstacles I face:No obstacles yet
 
 Oct 28,2019
-	What I did yesterday:
-	What I will do today:
+	What I did yesterday:finish user stories 1.011
+	What I will do today:N/A
 	Obstacles I face:
 
 Oct 29,2019
-	What I did yesterday:
-	What I will do today:
+	What I did yesterday:N/A
+	What I will do today:discuss and allocate later user stories tasks with team members
 	Obstacles I face:
 
 Oct 30,2019
-	What I did yesterday:
-	What I will do today:
+	What I did yesterday:discuss and allocate later user stories tasks with team members
+	What I will do today:start work on user story 1.06
 	Obstacles I face:
 
 Oct 31,2019

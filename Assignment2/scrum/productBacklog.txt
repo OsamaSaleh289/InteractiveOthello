@@ -26,7 +26,7 @@ ISSUE    : Member 2
 --------------------------------------------------------------------------
 TYPE     : BUG 0.03 : chenj628 : STATUS : Complete (NotStarted,InProgress, Incomplete,Complete)
 NAME     : Configure and use system
-OWNER    : 
+OWNER    : chenj628
 PRIORITY : (1,2,3)
 ESTIMATE : (1 hour, 2 hours, 4 hours, 1 day, 2 days, 4 days)    ACTUAL :  2hours
 ISSUE    : Jiaqi Chen
@@ -58,7 +58,7 @@ the (row,col) that the user clicked.
 --------------------------------------------------------------------------
 TYPE     : USER STORY 1.011 : chenj628 : STATUS : Complete (NotStarted,InProgress, Incomplete,Complete)
 NAME     : OthelloGUI Buttons Active, Console View
-OWNER    : 
+OWNER    : chenj628
 PRIORITY : (1,2,3)
 ESTIMATE : 2 hours  ACTUAL :  6 hours
 ISSUE    : The users can now use the OthelloGUI created in US1.01 
@@ -118,9 +118,9 @@ ISSUE    : When users play, the current status of the game is on display, showin
 of the winner of the game.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY 1.06 : UTORID : STATUS : NotStarted (NotStarted,InProgress, Incomplete,Complete)
+TYPE     : USER STORY 1.06 : chenj628 : STATUS : InProgress (NotStarted,InProgress, Incomplete,Complete)
 NAME     : Change tokens to Images
-OWNER    : 
+OWNER    : chenj628
 PRIORITY : (1,2,3)
 ESTIMATE : (1 hour, 2 hours, 4 hours, 1 day, 2 days, 4 days)    ACTUAL :  
 ISSUE    : When users are playing and the board is on display, 
