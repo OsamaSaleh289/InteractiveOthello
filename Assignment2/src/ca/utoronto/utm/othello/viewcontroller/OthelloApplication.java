@@ -32,6 +32,15 @@ public class OthelloApplication extends Application {
 		// VIEW
 		OthelloControllerHumanVSHuman oc = new OthelloControllerHumanVSHuman();
 		
+        // create a input stream 
+        FileInputStream input1 = new FileInputStream("D:\\black.jpg"); 
+        FileInputStream input2 = new FileInputStream("D:\\white.jpg"); 
+        // create a image 
+        Image black = new Image(input1); 
+        Image white = new Image(input2); 
+        // create a image View 
+        ImageView vblack = new ImageView(black); 
+        ImageView vwhite = new ImageView(white); 
 		// MODEL
 		Othello othello= oc.getOthello();
 		// VIEW->CONTROLLER hookup
@@ -42,6 +51,11 @@ public class OthelloApplication extends Application {
 		GridPane grid = new GridPane();
 		for (int row=0; row<8; row++) {
 			for (int col=0; col<8; col++) {
+				if(othello.getToken(row, col) == 'X') {
+					Button button = new Button("", vblack));
+				}else if (othello.getToken(row, col) == 'O') {
+					Button button = new Button("", vwhite));
+				}
 				Button button = new Button(othello.getToken(row, col)+"");
 				
 				button.setOnAction(cpresshandler);

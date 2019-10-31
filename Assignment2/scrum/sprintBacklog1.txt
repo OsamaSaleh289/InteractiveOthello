@@ -62,3 +62,12 @@ in the old HumanVSHuman game, but the output is still on the console.
 NOTE: Make sure that you are using good MVC principles in implementing this.
 If you didn't then file BUG 1.012 to fix the implementation.
 --------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : BUG 1.021 : UTORID : wronadom STATUS : Completed (NotStarted,InProgress, Incomplete,Complete)
+NAME     : Check Architecture
+OWNER    : 
+PRIORITY : (1,2,3)
+ESTIMATE : 1 hour     ACTUAL :  30 minutes
+ISSUE    : If your code is not MVC right now, fix it to MVC. Pay the price
+now to create a good architecture, rather than clean up a lot of code later.
+--------------------------------------------------------------------------

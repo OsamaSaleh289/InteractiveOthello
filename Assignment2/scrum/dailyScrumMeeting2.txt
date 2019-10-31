@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Fill in, commit and push each day.
 Member name: Jiaqi Chen    email:  isabeljiaqi.chen@mail.utoronto.ca   utorid: chenj628  
 
@@ -220,3 +221,227 @@ Nov 29,2019
 	What I did yesterday:
 	What I will do today:
 	Obstacles I face:
+=======
+# Fill in, commit and push each day.
+Member name: Jiaqi Chen    email:  isabeljiaqi.chen@mail.utoronto.ca   utorid: chenj628  
+
+Oct 17,2019
+	What I did yesterday:
+	What I will do today:
+	Obstacles I face:
+
+Oct 18,2019
+	What I did yesterday:
+	What I will do today:
+	Obstacles I face:
+
+Oct 19,2019
+	What I did yesterday:
+	What I will do today:
+	Obstacles I face:
+
+Oct 20,2019
+	What I did yesterday:
+	What I will do today:
+	Obstacles I face:
+
+Oct 21,2019
+	What I did yesterday:
+	What I will do today:
+	Obstacles I face:
+
+Oct 22,2019
+	What I did yesterday:
+	What I will do today:
+	Obstacles I face:
+
+Oct 23,2019
+	What I did yesterday:
+	What I will do today:
+	Obstacles I face:
+
+Oct 24,2019
+	What I did yesterday:
+	What I will do today:
+	Obstacles I face:
+
+Oct 25,2019
+	What I did yesterday:
+	What I will do today:
+	Obstacles I face:
+
+Oct 26,2019
+	What I did yesterday: Read the description and requirement of A2 and began to setup environment
+	What I will do today: finish bug BUG 0.03 and start do user stories 1.011
+	Obstacles I face: No obstacles yet
+
+Oct 27,2019
+	What I did yesterday: finish bug BUG 0.03 and start do user stories 1.011
+	What I will do today: finish user stories 1.011
+	Obstacles I face:No obstacles yet
+
+Oct 28,2019
+	What I did yesterday:
+	What I will do today:
+	Obstacles I face:
+
+Oct 29,2019
+	What I did yesterday:
+	What I will do today:
+	Obstacles I face:
+
+Oct 30,2019
+	What I did yesterday:
+	What I will do today:
+	Obstacles I face:
+
+Oct 31,2019
+	What I did yesterday:
+	What I will do today:
+	Obstacles I face:
+
+Nov 1,2019
+	What I did yesterday:
+	What I will do today:
+	Obstacles I face:
+
+Nov 2,2019
+	What I did yesterday:
+	What I will do today:
+	Obstacles I face:
+
+Nov 3,2019
+	What I did yesterday:
+	What I will do today:
+	Obstacles I face:
+
+Nov 4,2019
+	What I did yesterday:
+	What I will do today:
+	Obstacles I face:
+
+Nov 5,2019
+	What I did yesterday:
+	What I will do today:
+	Obstacles I face:
+
+Nov 6,2019
+	What I did yesterday:
+	What I will do today:
+	Obstacles I face:
+
+Nov 7,2019
+	What I did yesterday:
+	What I will do today:
+	Obstacles I face:
+
+Nov 8,2019
+	What I did yesterday:
+	What I will do today:
+	Obstacles I face:
+
+Nov 9,2019
+	What I did yesterday:
+	What I will do today:
+	Obstacles I face:
+
+Nov 10,2019
+	What I did yesterday:
+	What I will do today:
+	Obstacles I face:
+
+Nov 11,2019
+	What I did yesterday:
+	What I will do today:
+	Obstacles I face:
+
+Nov 12,2019
+	What I did yesterday:
+	What I will do today:
+	Obstacles I face:
+
+Nov 13,2019
+	What I did yesterday:
+	What I will do today:
+	Obstacles I face:
+
+Nov 14,2019
+	What I did yesterday:
+	What I will do today:
+	Obstacles I face:
+
+Nov 15,2019
+	What I did yesterday:
+	What I will do today:
+	Obstacles I face:
+
+Nov 16,2019
+	What I did yesterday:
+	What I will do today:
+	Obstacles I face:
+
+Nov 17,2019
+	What I did yesterday:
+	What I will do today:
+	Obstacles I face:
+
+Nov 18,2019
+	What I did yesterday:
+	What I will do today:
+	Obstacles I face:
+
+Nov 19,2019
+	What I did yesterday:
+	What I will do today:
+	Obstacles I face:
+
+Nov 20,2019
+	What I did yesterday:
+	What I will do today:
+	Obstacles I face:
+
+Nov 21,2019
+	What I did yesterday:
+	What I will do today:
+	Obstacles I face:
+
+Nov 22,2019
+	What I did yesterday:
+	What I will do today:
+	Obstacles I face:
+
+Nov 23,2019
+	What I did yesterday:
+	What I will do today:
+	Obstacles I face:
+
+Nov 24,2019
+	What I did yesterday:
+	What I will do today:
+	Obstacles I face:
+
+Nov 25,2019
+	What I did yesterday:
+	What I will do today:
+	Obstacles I face:
+
+Nov 26,2019
+	What I did yesterday:
+	What I will do today:
+	Obstacles I face:
+
+Nov 27,2019
+	What I did yesterday:
+	What I will do today:
+	Obstacles I face:
+
+Nov 28,2019
+	What I did yesterday:
+	What I will do today:
+	Obstacles I face:
+
+Nov 29,2019
+	What I did yesterday:
+	What I will do today:
+	Obstacles I face:
+>>>>>>> 39c3664501695994900c9c9ccc42161007a2e0e0
