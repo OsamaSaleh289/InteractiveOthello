@@ -6,7 +6,7 @@ utorid:chenj628
 
 Member3 name: Dominik Wrona       email: dominik.wrona@mail.utoronto.ca       utorid: wronadom
 
-Member4 name: Xuankui Zhu       email: xk.zhu@mail.utoronto.ca       utorid: zhuxuank
+Member4 name: Osama Saleh       email: osama.saleh@mail.utoronto.ca       utorid: salehosa
 
 Coach name: Shubham Sharma
 Email: shub.sharma@mail.utoronto.ca
