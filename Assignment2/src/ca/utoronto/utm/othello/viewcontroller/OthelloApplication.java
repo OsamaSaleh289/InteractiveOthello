@@ -1,4 +1,6 @@
 package ca.utoronto.utm.othello.viewcontroller;
+import java.io.FileInputStream;
+
 import ca.utoronto.utm.othello.model.*;
 
 import javafx.application.Application;
@@ -7,6 +9,8 @@ import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -32,15 +36,22 @@ public class OthelloApplication extends Application {
 		// VIEW
 		OthelloControllerHumanVSHuman oc = new OthelloControllerHumanVSHuman();
 		
-        // create a input stream 
-        FileInputStream input1 = new FileInputStream("D:\\black.jpg"); 
-        FileInputStream input2 = new FileInputStream("D:\\white.jpg"); 
-        // create a image 
-        Image black = new Image(input1); 
-        Image white = new Image(input2); 
-        // create a image View 
-        ImageView vblack = new ImageView(black); 
-        ImageView vwhite = new ImageView(white); 
+//        // create a input stream 
+//		
+//		
+//        FileInputStream input1 = new FileInputStream("D:\\black.jpg"); 
+//        FileInputStream input2 = new FileInputStream("D:\\white.jpg"); 
+//        
+//        
+//        // create a image 
+//        Image black = new Image(input1); 
+//        Image white = new Image(input2); 
+//        // create a image View 
+//        ImageView vblack = new ImageView(black); 
+//        ImageView vwhite = new ImageView(white);
+        
+        
+        
 		// MODEL
 		Othello othello= oc.getOthello();
 		// VIEW->CONTROLLER hookup
@@ -51,12 +62,11 @@ public class OthelloApplication extends Application {
 		GridPane grid = new GridPane();
 		for (int row=0; row<8; row++) {
 			for (int col=0; col<8; col++) {
-				if(othello.getToken(row, col) == 'X') {
-					Button button = new Button("", vblack));
-				}else if (othello.getToken(row, col) == 'O') {
-					Button button = new Button("", vwhite));
-				}
-//				Button button = new Button(othello.getToken(row, col)+"");
+//				Button button = new Button("", vwhite);
+//				if(othello.getToken(row, col) == 'X') {
+//					button = new Button("", vblack);
+//				}
+				Button button = new Button(othello.getToken(row, col)+"");
 				
 				button.setOnAction(cpresshandler);
 				
