@@ -56,7 +56,7 @@ public class OthelloApplication extends Application {
 				}else if (othello.getToken(row, col) == 'O') {
 					Button button = new Button("", vwhite));
 				}
-				Button button = new Button(othello.getToken(row, col)+"");
+//				Button button = new Button(othello.getToken(row, col)+"");
 				
 				button.setOnAction(cpresshandler);
 				

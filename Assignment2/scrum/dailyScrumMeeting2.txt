@@ -73,8 +73,8 @@ Oct 30,2019
 	Obstacles I face:
 
 Oct 31,2019
-	What I did yesterday:
-	What I will do today:
+	What I did yesterday:start work on user story 1.06
+	What I will do today:solve the merge problem
 	Obstacles I face:
 
 Nov 1,2019
