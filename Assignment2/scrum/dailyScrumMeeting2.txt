@@ -74,12 +74,12 @@ Oct 30,2019
 
 Oct 31,2019
 	What I did yesterday:start work on user story 1.06
-	What I will do today:solve the merge problem
+	What I will do today:solve the merge problem and setting issue
 	Obstacles I face:
 
 Nov 1,2019
-	What I did yesterday:
-	What I will do today:
+	What I did yesterday:solve the merge problem and setting issue
+	What I will do today:continue work on user story 1.06
 	Obstacles I face:
 
 Nov 2,2019
