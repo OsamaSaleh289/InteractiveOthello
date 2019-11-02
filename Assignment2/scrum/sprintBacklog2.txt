@@ -17,7 +17,7 @@ for Human vs Human play. The grid buttons simply show X and O text
 labels for the buttons. There is no longer a console display as in 1.012.
 --------------------------------------------------------------------------
 
-TYPE     : USER STORY 1.03 : wronadom : STATUS : NotStarted (NotStarted,InProgress, Incomplete,Complete)
+TYPE     : USER STORY 1.03 : wronadom : STATUS : Complete (NotStarted,InProgress, Incomplete,Complete)
 NAME     : Whos Next
 OWNER    : 
 PRIORITY : (1,2,3)
