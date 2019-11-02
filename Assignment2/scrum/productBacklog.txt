@@ -91,7 +91,7 @@ ISSUE    : If your code is not MVC right now, fix it to MVC. Pay the price
 now to create a good architecture, rather than clean up a lot of code later.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY 1.03 : UTORID : STATUS : InProgress (NotStarted,InProgress, Incomplete,Complete)
+TYPE     : USER STORY 1.03 : UTORID : STATUS : NotStarted (NotStarted,InProgress, Incomplete,Complete)
 NAME     : Whos Next
 OWNER    : 
 PRIORITY : (1,2,3)
@@ -119,11 +119,11 @@ ISSUE    : When users play, the current status of the game is on display, showin
 of the winner of the game.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY 1.06 : chenj628 : STATUS : InProgress (NotStarted,InProgress, Incomplete,Complete)
+TYPE     : USER STORY 1.06 : chenj628 : STATUS : Complete (NotStarted,InProgress, Incomplete,Complete)
 NAME     : Change tokens to Images
 OWNER    : chenj628
 PRIORITY : (1,2,3)
-ESTIMATE : (1 hour, 2 hours, 4 hours, 1 day, 2 days, 4 days)    ACTUAL :  
+ESTIMATE : (1 hour, 2 hours, 4 hours, 1 day, 2 days, 4 days)    ACTUAL :  3 hours
 ISSUE    : When users are playing and the board is on display, 
 instead of displaying X and O as players, the users see 
 appropriate black/white tokens.

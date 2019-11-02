@@ -83,8 +83,8 @@ Nov 1,2019
 	Obstacles I face:
 
 Nov 2,2019
-	What I did yesterday:
-	What I will do today:
+	What I did yesterday:continue work on user story 1.06
+	What I will do today:finish user story 1.06
 	Obstacles I face:
 
 Nov 3,2019
