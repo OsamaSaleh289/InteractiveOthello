@@ -26,8 +26,8 @@ public class PrintEventHandler implements EventHandler<ActionEvent>{
 
 		othello.setMove(row, col);
 				
-		for (Node child : grid.getChildren()) {
-			Button bttn = (Button) child;
+		for (int child = 0; child < 64; child++) {
+			Button bttn = (Button)grid.getChildren().get(child);
 			int r = GridPane.getRowIndex(bttn);
 			int c = GridPane.getColumnIndex(bttn);
 			bttn.setText(this.othello.getToken(r, c)+"");

@@ -73,14 +73,18 @@ Oct 30,2019
 	Obstacles I face: Getting accustomed to the observable/observer design pattern
 
 Oct 31,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Finished US1.04. Reviewed group code and understand the observable patterns used
+	What I will do today: Get more accustomed to branching and debug some errors in US1.04. Went to office
+	hours and fully understood how it works. Start US1.05. Study for the test rest of the day.
+	Obstacles I face: I lost some code today due to a misunderstaniding of branching. Still need to 
+	practice using it more. 
 
 Nov 1,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Debugged US1.04 and fully understood branching. Also started US1.05.
+	What I will do today: Finish US1.05 and make US1.04 work for other scenarios (HumanVSRandom etc...). 
+	Also fix some issues with my repo
+	Obstacles I face: Facing challenges with getting US1.04 and US1.05 work for HumanVSRandom strategy
+	but will hopefully get it done.
 
 Nov 2,2019
 	What I did yesterday:

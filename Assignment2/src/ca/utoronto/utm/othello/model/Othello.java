@@ -42,7 +42,7 @@ public class Othello extends Observable {
 //		System.out.println("currentmove is"+currentMove);
 		this.setChanged();
 		this.notifyObservers();
-	}
+}
 	
 	public Move getMove(){
 //		int row = getMove("row: ");

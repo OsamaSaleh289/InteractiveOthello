@@ -24,6 +24,9 @@ public class OthelloApplication extends Application {
 	
 	@Override
 	public void start(Stage stage) throws Exception {
+		TokenCounter p1Count;
+		TokenCounter p2Count;
+		GameStatusTracker status;
 		// Create and hook up the Model, View and the controller
 		
 //		// MODEL
@@ -51,6 +54,15 @@ public class OthelloApplication extends Application {
 //        ImageView vwhite = new ImageView(white);
         
         
+		 //Create token count text fields
+        p1Count = new TokenCounter("X : ", 'X');
+        p2Count = new TokenCounter ("O : ", 'O');
+        p1Count.setEditable(false);
+        p2Count.setEditable(false);
+        
+        //Create text fields to track current game status
+        status = new GameStatusTracker("X's Turn");
+        status.setEditable(false);
         
 		// MODEL
 		Othello othello= oc.getOthello();
@@ -58,6 +70,9 @@ public class OthelloApplication extends Application {
 		// MODEL->VIEW hookup
 //		lb1.attach(lbo1);
 		othello.addObserver(oc);
+		othello.addObserver(p1Count);
+		othello.addObserver(p2Count);
+		othello.addObserver(status);
 		
 		GridPane grid = new GridPane();
 		for (int row=0; row<8; row++) {
@@ -78,6 +93,10 @@ public class OthelloApplication extends Application {
 				button.setPrefSize(28, 28);
 			}
 		}
+		//Add token counter and game tracker to view
+		grid.add(p1Count, 9, 0);
+		grid.add(p2Count, 9, 1);
+		grid.add(status, 9, 2);
 		// SCENE
 		Scene scene = new Scene(grid); 
 		stage.setTitle("Othello");
