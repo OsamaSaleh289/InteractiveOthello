@@ -77,9 +77,9 @@ Oct 31,2019
 	Obstacles I face:
 
 Nov 1,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Nothing related to the assignment
+	What I will do today: upgrade scrum meeting at the least
+	Obstacles I face: csc207 midterm
 
 Nov 2,2019
 	What I did yesterday:
