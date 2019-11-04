@@ -39,6 +39,7 @@ public class OthelloApplication extends Application {
 		TokenCounter p1Count;
 		TokenCounter p2Count;
 		GameStatusTracker status;
+		
 		// Create and hook up the Model, View and the controller
 
 //		// MODEL
@@ -47,6 +48,7 @@ public class OthelloApplication extends Application {
 		// CONTROLLER
 		// CONTROLLER->MODEL hookup
 		ButtonPressEventHandler cpresshandler = new ButtonPressEventHandler();
+		
 //		PrintEventHandler p = new PrintEventHandler(othello);
 		// VIEW
 		OthelloControllerHumanVSHuman oc = new OthelloControllerHumanVSHuman();
@@ -65,7 +67,6 @@ public class OthelloApplication extends Application {
 		Othello othello = oc.getOthello();
 		// VIEW->CONTROLLER hookup
 		// MODEL->VIEW hookup
-//		lb1.attach(lbo1);
 		othello.addObserver(oc);
 		othello.addObserver(p1Count);
 		othello.addObserver(p2Count);
@@ -74,10 +75,7 @@ public class OthelloApplication extends Application {
 		GridPane grid = new GridPane();
 		for (int row = 0; row < 8; row++) {
 			for (int col = 0; col < 8; col++) {
-//				Button button = new Button(vwhite + "");
-//				if(othello.getToken(row, col) == 'X') {
-//					button = new Button(vblack + "");
-//				}
+				
 				Button button = new Button("", othello.getImage(row, col));
 
 				button.setOnAction(cpresshandler);
@@ -87,7 +85,6 @@ public class OthelloApplication extends Application {
 				button.addEventHandler(ActionEvent.ACTION, p);
 
 				grid.add(button, col, row);
-//				button.setPrefSize(28, 28);
 				button.setPrefSize(35, 35);
 				
 			}
@@ -96,6 +93,39 @@ public class OthelloApplication extends Application {
 		grid.add(p1Count, 9, 0);
 		grid.add(p2Count, 9, 1);
 		grid.add(status, 9, 2);
+		
+		// Create buttons to select which opponent to play
+		Button hVsHuman = new Button("Human vs. Human");
+		Button hVsRandom = new Button("Human vs. Random");
+		Button hVsGreedy = new Button("Human vs. Greedy");
+		
+		//add OpponentChooserGUISelection Event Handler
+		OpponentChooserEventHandler chooseOpponentHandler = new OpponentChooserEventHandler(othello);
+		
+		//hVsHuman.setOnAction(chooseOpponentHandler);
+		//hVsRandom.setOnAction(chooseOpponentHandler);
+		//hVsGreedy.setOnAction(chooseOpponentHandler);
+		
+		hVsHuman.addEventHandler(ActionEvent.ACTION, chooseOpponentHandler);
+		hVsRandom.addEventHandler(ActionEvent.ACTION, chooseOpponentHandler);
+		hVsGreedy.addEventHandler(ActionEvent.ACTION, chooseOpponentHandler);
+		
+		OpponentTrackerP1 currentPlayerTypeP1 = new OpponentTrackerP1("P1: "+othello.getOpponent(OthelloBoard.P2));
+		OpponentTrackerP2 currentPlayerTypeP2 = new OpponentTrackerP2("P2: "+othello.getOpponent(OthelloBoard.P1));
+		currentPlayerTypeP1.setEditable(false);
+		currentPlayerTypeP2.setEditable(false);
+		
+		othello.addObserver(currentPlayerTypeP1);
+		othello.addObserver(currentPlayerTypeP2);
+		
+		// add opponent select buttons to view
+		grid.add(hVsHuman, 9, 4);
+		grid.add(hVsRandom, 9, 5);
+		grid.add(hVsGreedy, 9, 6);
+		
+		grid.add(currentPlayerTypeP1, 9, 7);
+		grid.add(currentPlayerTypeP2, 9, 8);
+		
 		// SCENE
 		Scene scene = new Scene(grid);
 		stage.setTitle("Othello");

@@ -1,9 +1,10 @@
 package ca.utoronto.utm.mvcexample;
 
-import java.util.Observable;
+//import java.util.Observable;
+import ca.utoronto.utm.util.*;
 
 import javafx.scene.control.Label;
-import src.ca.utoronto.utm.util.Observer;
+//import src.ca.utoronto.utm.util.Observer;
 
 public class VCount extends Label implements Observer {
 

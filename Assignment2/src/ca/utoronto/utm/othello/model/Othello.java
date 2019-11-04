@@ -30,7 +30,33 @@ public class Othello extends Observable {
 	private char whosTurn = OthelloBoard.P1;
 	private int numMoves = 0;
 	public Move currentMove = new Move(0, 0);
-
+	private String opponentP1 = "Human";
+	private String opponentP2 = "Human";
+	
+	/*
+	 * 
+	 */
+	public void setOpponent(char p, String oppnt) {
+		// make sure it's "Human" "Random" or "Greedy"
+		if(p==OthelloBoard.P1)
+			opponentP1 = oppnt;
+		else if(p==OthelloBoard.P2)
+			opponentP2 = oppnt;
+		this.setChanged();
+		this.notifyObservers();
+	}
+	
+	/*
+	 * 
+	 */
+	public String getOpponent(char p) {
+		if(p==OthelloBoard.P1)
+			return opponentP1;
+		else if(p==OthelloBoard.P2)
+			return opponentP2;
+		return null;
+	}
+	
 	/**
 	 * return P1,P2 or EMPTY depending on who moves next.
 	 * 

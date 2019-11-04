@@ -55,7 +55,7 @@ instead of displaying X and O as players, the users see
 appropriate black/white tokens.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY 1.07 : UTORID : STATUS : NotStarted (NotStarted,InProgress, Incomplete,Complete)
+TYPE     : USER STORY 1.07 : watso166 : STATUS : Started (NotStarted,InProgress, Incomplete,Complete)
 NAME     : Opponent Chooser GUI Selection
 OWNER    : 
 PRIORITY : (1,2,3)
@@ -69,7 +69,7 @@ plays HumanVSHuman for now. The user should be able to switch opponents
 at any time during game play. 
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY 1.071 : UTORID : STATUS : NotStarted (NotStarted,InProgress, Incomplete,Complete)
+TYPE     : USER STORY 1.071 : watso166 : STATUS : NotStarted (NotStarted,InProgress, Incomplete,Complete)
 NAME     : Opponent Chooser GUI Display
 OWNER    : 
 PRIORITY : (1,2,3)
@@ -80,7 +80,7 @@ P1: Human  P2: Greedy
 P1: Random P2: Human
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY 1.08 : UTORID : STATUS : NotStarted (NotStarted,InProgress, Incomplete,Complete)
+TYPE     : USER STORY 1.08 : UTORID : watso166 : NotStarted (NotStarted,InProgress, Incomplete,Complete)
 NAME     : Opponent Chooser Implementation
 OWNER    : 
 PRIORITY : (1,2,3)

@@ -4,7 +4,6 @@ import ca.utoronto.utm.othello.model.Othello;
 import ca.utoronto.utm.othello.model.PlayerHuman;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.layout.GridPane;
 
@@ -18,7 +17,6 @@ public class PrintEventHandler implements EventHandler<ActionEvent> {
 	}
 
 	public void handle(ActionEvent event) {
-
 		Button button = (Button) event.getSource();
 
 		int row = GridPane.getRowIndex(button);

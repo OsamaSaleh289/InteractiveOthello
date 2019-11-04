@@ -4,12 +4,12 @@ import java.util.Observable;
 import java.util.Observer;
 
 import ca.utoronto.utm.othello.model.Othello;
+import ca.utoronto.utm.othello.model.OthelloBoard;
 import javafx.scene.control.TextField;
-
-public class GameStatusTracker extends TextField implements Observer{
+public class OpponentTrackerP2 extends TextField implements Observer{
 	private Othello othello;
 	
-	public GameStatusTracker(String text) {
+	public OpponentTrackerP2(String text) {
 		this.setText(text);
 	}
 
@@ -17,11 +17,7 @@ public class GameStatusTracker extends TextField implements Observer{
 	public void update(Observable o, Object arg1) {
 		// TODO Auto-generated method stub
 		othello = (Othello) o;
-		if (!othello.isGameOver()) {
-			this.setText(othello.getWhosTurn()+"'s" + " Turn");
-		} else {
-			this.setText("Winner: " + othello.getWinner());
-		}
+		this.setText("P2: "+othello.getOpponent(OthelloBoard.P1));
 	}
 }
 
