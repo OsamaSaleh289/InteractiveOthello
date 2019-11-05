@@ -1,7 +1,6 @@
 package ca.utoronto.utm.othello.viewcontroller;
 
-import java.util.Observable;
-import java.util.Observer;
+import ca.utoronto.utm.util.*;
 
 import ca.utoronto.utm.othello.model.Othello;
 import javafx.scene.control.TextField;
@@ -14,7 +13,7 @@ public class GameStatusTracker extends TextField implements Observer{
 	}
 
 	@Override
-	public void update(Observable o, Object arg1) {
+	public void update(Observable o) {
 		// TODO Auto-generated method stub
 		othello = (Othello) o;
 		if (!othello.isGameOver()) {

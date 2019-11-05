@@ -1,4 +1,4 @@
-package ca.utoronto.utm.othello.model;
+/*package ca.utoronto.utm.othello.model;
 
 public abstract class OthelloControllerVerbose extends OthelloController {
 
@@ -21,4 +21,4 @@ public abstract class OthelloControllerVerbose extends OthelloController {
 		System.out.println(s);
 	}
 
-}
+}*/

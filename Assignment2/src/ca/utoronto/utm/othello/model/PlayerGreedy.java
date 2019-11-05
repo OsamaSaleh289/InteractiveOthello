@@ -23,6 +23,7 @@ package ca.utoronto.utm.othello.model;
 public class PlayerGreedy extends Player {
 	public PlayerGreedy(Othello othello, char player) {
 		super(othello, player);
+		this.type = "Greedy";
 	}
 
 	@Override
@@ -30,7 +31,7 @@ public class PlayerGreedy extends Player {
 		Othello othelloCopy = othello.copy();
 		Move bestMove = new Move(0, 0);
 		int bestMoveCount = othelloCopy.getCount(this.player);
-		;
+		
 		for (int row = 0; row < Othello.DIMENSION; row++) {
 			for (int col = 0; col < Othello.DIMENSION; col++) {
 				othelloCopy = othello.copy();

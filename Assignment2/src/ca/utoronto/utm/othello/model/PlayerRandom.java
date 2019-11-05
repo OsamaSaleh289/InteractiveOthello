@@ -16,6 +16,7 @@ public class PlayerRandom extends Player {
 
 	public PlayerRandom(Othello othello, char player) {
 		super(othello, player);
+		this.type = "Random";
 	}
 
 	@Override

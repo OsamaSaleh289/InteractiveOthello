@@ -1,4 +1,4 @@
-package ca.utoronto.utm.othello.model;
+/*package ca.utoronto.utm.othello.model;
 
 import java.util.Observable;
 import java.util.Observer;
@@ -10,14 +10,14 @@ import java.util.Observer;
  * @author arnold
  *
  */
-public class OthelloControllerHumanVSRandom extends OthelloControllerVerbose implements Observer {
+//public class OthelloControllerHumanVSRandom extends OthelloController implements Observer {
 
 	/**
 	 * Constructs a new OthelloController with a new Othello game. Human VS Random
 	 * strategy
-	 */
-	public OthelloControllerHumanVSRandom() {
-		super();
+	 *//*
+	public OthelloControllerHumanVSRandom(Othello othello) {
+		super(othello);
 		this.player1 = new PlayerHuman(this.othello, OthelloBoard.P1);
 		this.player2 = new PlayerRandom(this.othello, OthelloBoard.P2);
 	}
@@ -33,16 +33,16 @@ public class OthelloControllerHumanVSRandom extends OthelloControllerVerbose imp
 	 * 
 	 * @param args
 	 */
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		OthelloControllerHumanVSRandom oc = new OthelloControllerHumanVSRandom();
 		oc.play();
-	}
+	}*/
 
-	@Override
+	/*@Override
 	public void update(Observable o, Object arg1) {
 		this.play();
 		// TODO Auto-generated method stub
 
-	}
+	}*/
 
-}
+//}

@@ -55,11 +55,11 @@ instead of displaying X and O as players, the users see
 appropriate black/white tokens.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY 1.07 : watso166 : STATUS : Started (NotStarted,InProgress, Incomplete,Complete)
+TYPE     : USER STORY 1.07 : watso166 : STATUS : Complete (NotStarted,InProgress, Incomplete,Complete)
 NAME     : Opponent Chooser GUI Selection
 OWNER    : 
 PRIORITY : (1,2,3)
-ESTIMATE : (1 hour, 2 hours, 4 hours, 1 day, 2 days, 4 days)    ACTUAL :  
+ESTIMATE : 3 hours    ACTUAL : 3 hours
 ISSUE    : When users are playing, they see a GUI which allows the user to 
 choose whether to play HumanVSHuman, HumanVSGreedy, HumanVSRandom.
 This user story involves
@@ -69,22 +69,32 @@ plays HumanVSHuman for now. The user should be able to switch opponents
 at any time during game play. 
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY 1.071 : watso166 : STATUS : NotStarted (NotStarted,InProgress, Incomplete,Complete)
+TYPE     : USER STORY 1.071 : watso166 : STATUS : Complete
 NAME     : Opponent Chooser GUI Display
 OWNER    : 
 PRIORITY : (1,2,3)
-ESTIMATE : (1 hour, 2 hours, 4 hours, 1 day, 2 days, 4 days)    ACTUAL :  
+ESTIMATE : 2 hours    ACTUAL : 2 hours 
 ISSUE    : An extension to Opponent Chooser, the current player types
 are on display, so for example, 
 P1: Human  P2: Greedy 
 P1: Random P2: Human
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY 1.08 : UTORID : watso166 : NotStarted (NotStarted,InProgress, Incomplete,Complete)
+TYPE     : BUG 1.079 : UTORID : watso166 : Complete 
+NAME     : Make the code MVC
+OWNER    : 
+PRIORITY : (1,2,3)
+ESTIMATE : 4 hours    ACTUAL : 5 hours
+ISSUE    : The code was never fixed in BUG 1.021, a lot of it was not 
+MVC so I had to go back and redo a ton of code and create/fix/delete 
+several classes.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY 1.08 : UTORID : watso166 : Complete
 NAME     : Opponent Chooser Implementation
 OWNER    : 
 PRIORITY : (1,2,3)
-ESTIMATE : (1 hour, 2 hours, 4 hours, 1 day, 2 days, 4 days)    ACTUAL :  
+ESTIMATE : 1 hours    ACTUAL : 1 hour
 ISSUE    : An extension to Opponent Chooser, we implement the users choice
 of opponent, so the Human can actually play the select opponent. Reminder:
 the user should be able to switch opponents at any time during game play.

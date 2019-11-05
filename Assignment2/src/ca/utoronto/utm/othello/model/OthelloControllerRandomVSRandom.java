@@ -1,4 +1,4 @@
-package ca.utoronto.utm.othello.model;
+//package ca.utoronto.utm.othello.model;
 
 /**
  * Determine whether the first player or second player has the advantage when
@@ -13,7 +13,7 @@ package ca.utoronto.utm.othello.model;
  * 
  * @author arnold
  *
- */
+ *//*
 public class OthelloControllerRandomVSRandom extends OthelloController {
 	public OthelloControllerRandomVSRandom() {
 		super();
@@ -27,7 +27,7 @@ public class OthelloControllerRandomVSRandom extends OthelloController {
 	 * 
 	 * @param args
 	 */
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		int p1wins = 0, p2wins = 0, numGames = 10000;
 		for (int i = 0; i < numGames; i++) {
 			OthelloControllerRandomVSRandom oc = new OthelloControllerRandomVSRandom();
@@ -39,5 +39,5 @@ public class OthelloControllerRandomVSRandom extends OthelloController {
 		}
 		System.out.println("Probability P1 wins=" + (float) p1wins / numGames);
 		System.out.println("Probability P2 wins=" + (float) p2wins / numGames);
-	}
-}
+	}*/
+//}

@@ -1,4 +1,4 @@
-package ca.utoronto.utm.othello.model;
+//package ca.utoronto.utm.othello.model;
 
 /**
  * The goal here is to print out the probability that Random wins and Greedy
@@ -8,12 +8,13 @@ package ca.utoronto.utm.othello.model;
  * @author arnold
  *
  */
-public class OthelloControllerRandomVSGreedy extends OthelloController {
-	public OthelloControllerRandomVSGreedy() {
-		super();
+/*//public class OthelloControllerRandomVSGreedy extends OthelloController {
+/*	
+	public OthelloControllerRandomVSGreedy(Othello othello) {
+		super(othello);
 		this.player1 = new PlayerRandom(this.othello, OthelloBoard.P1);
 		this.player2 = new PlayerGreedy(this.othello, OthelloBoard.P2);
-	}
+	}*/
 
 	/**
 	 * Run main to execute the simulation and print out the two line results. Output
@@ -21,7 +22,7 @@ public class OthelloControllerRandomVSGreedy extends OthelloController {
 	 * 
 	 * @param args
 	 */
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		int p1wins = 0, p2wins = 0, numGames = 10000;
 		for (int i = 0; i < numGames; i++) {
 			OthelloControllerRandomVSGreedy oc = new OthelloControllerRandomVSGreedy();
@@ -33,5 +34,5 @@ public class OthelloControllerRandomVSGreedy extends OthelloController {
 		}
 		System.out.println("Probability P1 wins=" + (float) p1wins / numGames);
 		System.out.println("Probability P2 wins=" + (float) p2wins / numGames);
-	}
-}
+	}*/
+//}

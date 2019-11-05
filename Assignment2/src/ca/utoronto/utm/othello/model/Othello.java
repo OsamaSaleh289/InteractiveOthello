@@ -6,7 +6,6 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 import java.io.InputStream;
-import java.util.Observable;
 import java.util.Random;
 
 /**
@@ -33,6 +32,8 @@ public class Othello extends Observable {
 	private String opponentP1 = "Human";
 	private String opponentP2 = "Human";
 	
+	// TODO: create enum type for opponents
+	
 	/*
 	 * 
 	 */
@@ -42,7 +43,7 @@ public class Othello extends Observable {
 			opponentP1 = oppnt;
 		else if(p==OthelloBoard.P2)
 			opponentP2 = oppnt;
-		this.setChanged();
+		
 		this.notifyObservers();
 	}
 	
@@ -67,18 +68,13 @@ public class Othello extends Observable {
 	}
 
 	public void setMove(int row, int col) {
-//		System.out.println("BBBBBB");
 		currentMove.setCol(col);
 		currentMove.setRow(row);
-//		System.out.println("currentmove is"+currentMove);
-		this.setChanged();
+		
 		this.notifyObservers();
 	}
 
 	public Move getMove() {
-//		int row = getMove("row: ");
-//		int col = getMove("col: ");
-//		System.out.println("getcurrent move is "+ currentMove);
 		return currentMove;
 	}
 
@@ -92,7 +88,6 @@ public class Othello extends Observable {
 		return this.board.get(row, col);
 	}
 	
-	
 	/**
 	 * 
 	 * @param row
@@ -105,7 +100,6 @@ public class Othello extends Observable {
 	    InputStream input1 = OthelloApplication.class.getResourceAsStream("black.png");
 	    InputStream input2 = OthelloApplication.class.getResourceAsStream("white.png"); 
 	    
-	   
 	    Image black = new Image(input1); 
 	    Image white = new Image(input2); 
 
@@ -116,15 +110,11 @@ public class Othello extends Observable {
 		
 		if(this.getToken(row, col) == 'X') {
 			result = vblack;
-		}else if (this.getToken(row, col) == 'O') {
+		} else if(this.getToken(row, col) == 'O') {
 			result = vwhite;
 		}
-			
-		
 		return result;
 	}
-
-
 
 
 	/**
@@ -143,6 +133,7 @@ public class Othello extends Observable {
 			if (allowedMove != OthelloBoard.BOTH)
 				this.whosTurn = allowedMove;
 			this.numMoves++;
+			this.notifyObservers();
 			return true;
 		} else {
 			return false;
@@ -207,7 +198,7 @@ public class Othello extends Observable {
 	 * 
 	 * @param args
 	 */
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		Random rand = new Random();
 
 		Othello o = new Othello();
@@ -222,5 +213,5 @@ public class Othello extends Observable {
 			}
 		}
 
-	}
+	}*/
 }

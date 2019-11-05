@@ -4,6 +4,7 @@ import java.io.FileInputStream;
 import java.io.InputStream;
 
 import ca.utoronto.utm.othello.model.*;
+import ca.utoronto.utm.util.*;
 
 import javafx.application.Application;
 import javafx.event.ActionEvent;
@@ -17,15 +18,6 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import java.lang.Object;
-import java.awt.*;
-import java.awt.event.*;
-import java.awt.geom.*;
-import java.awt.image.BufferedImage;
-import java.io.*;
-import java.net.*;
-import javax.imageio.ImageIO;
-import javax.swing.*;
 
 public class OthelloApplication extends Application {
 	// REMEMBER: To run this in the lab put
@@ -36,95 +28,85 @@ public class OthelloApplication extends Application {
 
 	@Override
 	public void start(Stage stage) throws Exception {
+		// MODEL
+		Othello othello=new Othello();
+
+		
+		// VIEWs:
+		OthelloControllerHumanVSHuman oc = new OthelloControllerHumanVSHuman(othello);
 		TokenCounter p1Count;
 		TokenCounter p2Count;
 		GameStatusTracker status;
-		
-		// Create and hook up the Model, View and the controller
-
-//		// MODEL
-//		Othello othello=new Othello();
-
-		// CONTROLLER
-		// CONTROLLER->MODEL hookup
-		ButtonPressEventHandler cpresshandler = new ButtonPressEventHandler();
-		
-//		PrintEventHandler p = new PrintEventHandler(othello);
-		// VIEW
-		OthelloControllerHumanVSHuman oc = new OthelloControllerHumanVSHuman();
-
 		// Create token count text fields
 		p1Count = new TokenCounter("X : ", 'X');
 		p2Count = new TokenCounter("O : ", 'O');
 		p1Count.setEditable(false);
 		p2Count.setEditable(false);
-
 		// Create text fields to track current game status
 		status = new GameStatusTracker("X's Turn");
 		status.setEditable(false);
-
-		// MODEL
-		Othello othello = oc.getOthello();
-		// VIEW->CONTROLLER hookup
+		// create text fields to track current player type
+		OpponentTrackerP1 currentPlayerTypeP1 = new OpponentTrackerP1("P1: "+othello.getOpponent(OthelloBoard.P2));
+		OpponentTrackerP2 currentPlayerTypeP2 = new OpponentTrackerP2("P2: "+othello.getOpponent(OthelloBoard.P1));
+		currentPlayerTypeP1.setEditable(false);
+		currentPlayerTypeP2.setEditable(false);
+		
+		 
 		// MODEL->VIEW hookup
-		othello.addObserver(oc);
-		othello.addObserver(p1Count);
-		othello.addObserver(p2Count);
-		othello.addObserver(status);
-
+		othello.attach(oc);
+		othello.attach(p1Count);
+		othello.attach(p2Count);
+		othello.attach(status);
+		othello.attach(currentPlayerTypeP1);
+		othello.attach(currentPlayerTypeP2);
+		
+		
+		// CONTROLLERS:
+		// Create buttons to select which opponent to play
+		Button hVsHuman = new Button("Human vs. Human");
+		Button hVsRandom = new Button("Human vs. Random");
+		Button hVsGreedy = new Button("Human vs. Greedy");
+		// GUI grid to add all buttons and text views onto
 		GridPane grid = new GridPane();
+		// create game board buttons
 		for (int row = 0; row < 8; row++) {
 			for (int col = 0; col < 8; col++) {
+				BoardSquare boardSquare = new BoardSquare(othello,row,col);
+
+				MoveAttemptEventHandler moveToClick = new MoveAttemptEventHandler(othello, grid);
+				boardSquare.addEventHandler(ActionEvent.ACTION, moveToClick); // CONTROLLER->MODEL hookup
+
+				grid.add(boardSquare, col, row);
+				boardSquare.setPrefSize(35, 35);
 				
-				Button button = new Button("", othello.getImage(row, col));
-
-				button.setOnAction(cpresshandler);
-
-				PrintEventHandler p = new PrintEventHandler(othello, grid);
-				button.setOnAction(p);
-				button.addEventHandler(ActionEvent.ACTION, p);
-
-				grid.add(button, col, row);
-				button.setPrefSize(35, 35);
-				
+				othello.attach(boardSquare); // MODEL->VIEW hookup
 			}
 		}
 		// Add token counter and game tracker to view
 		grid.add(p1Count, 9, 0);
 		grid.add(p2Count, 9, 1);
 		grid.add(status, 9, 2);
-		
-		// Create buttons to select which opponent to play
-		Button hVsHuman = new Button("Human vs. Human");
-		Button hVsRandom = new Button("Human vs. Random");
-		Button hVsGreedy = new Button("Human vs. Greedy");
-		
-		//add OpponentChooserGUISelection Event Handler
-		OpponentChooserEventHandler chooseOpponentHandler = new OpponentChooserEventHandler(othello);
-		
-		//hVsHuman.setOnAction(chooseOpponentHandler);
-		//hVsRandom.setOnAction(chooseOpponentHandler);
-		//hVsGreedy.setOnAction(chooseOpponentHandler);
-		
-		hVsHuman.addEventHandler(ActionEvent.ACTION, chooseOpponentHandler);
-		hVsRandom.addEventHandler(ActionEvent.ACTION, chooseOpponentHandler);
-		hVsGreedy.addEventHandler(ActionEvent.ACTION, chooseOpponentHandler);
-		
-		OpponentTrackerP1 currentPlayerTypeP1 = new OpponentTrackerP1("P1: "+othello.getOpponent(OthelloBoard.P2));
-		OpponentTrackerP2 currentPlayerTypeP2 = new OpponentTrackerP2("P2: "+othello.getOpponent(OthelloBoard.P1));
-		currentPlayerTypeP1.setEditable(false);
-		currentPlayerTypeP2.setEditable(false);
-		
-		othello.addObserver(currentPlayerTypeP1);
-		othello.addObserver(currentPlayerTypeP2);
-		
 		// add opponent select buttons to view
 		grid.add(hVsHuman, 9, 4);
 		grid.add(hVsRandom, 9, 5);
 		grid.add(hVsGreedy, 9, 6);
-		
+		// add player type trackers to view
 		grid.add(currentPlayerTypeP1, 9, 7);
 		grid.add(currentPlayerTypeP2, 9, 8);
+		
+		// opponent chooser GUI Event Handler
+		OpponentChooserEventHandler chooseOpponentHandler = new OpponentChooserEventHandler(othello);
+		
+		
+		// VIEW->CONTROLLER hookup
+		
+		
+		// CONTROLLER->MODEL hookup
+		// add eventHandlers to opponent chooser GUI
+		hVsHuman.addEventHandler(ActionEvent.ACTION, chooseOpponentHandler);
+		hVsRandom.addEventHandler(ActionEvent.ACTION, chooseOpponentHandler);
+		hVsGreedy.addEventHandler(ActionEvent.ACTION, chooseOpponentHandler);
+		
 		
 		// SCENE
 		Scene scene = new Scene(grid);

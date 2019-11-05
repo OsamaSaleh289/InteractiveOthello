@@ -1,6 +1,5 @@
 package ca.utoronto.utm.mvcexample;
 
-//import java.util.Observable;
 import ca.utoronto.utm.util.*;
 
 /**

@@ -17,19 +17,15 @@ public class PlayerHuman extends Player {
 
 	public PlayerHuman(Othello othello, char player) {
 		super(othello, player);
+		this.type = "Human";
 	}
-//	private Move move;
 
-//	public void setMove(int row, int col) {
-//		move = new Move(row, col);
-//	}
-
-//	public Move getMove(){
-////		int row = getMove("row: ");
-////		int col = getMove("col: ");
-//		return move;
-//	}
-	public Move getMove() {
+	public Move getMove(){
+		return this.othello.getMove();
+	}
+	
+	
+	/*public Move getMove() {
 		int row = getMove("row: ");
 		int col = getMove("col: ");
 		return new Move(row, col);
@@ -55,5 +51,5 @@ public class PlayerHuman extends Player {
 			}
 		}
 		return -1;
-	}
+	}*/
 }
