@@ -87,9 +87,9 @@ Nov 2,2019
 	Obstacles I face:
 
 Nov 3,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: found how to fix my team member's moving of files to /src package from /ca
+	What I will do today: US 1.09
+	Obstacles I face:sunday - family and other distractions
 
 Nov 4,2019
 	What I did yesterday:
