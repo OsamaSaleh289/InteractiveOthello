@@ -87,14 +87,17 @@ Nov 1,2019
 	but will hopefully get it done.
 
 Nov 2,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: I realized US1.08 still needs to be done before I can finish this portion so 
+	I worked on other material instead. 
+	What I will do today: Study for 2 tests this coming week until the rest of the sprint is done.
+	Obstacles I face: No major ones as of yet.
 
 Nov 3,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Worked mostly on other course material.
+	What I will do today: Do the 207 readings for the lecture this upcoming Monday and continiue studying
+	for next week's test. Go over the next user stories and understand whats required in prepration for the next
+	scrum meeting.
+	Obstacles I face: No major obstacles.
 
 Nov 4,2019
 	What I did yesterday:
