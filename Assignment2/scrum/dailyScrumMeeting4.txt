@@ -100,24 +100,30 @@ Nov 3,2019
 	Obstacles I face: No major obstacles.
 
 Nov 4,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Not much on the assignment. We were all waiting to catch up so everyone is on
+	track with the second sprint
+	What I will do today: Was sick so couldn't conduct scrum meeting but agreed on which user stories 
+	to finish by the time we are done the 3rd sprint
+	Obstacles I face: Need to manage time and multitask better
 
 Nov 5,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Studied for upcoming tests and assignment due dates since I was at home all day
+	and couldn't conduct scrum meeting
+	What I will do today: Conduct scrum meeting and assign tasks
+	Obstacles I face: No major obstacles
 
 Nov 6,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Assigned user stories via scrum meeting. 
+	What I will do today: Fully understand whats required and brainstorm ways of implementing proper
+	design patterns to implement my user stories. I was assigned 1.11 and 1.13.
+	Obstacles I face: I've done something similar to the animation in an android app before
+	so I should be able to do it. Restarting might need a little bit more thinking since you need to 
+	know exactly which tokens to reset.
 
 Nov 7,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Brainstormed some solutions to implement my user stories.
+	What I will do today: Final round of studying for the 2 tests I have today.
+	Obstacles I face: No major obstacles.
 
 Nov 8,2019
 	What I did yesterday:
