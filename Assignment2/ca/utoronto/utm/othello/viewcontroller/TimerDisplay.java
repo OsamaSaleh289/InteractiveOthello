@@ -13,8 +13,7 @@ class TimerDisplay extends TextField implements Observer{
 	
 	public TimerDisplay() {
 		timer = new Timer();
-		timer.schedule(new DisplayCountDown(), 0, 1000)
-		}
+		
 	}
 	
 	public void update(Observable o) {
@@ -26,3 +25,4 @@ class TimerDisplay extends TextField implements Observer{
 		
 	}
 }
+

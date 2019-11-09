@@ -12,5 +12,11 @@ class GameTracker extends Timer implements Observer {
 		// TODO Auto-generated constructor stub
 	}
 
+	@Override
+	public void update(Observable o) {
+		// TODO Auto-generated method stub
+		
+	}
+
 	
 }
