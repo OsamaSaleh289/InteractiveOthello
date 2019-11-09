@@ -38,8 +38,8 @@ public class OthelloApplication extends Application {
 		TokenCounter p2Count;
 		GameStatusTracker status;
 		// Create token count text fields
-		p1Count = new TokenCounter("X : ", 'X');
-		p2Count = new TokenCounter("O : ", 'O');
+		p1Count = new TokenCounter("X : 2", 'X');
+		p2Count = new TokenCounter("O : 2", 'O');
 		p1Count.setEditable(false);
 		p2Count.setEditable(false);
 		// Create text fields to track current game status
@@ -51,6 +51,7 @@ public class OthelloApplication extends Application {
 		currentPlayerTypeP1.setEditable(false);
 		currentPlayerTypeP2.setEditable(false);
 		
+		
 		 
 		// MODEL->VIEW hookup
 		othello.attach(oc);
@@ -59,6 +60,7 @@ public class OthelloApplication extends Application {
 		othello.attach(status);
 		othello.attach(currentPlayerTypeP1);
 		othello.attach(currentPlayerTypeP2);
+	
 		
 		
 		// CONTROLLERS:
@@ -66,6 +68,8 @@ public class OthelloApplication extends Application {
 		Button hVsHuman = new Button("Human vs. Human");
 		Button hVsRandom = new Button("Human vs. Random");
 		Button hVsGreedy = new Button("Human vs. Greedy");
+		//Setup the restart button
+		Button restart = new Button("Restart");
 		// GUI grid to add all buttons and text views onto
 		GridPane grid = new GridPane();
 		// create game board buttons
@@ -86,6 +90,8 @@ public class OthelloApplication extends Application {
 		grid.add(p1Count, 9, 0);
 		grid.add(p2Count, 9, 1);
 		grid.add(status, 9, 2);
+		//Add the restart button to the view
+		grid.add(restart, 9, 3);
 		// add opponent select buttons to view
 		grid.add(hVsHuman, 9, 4);
 		grid.add(hVsRandom, 9, 5);
@@ -96,6 +102,8 @@ public class OthelloApplication extends Application {
 		
 		// opponent chooser GUI Event Handler
 		OpponentChooserEventHandler chooseOpponentHandler = new OpponentChooserEventHandler(othello);
+		//Restart event handler creation
+		RestartEventHandler restartHandler = new RestartEventHandler(othello);
 		
 		
 		// VIEW->CONTROLLER hookup
@@ -106,6 +114,8 @@ public class OthelloApplication extends Application {
 		hVsHuman.addEventHandler(ActionEvent.ACTION, chooseOpponentHandler);
 		hVsRandom.addEventHandler(ActionEvent.ACTION, chooseOpponentHandler);
 		hVsGreedy.addEventHandler(ActionEvent.ACTION, chooseOpponentHandler);
+		//Add the restart handler to our button
+		restart.addEventHandler(ActionEvent.ACTION, restartHandler);
 		
 		
 		// SCENE
