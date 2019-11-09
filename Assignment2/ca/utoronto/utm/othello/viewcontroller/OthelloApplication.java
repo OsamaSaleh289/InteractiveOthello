@@ -5,7 +5,8 @@ import java.io.InputStream;
 
 import ca.utoronto.utm.othello.model.*;
 import ca.utoronto.utm.util.*;
-
+import javax.swing.*;
+import javafx.animation.AnimationTimer;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.geometry.Insets;
@@ -37,6 +38,8 @@ public class OthelloApplication extends Application {
 		TokenCounter p1Count;
 		TokenCounter p2Count;
 		GameStatusTracker status;
+		TimerDisplay timedisplay;
+		GameTracker timer;
 		// Create token count text fields
 		p1Count = new TokenCounter("X : ", 'X');
 		p2Count = new TokenCounter("O : ", 'O');
@@ -50,6 +53,16 @@ public class OthelloApplication extends Application {
 		OpponentTrackerP2 currentPlayerTypeP2 = new OpponentTrackerP2("P2: "+othello.getOpponent(OthelloBoard.P1));
 		currentPlayerTypeP1.setEditable(false);
 		currentPlayerTypeP2.setEditable(false);
+		//create timer to track time for each player's move
+		timedisplay = new TimerDisplay();
+		timedisplay.setEditable(false);
+		/*javax.swing.Timer t = new javax.swing.Timer(1000, new ActionListener() {
+	          public void actionPerformed(ActionEvent e) {
+	              p.repaint();
+	          }
+	       });*/
+		int countdown = 300000;
+		timer = new GameTracker(countdown, timetracker)
 		
 		 
 		// MODEL->VIEW hookup
@@ -57,6 +70,7 @@ public class OthelloApplication extends Application {
 		othello.attach(p1Count);
 		othello.attach(p2Count);
 		othello.attach(status);
+		othello.attach(timer);
 		othello.attach(currentPlayerTypeP1);
 		othello.attach(currentPlayerTypeP2);
 		

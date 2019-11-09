@@ -5,11 +5,11 @@
 # Sprint 3 Nov 03-Nov 09, 2019
 # Sprint 3 Backlog UserStories go below
 
-TYPE     : USER STORY 1.09 : UTORID : STATUS : NotStarted (NotStarted,InProgress, Incomplete,Complete)
+TYPE     : USER STORY 1.09 : wronadom : STATUS : NotStarted (NotStarted,InProgress, Incomplete,Complete)
 NAME     : Othello Timer Fixed Time
 OWNER    : Dominik
 PRIORITY : (1,2,3)
-ESTIMATE : (1 hour, 2 hours, 4 hours, 1 day, 2 days, 4 days)    ACTUAL :  
+ESTIMATE : 2 hours    ACTUAL :  
 ISSUE    : When users play, they see a chess like timer for the othello game. 
 For this user story, the time is fixed to 5 minutes/player.
 After a player makes a move the timer switches off for the player and on for the next mover.
