@@ -19,7 +19,7 @@ ISSUE    : Dominik Wrona
 --------------------------------------------------------------------------
 TYPE     : BUG 0.02 : watso166 : STATUS : Complete (NotStarted,InProgress, Incomplete,Complete)
 NAME     : Configure and use system
-OWNER    : 
+OWNER    : Katrina Watson
 PRIORITY : 1
 ESTIMATE : 1 day    ACTUAL : 3 hours (over 2 days)
 ISSUE    : Member 2 
