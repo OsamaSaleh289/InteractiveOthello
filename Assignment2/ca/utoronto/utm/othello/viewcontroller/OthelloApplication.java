@@ -39,7 +39,7 @@ public class OthelloApplication extends Application {
 		TokenCounter p2Count;
 		GameStatusTracker status;
 		TimerDisplay timedisplay;
-		GameTracker timer;
+		TimeTracker timer;
 		// Create token count text fields
 		p1Count = new TokenCounter("X : ", 'X');
 		p2Count = new TokenCounter("O : ", 'O');
@@ -62,7 +62,7 @@ public class OthelloApplication extends Application {
 	          }
 	       });*/
 		int countdown = 300000;
-		timer = new GameTracker(countdown, timetracker)
+		timer = new TimeTracker(countdown, timedisplay);
 		
 		 
 		// MODEL->VIEW hookup
