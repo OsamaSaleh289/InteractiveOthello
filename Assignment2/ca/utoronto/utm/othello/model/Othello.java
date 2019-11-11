@@ -133,9 +133,10 @@ public class Othello extends Observable {
 			if (allowedMove != OthelloBoard.BOTH)
 				this.whosTurn = allowedMove;
 			this.numMoves++;
-			this.notifyObservers();
+			//this.notifyObservers();
 			return true;
 		} else {
+			
 			return false;
 		}
 	}

@@ -54,15 +54,16 @@ public class OthelloApplication extends Application {
 		currentPlayerTypeP1.setEditable(false);
 		currentPlayerTypeP2.setEditable(false);
 		//create timer to track time for each player's move
-		timedisplay = new TimerDisplay();
+		timer = new TimeTracker();
+		timedisplay = new TimerDisplay(timer);
+		timer.attach(timedisplay);
 		timedisplay.setEditable(false);
 		/*javax.swing.Timer t = new javax.swing.Timer(1000, new ActionListener() {
 	          public void actionPerformed(ActionEvent e) {
 	              p.repaint();
 	          }
 	       });*/
-		int countdown = 300000;
-		timer = new TimeTracker(countdown, timedisplay);
+		
 		
 		 
 		// MODEL->VIEW hookup
@@ -100,6 +101,8 @@ public class OthelloApplication extends Application {
 		grid.add(p1Count, 9, 0);
 		grid.add(p2Count, 9, 1);
 		grid.add(status, 9, 2);
+		// Add timer to view
+		grid.add(timedisplay, 9, 3);
 		// add opponent select buttons to view
 		grid.add(hVsHuman, 9, 4);
 		grid.add(hVsRandom, 9, 5);
@@ -109,7 +112,7 @@ public class OthelloApplication extends Application {
 		grid.add(currentPlayerTypeP2, 9, 8);
 		
 		// opponent chooser GUI Event Handler
-		OpponentChooserEventHandler chooseOpponentHandler = new OpponentChooserEventHandler(othello);
+		OpponentChooserEventHandler chooseOpponentHandler = new OpponentChooserEventHandler(othello, timer);
 		
 		
 		// VIEW->CONTROLLER hookup

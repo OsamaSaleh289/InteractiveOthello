@@ -9,13 +9,16 @@ import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.util.Duration;
 import javax.swing.*;
+import ca.utoronto.utm.othello.model.Othello;
 
-class TimeTracker extends Observable implements Observer {
-
+public class TimeTracker extends Observable implements Observer {
+	private Othello othello;
 	public static int minutesP1 = 5;
 	public static int secondsP1 = 0;
 	public static int minutesP2 = 5;
 	public static int secondsP2 = 0;
+	private char whosTurn = 'X';
+	
 	
 	Timeline countdownP1 = new Timeline();
 	Timeline countdownP2 = new Timeline();
@@ -64,17 +67,46 @@ class TimeTracker extends Observable implements Observer {
 		countdownP2.getKeyFrames().add(secondsFrameP2);
 		
 	}
-
+	public int getMinutes() {
+		if (countdownP1.getStatus() == Animation.Status.RUNNING) {
+			return minutesP1; }
+		else {
+			return minutesP2;
+		}
+	}
+	public int getSeconds() {
+		if (countdownP1.getStatus() == Animation.Status.RUNNING) {
+			return secondsP1;
+		}
+		else {
+			return secondsP2;
+		}
+	}
+	public void startTimer() {
+		countdownP1.play();
+	}
 	@Override
 	public void update(Observable o) {
 		// TODO Auto-generated method stub
-		if (countdownP1.getStatus() == Animation.Status.RUNNING) {
+		/*if (countdownP1.getStatus() == Animation.Status.RUNNING) {
 			countdownP1.pause();
 			countdownP2.play();
 		}
 		else if (countdownP2.getStatus() == Animation.Status.RUNNING) {
 			countdownP2.pause();
 			countdownP1.play();
+		}*/
+		othello = (Othello) o;
+		if (othello.getWhosTurn() != whosTurn) {
+			whosTurn = othello.getWhosTurn();
+			if (whosTurn == 'X') {
+				countdownP2.pause();
+				countdownP1.play();
+			}
+			else {
+				countdownP1.pause();
+				countdownP2.play();
+			}
 		}
 	}
 

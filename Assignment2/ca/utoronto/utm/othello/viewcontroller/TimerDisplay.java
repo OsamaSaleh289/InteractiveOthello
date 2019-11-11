@@ -8,21 +8,22 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Timer; import java.util.TimerTask;
 
-class TimerDisplay extends TextField implements ActionListener{
+class TimerDisplay extends TextField implements Observer{
 	private Othello othello;
 	int minute;
 	int second;
-	Timer timer;
+	TimeTracker timer;
 	
-	public TimerDisplay() {
-		timer = new Timer();
+	public TimerDisplay(TimeTracker tracker) {
+		this.setText(minute + ":"+ second);
+		this.timer = tracker;
 		
 	}
 
 	@Override
-	public void actionPerformed(ActionEvent e) {
+	public void update(Observable o) {
 		// TODO Auto-generated method stub
-		
+		this.setText(timer.getMinutes() + ":" + timer.getSeconds() );
 	}
 }
 

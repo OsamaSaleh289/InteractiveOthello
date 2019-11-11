@@ -8,9 +8,11 @@ import javafx.scene.layout.GridPane;
 
 public class OpponentChooserEventHandler implements EventHandler<ActionEvent> {
 	private Othello othello;
+	private TimeTracker timer;
 	
-	public OpponentChooserEventHandler(Othello othello) {
+	public OpponentChooserEventHandler(Othello othello, TimeTracker timer) {
 		this.othello = othello;
+		this.timer = timer;
 	}
 	
 	public void handle(ActionEvent event) {
@@ -22,6 +24,7 @@ public class OpponentChooserEventHandler implements EventHandler<ActionEvent> {
 		
 		if(row==4 && col==9) {
 			this.othello.setOpponent(othello.getWhosTurn(),"Human");
+			timer.startTimer();
 		} else if(row==5 && col==9) {
 			this.othello.setOpponent(othello.getWhosTurn(),"Random");
 		} else if(row==6 && col==9) {
