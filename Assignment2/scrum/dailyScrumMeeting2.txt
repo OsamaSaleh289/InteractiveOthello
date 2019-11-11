@@ -88,43 +88,43 @@ Nov 2,2019
 	Obstacles I face:
 
 Nov 3,2019
-	What I did yesterday:
-	What I will do today:
+	What I did yesterday:finish user story 1.06
+	What I will do today:N/A
 	Obstacles I face:
 
 Nov 4,2019
-	What I did yesterday:
-	What I will do today:
+	What I did yesterday:N/A
+	What I will do today:N/A
 	Obstacles I face:
 
 Nov 5,2019
-	What I did yesterday:
-	What I will do today:
+	What I did yesterday:N/A
+	What I will do today:N/A
 	Obstacles I face:
 
 Nov 6,2019
-	What I did yesterday:
-	What I will do today:
+	What I did yesterday:N/A
+	What I will do today:N/A
 	Obstacles I face:
 
 Nov 7,2019
-	What I did yesterday:
-	What I will do today:
+	What I did yesterday:N/A
+	What I will do today:N/A
 	Obstacles I face:
 
 Nov 8,2019
-	What I did yesterday:
-	What I will do today:
+	What I did yesterday:N/A
+	What I will do today:N/A
 	Obstacles I face:
 
 Nov 9,2019
-	What I did yesterday:
-	What I will do today:
+	What I did yesterday:N/A
+	What I will do today:start working on US1.10
 	Obstacles I face:
 
 Nov 10,2019
-	What I did yesterday:
-	What I will do today:
+	What I did yesterday:start working on US1.10
+	What I will do today:continue working on US1.10
 	Obstacles I face:
 
 Nov 11,2019
