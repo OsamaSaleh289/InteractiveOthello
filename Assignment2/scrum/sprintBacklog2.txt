@@ -9,7 +9,7 @@
 
 TYPE     : USER STORY 1.02 : watso166 : STATUS : Completed (NotStarted,InProgress, Incomplete,Complete)
 NAME     : Othello Board Human VS Human
-OWNER    : 
+OWNER    : Katrina Watson
 PRIORITY : (1,2,3)
 ESTIMATE : 4 hours   ACTUAL : 8 hours (counting redo after accidental git checkout to master from unsaved branch)
 ISSUE    : The users can now use the OthelloGUI created in US1.012 
@@ -45,9 +45,9 @@ ISSUE    : When users play, the current status of the game is on display, showin
 of the winner of the game.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY 1.06 : UTORID : STATUS : NotStarted (NotStarted,InProgress, Incomplete,Complete)
+TYPE     : USER STORY 1.06 : chenj628 : STATUS : Complete (NotStarted,InProgress, Incomplete,Complete)
 NAME     : Change tokens to Images
-OWNER    : 
+OWNER    : Jiaqi Chen
 PRIORITY : (1,2,3)
 ESTIMATE : (1 hour, 2 hours, 4 hours, 1 day, 2 days, 4 days)    ACTUAL :  
 ISSUE    : When users are playing and the board is on display, 
@@ -57,7 +57,7 @@ appropriate black/white tokens.
 --------------------------------------------------------------------------
 TYPE     : USER STORY 1.07 : watso166 : STATUS : Complete (NotStarted,InProgress, Incomplete,Complete)
 NAME     : Opponent Chooser GUI Selection
-OWNER    : 
+OWNER    : Katrina Watson
 PRIORITY : (1,2,3)
 ESTIMATE : 3 hours    ACTUAL : 3 hours
 ISSUE    : When users are playing, they see a GUI which allows the user to 
@@ -71,7 +71,7 @@ at any time during game play.
 --------------------------------------------------------------------------
 TYPE     : USER STORY 1.071 : watso166 : STATUS : Complete
 NAME     : Opponent Chooser GUI Display
-OWNER    : 
+OWNER    : Katrina Watson
 PRIORITY : (1,2,3)
 ESTIMATE : 2 hours    ACTUAL : 2 hours 
 ISSUE    : An extension to Opponent Chooser, the current player types
@@ -80,11 +80,21 @@ P1: Human  P2: Greedy
 P1: Random P2: Human
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
+TYPE     : BUG 1.078 : UTORID : watso166 : Complete 
+NAME     : Observer/Observable
+OWNER    : Katrina Watson
+PRIORITY : (1,2,3)
+ESTIMATE : 2 hours    ACTUAL : 1 hours
+ISSUE    : Someone imported and started using the wrong observer/observable. 
+This needs to be fixed and also observer/observable needs to be properly 
+implemented in the correct classes. 
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
 TYPE     : BUG 1.079 : UTORID : watso166 : Complete 
 NAME     : Make the code MVC
-OWNER    : 
+OWNER    : Katrina Watson
 PRIORITY : (1,2,3)
-ESTIMATE : 4 hours    ACTUAL : 5 hours
+ESTIMATE : 3 hours    ACTUAL : 4 hours
 ISSUE    : The code was never fixed in BUG 1.021, a lot of it was not 
 MVC so I had to go back and redo a ton of code and create/fix/delete 
 several classes.
@@ -92,7 +102,7 @@ several classes.
 --------------------------------------------------------------------------
 TYPE     : USER STORY 1.08 : UTORID : watso166 : Complete
 NAME     : Opponent Chooser Implementation
-OWNER    : 
+OWNER    : Katrina Watson
 PRIORITY : (1,2,3)
 ESTIMATE : 1 hours    ACTUAL : 1 hour
 ISSUE    : An extension to Opponent Chooser, we implement the users choice

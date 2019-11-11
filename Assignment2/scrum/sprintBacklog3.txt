@@ -49,7 +49,7 @@ on the board at all times.
 --------------------------------------------------------------------------
 TYPE     : USER STORY 1.11 : UTORID : STATUS : NotStarted (NotStarted,InProgress, Incomplete,Complete)
 NAME     : Restart
-OWNER    : 
+OWNER    : Osama Saleh
 PRIORITY : (1,2,3)
 ESTIMATE : (1 hour, 2 hours, 4 hours, 1 day, 2 days, 4 days)    ACTUAL :  
 ISSUE    : When a user is playing, they see a button etc. which allows them
@@ -66,18 +66,18 @@ ISSUE    : A user has the ability to undo the last move or moves.
 --------------------------------------------------------------------------
 TYPE     : USER STORY 1.13 : UTORID : STATUS : NotStarted (NotStarted,InProgress, Incomplete,Complete)
 NAME     : Animation
-OWNER    : 
+OWNER    : Osama Saleh
 PRIORITY : (1,2,3)
 ESTIMATE : (1 hour, 2 hours, 4 hours, 1 day, 2 days, 4 days)    ACTUAL :  
 ISSUE    : When a user makes a move, they see an animation associated
 with their placing a piece. 
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY 1.14 : UTORID : STATUS : NotStarted (NotStarted,InProgress, Incomplete,Complete)
+TYPE     : USER STORY 1.14 : watso166 : STATUS : NotStarted (NotStarted,InProgress, Incomplete,Complete)
 NAME     : Available moves
-OWNER    : 
+OWNER    : Katrina Watson
 PRIORITY : (1,2,3)
-ESTIMATE : (1 hour, 2 hours, 4 hours, 1 day, 2 days, 4 days)    ACTUAL :  
+ESTIMATE : 2 hours    ACTUAL :  
 ISSUE    : When a user is playing, they see the positions that they can
 move highlighted vs the positions they can't move.
 --------------------------------------------------------------------------

@@ -32,69 +32,70 @@ Oct 28,2019
 	Obstacles I face: had to redo after accidental git checkout to master from unsaved branch
 
 Oct 29,2019
-	What I did yesterday: 
-	What I will do today: 
-	Obstacles I face:
+	What I did yesterday: Finished UserStory 1.02
+	What I will do today: Nothing related to assignment (lab, review notes for midterm)
+	Obstacles I face: N/A
 
 Oct 30,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: N/A / Didn't write any code for assignment
+	What I will do today: review notes on observable/observer
+	Obstacles I face: N/A
 
 Oct 31,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: reviewed observer/observable / Didn't write any code for assignment
+	What I will do today: review mvc 
+	Obstacles I face: N/A
 
 Nov 1,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: reviewed mvc / Didn't write any code for assignment
+	What I will do today: Midterm
+	Obstacles I face: N/A
 
 Nov 2,2019
-	What I did yesterday:
+	What I did yesterday: Midterm
 	What I will do today: Start User Story 1.07
-	Obstacles I face: 
+	Obstacles I face: had to make git ignore OthelloApplication.launch
 
 Nov 3,2019
 	What I did yesterday: Started User Story 1.07
 	What I will do today: Finish User Story 1.07, do User Story 1.071
-	Obstacles I face:
+	Obstacles I face: N/A
 
 Nov 4,2019
 	What I did yesterday: Finished User Story 1.07, User Story 1.071
 	What I will do today: User Story 1.08
-	Obstacles I face: Had to add BUG 1.079 because I could not implement 1.08 without the code being MVC
+	Obstacles I face: Had to add BUG 1.078,1.079 because I could not implement 1.08 without 
+	the code being MVC and having working observer/observable
 
 Nov 5,2019
-	What I did yesterday: Did BUG 1.079, started User Story 1.08
+	What I did yesterday: Did BUG 1.078,1.079, started User Story 1.08
 	What I will do today: Finished User Story 1.08
-	Obstacles I face:
+	Obstacles I face: N/A
 
 Nov 6,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Finished User Story 1.08
+	What I will do today: N/A (sta256 midterm tomorrow)
+	Obstacles I face: N/A
 
 Nov 7,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: N/A
+	What I will do today: N/A (sta256 midterm)
+	Obstacles I face: N/A
 
 Nov 8,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: N/A
+	What I will do today: N/A (csc236 assignment)
+	Obstacles I face: N/A
 
 Nov 9,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: N/A
+	What I will do today: 
+	Obstacles I face: 
 
 Nov 10,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: 
+	What I will do today: 
+	Obstacles I face: 
 
 Nov 11,2019
 	What I did yesterday:
