@@ -126,19 +126,20 @@ Nov 7,2019
 	Obstacles I face: No major obstacles.
 
 Nov 8,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Started US1.13 and finished studying for my tests.
+	What I will do today: Finish US1.11. Expecting US1.11 to take a little bit more time.
+	Obstacles I face: Not really sure what US1.13 is asking
 
 Nov 9,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Spent most of the time researching animations in JavaFX and how to implement them.
+	What I will do today: Finish US1.11 since I didn't get to work on it much
+	Obstacles I face: Using animations
 
 Nov 10,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Finished US1.11 and now I fully understand what US1.13 is asking
+	(I posted on the discussion board).
+	What I will do today: Work more on US1.13. Brainstorm how I want to implement the animation
+	Obstacles I face: Figuring out exactly how I'm going to present my animation
 
 Nov 11,2019
 	What I did yesterday:

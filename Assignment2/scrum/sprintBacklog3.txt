@@ -51,7 +51,7 @@ TYPE     : USER STORY 1.11 : UTORID : STATUS : NotStarted (NotStarted,InProgress
 NAME     : Restart
 OWNER    : Osama Saleh
 PRIORITY : (1,2,3)
-ESTIMATE : (1 hour, 2 hours, 4 hours, 1 day, 2 days, 4 days)    ACTUAL :  
+ESTIMATE : 1 hour   ACTUAL : 25 minutes 
 ISSUE    : When a user is playing, they see a button etc. which allows them
 to restart the game. 
 --------------------------------------------------------------------------
