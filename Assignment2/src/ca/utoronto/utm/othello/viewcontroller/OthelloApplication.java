@@ -87,8 +87,6 @@ public class OthelloApplication extends Application {
 	          }
 	       });*/
 		
-		
-		 
 		// MODEL->VIEW hookup
 		othello.attach(oc);
 		othello.attach(p1Count);
