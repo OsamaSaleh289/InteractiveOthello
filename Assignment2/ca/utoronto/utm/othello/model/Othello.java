@@ -67,12 +67,12 @@ public class Othello extends Observable {
 		return this.whosTurn;
 	}
 
-	public void setMove(int row, int col) {
+	/*public void setMove(int row, int col) {
 		currentMove.setCol(col);
 		currentMove.setRow(row);
 		
-		this.notifyObservers();
-	}
+		//this.notifyObservers();
+	}*/
 
 	public Move getMove() {
 		return currentMove;
@@ -133,7 +133,7 @@ public class Othello extends Observable {
 			if (allowedMove != OthelloBoard.BOTH)
 				this.whosTurn = allowedMove;
 			this.numMoves++;
-			//this.notifyObservers();
+			this.notifyObservers();
 			return true;
 		} else {
 			

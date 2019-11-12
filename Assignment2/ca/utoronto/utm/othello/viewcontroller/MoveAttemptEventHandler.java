@@ -23,6 +23,7 @@ public class MoveAttemptEventHandler implements EventHandler<ActionEvent> {
 		int row = GridPane.getRowIndex(button);
 		int col = GridPane.getColumnIndex(button);
 
-		othello.setMove(row, col);
+		//othello.setMove(row, col);
+		othello.move(row,col);
 	}
 }

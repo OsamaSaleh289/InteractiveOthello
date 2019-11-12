@@ -127,12 +127,12 @@ Nov 10,2019
 	Obstacles I face:
 
 Nov 11,2019
-	What I did yesterday:
-	What I will do today:
+	What I did yesterday: Began working on timer for US 1.09
+	What I will do today: Finish US 1.09
 	Obstacles I face:
 
 Nov 12,2019
-	What I did yesterday:
+	What I did yesterday: test
 	What I will do today:
 	Obstacles I face:
 
