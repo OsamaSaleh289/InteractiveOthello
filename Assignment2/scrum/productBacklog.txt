@@ -211,8 +211,7 @@ NAME     : Hight AI Hint on board
 OWNER    : 
 PRIORITY : (1,2,3)
 ESTIMATE : (1 hour, 2 hours, 4 hours, 1 day, 2 days, 4 days)    ACTUAL :  
-ISSUE    : Instead of displaying the (row,col) how about highlighting the position
-on the board.
+ISSUE    : Instead of displaying the (row,col) ,highlighting the position on the board.
 
 
 --------------------------------------------------------------------------
