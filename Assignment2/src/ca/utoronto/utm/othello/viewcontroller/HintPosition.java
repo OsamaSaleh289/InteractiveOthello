@@ -3,14 +3,18 @@ package ca.utoronto.utm.othello.viewcontroller;
 import ca.utoronto.utm.util.*;
 import ca.utoronto.utm.othello.model.Move;
 import ca.utoronto.utm.othello.model.Othello;
+import javafx.scene.Node;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.GridPane;
 
 public class HintPosition extends TextField implements Observer {
 	
 	private Othello othello;
+	private GridPane gridPane;
 			
-	public HintPosition(Othello othello) {
+	public HintPosition(Othello othello,GridPane gridPane) {
 		this.othello = othello;	
+		this.gridPane = gridPane;
 	}
 
 	@Override
@@ -18,10 +22,28 @@ public class HintPosition extends TextField implements Observer {
 		// TODO Auto-generated method stub
 
 	    if (o instanceof HintEventHandler) {
+	        for (Node node : gridPane.getChildren()) {
+//	            	   
+	        	node.setStyle("-fx-background-insets: 0 0 0 0, 0, 1, 2"); 
+	        }
+	    	
+	    	
 	    	Move m = othello.getRandomHint();
-	    	this.setText("(" + m.getRow()+ ','+' ' + m.getCol() + ")");
+	    	int r =  m.getRow();
+	    	int c =  m.getCol();
+	        for (Node node : gridPane.getChildren()) {
+	            if(GridPane.getRowIndex(node) == r && GridPane.getColumnIndex(node) == c) {
+//	                node.setStyle("-fx-background-color: #00ff00");
+	            	node.setStyle("-fx-background-color: green");
+	                break;
+	            }
+	        }
+//	    	this.setText("(" + m.getRow()+ ','+' ' + m.getCol() + ")");
 	    } else if (o instanceof MoveAttemptEventHandler) {
-	        this.clear();
+	        for (Node node : gridPane.getChildren()) {
+//         	   
+	        	node.setStyle("-fx-background-insets: 0 0 0 0, 0, 1, 2"); 
+	        }
 	    } 
 
 	}

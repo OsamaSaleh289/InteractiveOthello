@@ -42,9 +42,12 @@ public class OthelloApplication extends Application {
 		TimeTracker timer;
 		HintPosition hintp;
 		
+		// GUI grid to add all buttons and text views onto
+		GridPane grid = new GridPane();
+		
 		// Create AI hint 
 		Button hint = new Button("AI Hint");
-		hintp = new HintPosition(othello);
+		hintp = new HintPosition(othello,grid);
 		HintEventHandler handleHint = new HintEventHandler();
 		hint.addEventHandler(ActionEvent.ACTION, handleHint);
 		handleHint.attach(hintp);
@@ -90,8 +93,7 @@ public class OthelloApplication extends Application {
 		Button hVsHuman = new Button("Human vs. Human");
 		Button hVsRandom = new Button("Human vs. Random");
 		Button hVsGreedy = new Button("Human vs. Greedy");
-		// GUI grid to add all buttons and text views onto
-		GridPane grid = new GridPane();
+
 		// create game board buttons
 		for (int row = 0; row < 8; row++) {
 			for (int col = 0; col < 8; col++) {
@@ -121,7 +123,7 @@ public class OthelloApplication extends Application {
 		grid.add(currentPlayerTypeP2, 9, 8);
 		// Add AI Hint to view
 		grid.add(hint, 9, 9);
-		grid.add(hintp, 9, 10);
+//		grid.add(hintp, 9, 10);
 		
 		// opponent chooser GUI Event Handler
 		OpponentChooserEventHandler chooseOpponentHandler = new OpponentChooserEventHandler(othello, timer);
@@ -146,18 +148,6 @@ public class OthelloApplication extends Application {
 		stage.show();
 	}
 	
-//	public static BufferedImage resizeImage(final Image black, int width, int height) {
-//        final BufferedImage bufferedImage = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
-//        final Graphics2D graphics2D = bufferedImage.createGraphics();
-//        graphics2D.setComposite(AlphaComposite.Src);
-//        //below three lines are for RenderingHints for better image quality at cost of higher processing time
-//        graphics2D.setRenderingHint(RenderingHints.KEY_INTERPOLATION,RenderingHints.VALUE_INTERPOLATION_BILINEAR);
-//        graphics2D.setRenderingHint(RenderingHints.KEY_RENDERING,RenderingHints.VALUE_RENDER_QUALITY);
-//        graphics2D.setRenderingHint(RenderingHints.KEY_ANTIALIASING,RenderingHints.VALUE_ANTIALIAS_ON);
-//        graphics2D.drawImage(black, 0, 0, width, height, null);
-//        graphics2D.dispose( graphics2D.drawzImage);
-//        return bufferedImage;
-//	}
 
 	public static void main(String[] args) {
 		OthelloApplication view = new OthelloApplication();
