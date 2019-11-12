@@ -172,6 +172,13 @@ public class Othello extends Observable {
 	public boolean isGameOver() {
 		return this.whosTurn == OthelloBoard.EMPTY;
 	}
+	/**
+	 * * Alerts that time has run out for player; 
+	 * @return 
+	 */
+	public boolean timeOut() {
+		
+	}
 
 	/**
 	 * 

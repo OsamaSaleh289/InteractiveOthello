@@ -97,7 +97,11 @@ public class TimeTracker extends Observable implements Observer {
 			countdownP1.play();
 		}*/
 		othello = (Othello) o;
-		if (othello.getWhosTurn() != whosTurn) {
+		if (othello.isGameOver()) {
+			countdownP1.stop();
+			countdownP2.stop();
+		}
+		else if (othello.getWhosTurn() != whosTurn) {
 			whosTurn = othello.getWhosTurn();
 			if (whosTurn == 'X') {
 				countdownP2.pause();
