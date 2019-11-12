@@ -1,36 +1,9 @@
 
 # Fill in, commit and push each day.
-Member name: Jiaqi Chen    email:  isabeljiaqi.chen@mail.utoronto.ca   utorid: chenj628  
+Member name: Jiaqi Chen    
+email:  isabeljiaqi.chen@mail.utoronto.ca   
+utorid: chenj628  
 
-Oct 17,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
-
-Oct 18,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
-
-Oct 19,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
-
-Oct 20,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
-
-Oct 21,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
-
-Oct 22,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
 
 Oct 23,2019
 	What I did yesterday:N/A
@@ -128,23 +101,23 @@ Nov 10,2019
 	Obstacles I face:
 
 Nov 11,2019
-	What I did yesterday:
-	What I will do today:
+	What I did yesterday:continue working on US1.10
+	What I will do today:finish US1.10,finish US1.101
 	Obstacles I face:
 
 Nov 12,2019
-	What I did yesterday:
-	What I will do today:
+	What I did yesterday:finish US1.10,finish US1.101
+	What I will do today:finish US1.102
 	Obstacles I face:
 
 Nov 13,2019
-	What I did yesterday:
-	What I will do today:
+	What I did yesterday:finish US1.102
+	What I will do today:N/A
 	Obstacles I face:
 
 Nov 14,2019
-	What I did yesterday:
-	What I will do today:
+	What I did yesterday:N/A
+	What I will do today:N/A
 	Obstacles I face:
 
 Nov 15,2019
