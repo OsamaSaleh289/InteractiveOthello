@@ -7,12 +7,12 @@ import javafx.scene.Node;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 
-public class HintPosition extends TextField implements Observer {
+public class RandomHintPosition extends TextField implements Observer {
 	
 	private Othello othello;
 	private GridPane gridPane;
 			
-	public HintPosition(Othello othello,GridPane gridPane) {
+	public RandomHintPosition(Othello othello,GridPane gridPane) {
 		this.othello = othello;	
 		this.gridPane = gridPane;
 	}
@@ -21,7 +21,7 @@ public class HintPosition extends TextField implements Observer {
 	public void update(Observable o) {
 		// TODO Auto-generated method stub
 
-	    if (o instanceof HintEventHandler) {
+	    if (o instanceof RandomHintEventHandler) {
 	        for (Node node : gridPane.getChildren()) {
 //	            	   
 	        	node.setStyle("-fx-background-insets: 0 0 0 0, 0, 1, 2"); 

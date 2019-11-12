@@ -186,7 +186,31 @@ public class Othello extends Observable {
 		return o;
 	}
 	
+	/**
+	 * 
+	 * @return a greedy move
+	 */
+	public Move getGreedyHint() {
+		Othello othelloCopy = this.copy();
+		Move bestMove = new Move(0, 0);
+		int bestMoveCount = othelloCopy.getCount(this.whosTurn);
+		
+		for (int row = 0; row < Othello.DIMENSION; row++) {
+			for (int col = 0; col < Othello.DIMENSION; col++) {
+				othelloCopy = this.copy();
+				if (othelloCopy.move(row, col) && othelloCopy.getCount(this.whosTurn) > bestMoveCount) {
+					bestMoveCount = othelloCopy.getCount(this.whosTurn);
+					bestMove = new Move(row, col);
+				}
+			}
+		}
+		return bestMove;
+	}
 	
+	/**
+	 * 
+	 * @return one possible valid random move
+	 */
 	public Move getRandomHint() {
 		ArrayList<Move> moves = new ArrayList<Move>();
 		for (int row = 0; row < Othello.DIMENSION; row++) {

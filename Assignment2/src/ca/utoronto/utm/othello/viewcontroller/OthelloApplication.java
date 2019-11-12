@@ -12,9 +12,13 @@ import javafx.event.ActionEvent;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Menu;
+import javafx.scene.control.MenuBar;
+import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -40,18 +44,25 @@ public class OthelloApplication extends Application {
 		GameStatusTracker status;
 		TimerDisplay timedisplay;
 		TimeTracker timer;
-		HintPosition hintp;
+		RandomHintPosition rhintp;
+		GreedyHintPosition ghintp;
+		Menu menu;
+		MenuItem menuItem;
+		MenuBar menuBar;
 		
 		// GUI grid to add all buttons and text views onto
 		GridPane grid = new GridPane();
 		
 		// Create AI hint 
-		Button hint = new Button("AI Hint");
-		hintp = new HintPosition(othello,grid);
-		HintEventHandler handleHint = new HintEventHandler();
-		hint.addEventHandler(ActionEvent.ACTION, handleHint);
-		handleHint.attach(hintp);
+//		Button hint = new Button("AI Hint");
+		rhintp = new RandomHintPosition(othello,grid);
+		ghintp = new GreedyHintPosition(othello,grid);
 		
+		RandomHintEventHandler handleRandomHint = new RandomHintEventHandler();
+		GreedyHintEventHandler handleGreedyHint = new GreedyHintEventHandler();
+//		hint.addEventHandler(ActionEvent.ACTION, handleRandomHint);
+		handleRandomHint.attach(rhintp);
+		handleGreedyHint.attach(ghintp);
 		// Create token count text fields
 		p1Count = new TokenCounter("X : ", 'X');
 		p2Count = new TokenCounter("O : ", 'O');
@@ -101,13 +112,34 @@ public class OthelloApplication extends Application {
 
 				MoveAttemptEventHandler moveToClick = new MoveAttemptEventHandler(othello, grid);
 				boardSquare.addEventHandler(ActionEvent.ACTION, moveToClick); // CONTROLLER->MODEL hookup
-				moveToClick.attach(hintp);
+				moveToClick.attach(rhintp);
+				moveToClick.attach(ghintp);
 				grid.add(boardSquare, col, row);
 				boardSquare.setPrefSize(35, 35);
 				
 				othello.attach(boardSquare); // MODEL->VIEW hookup
 			}
 		}
+		
+		// A menu for Hint
+		menuBar = new MenuBar();
+		menu = new Menu("AI Hint");
+
+		menuItem = new MenuItem("random hint");
+//		menuItem.setOnAction(this);
+		menuItem.addEventHandler(ActionEvent.ACTION, handleRandomHint);
+		menu.getItems().add(menuItem);
+
+		menuItem = new MenuItem("greedy hint");
+//		menuItem.setOnAction(this);
+		menuItem.addEventHandler(ActionEvent.ACTION, handleGreedyHint);
+		menu.getItems().add(menuItem);
+		
+		menuBar.getMenus().add(menu);
+		
+		
+		
+		
 		// Add token counter and game tracker to view
 		grid.add(p1Count, 9, 0);
 		grid.add(p2Count, 9, 1);
@@ -122,7 +154,7 @@ public class OthelloApplication extends Application {
 		grid.add(currentPlayerTypeP1, 9, 7);
 		grid.add(currentPlayerTypeP2, 9, 8);
 		// Add AI Hint to view
-		grid.add(hint, 9, 9);
+//		grid.add(menu, 9, 9);
 //		grid.add(hintp, 9, 10);
 		
 		// opponent chooser GUI Event Handler
@@ -140,7 +172,13 @@ public class OthelloApplication extends Application {
 		
 		
 		// SCENE
-		Scene scene = new Scene(grid);
+		BorderPane root = new BorderPane();
+		root.setTop(menuBar);
+		root.setCenter(grid);
+		
+		
+		
+		Scene scene = new Scene(root);
 		stage.setTitle("Othello");
 		stage.setScene(scene);
 

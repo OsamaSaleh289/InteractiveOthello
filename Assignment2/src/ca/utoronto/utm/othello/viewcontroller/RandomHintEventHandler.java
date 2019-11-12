@@ -5,7 +5,7 @@ import ca.utoronto.utm.util.Observable;
 import javafx.event.EventHandler;
 
 
-public class HintEventHandler extends Observable implements EventHandler<ActionEvent> {
+public class RandomHintEventHandler extends Observable implements EventHandler<ActionEvent> {
 
 	public void handle(ActionEvent event) {
 		this.notifyObservers();
