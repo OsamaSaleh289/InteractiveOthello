@@ -22,13 +22,13 @@ public class OpponentChooserEventHandler implements EventHandler<ActionEvent> {
 		int row = GridPane.getRowIndex(button);
 		int col = GridPane.getColumnIndex(button);
 		
-		if(row==4 && col==9) {
+		if(row==5 && col==9) {
 			this.othello.setOpponent(othello.getWhosTurn(),"Human");
 			timer.startTimer();
-		} else if(row==5 && col==9) {
+		} else if(row==6 && col==9) {
 			this.othello.setOpponent(othello.getWhosTurn(),"Random");
 			timer.startTimer();
-		} else if(row==6 && col==9) {
+		} else if(row==7 && col==9) {
 			this.othello.setOpponent(othello.getWhosTurn(),"Greedy");
 			timer.startTimer();
 		}
