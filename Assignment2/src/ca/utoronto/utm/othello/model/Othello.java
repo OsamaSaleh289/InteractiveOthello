@@ -6,6 +6,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.Random;
 
 /**
@@ -24,7 +25,7 @@ import java.util.Random;
  */
 public class Othello extends Observable {
 	public static final int DIMENSION = 8; // This is an 8x8 game
-
+	private Random rand = new Random();
 	private OthelloBoard board = new OthelloBoard(Othello.DIMENSION);
 	private char whosTurn = OthelloBoard.P1;
 	private int numMoves = 0;
@@ -184,6 +185,20 @@ public class Othello extends Observable {
 		o.whosTurn = this.whosTurn;
 		return o;
 	}
+	
+	
+	public Move getRandomHint() {
+		ArrayList<Move> moves = new ArrayList<Move>();
+		for (int row = 0; row < Othello.DIMENSION; row++) {
+			for (int col = 0; col < Othello.DIMENSION; col++) {
+				Othello othelloCopy = this.copy();
+				if (othelloCopy.move(row, col))
+					moves.add(new Move(row, col));
+			}
+		}
+		return moves.get(this.rand.nextInt(moves.size()));
+	}
+	
 
 	/**
 	 * 

@@ -128,13 +128,13 @@ Nov 10,2019
 	Obstacles I face:
 
 Nov 11,2019
-	What I did yesterday:continue working on US1.10
-	What I will do today:finish US1.10
+	What I did yesterday:
+	What I will do today:
 	Obstacles I face:
 
 Nov 12,2019
-	What I did yesterday:finish US1.10
-	What I will do today:start work on US1.101
+	What I did yesterday:
+	What I will do today:
 	Obstacles I face:
 
 Nov 13,2019

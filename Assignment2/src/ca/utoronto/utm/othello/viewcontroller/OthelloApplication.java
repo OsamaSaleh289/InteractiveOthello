@@ -40,6 +40,15 @@ public class OthelloApplication extends Application {
 		GameStatusTracker status;
 		TimerDisplay timedisplay;
 		TimeTracker timer;
+		HintPosition hintp;
+		
+		// Create AI hint 
+		Button hint = new Button("AI Hint");
+		hintp = new HintPosition(othello);
+		HintEventHandler handleHint = new HintEventHandler();
+		hint.addEventHandler(ActionEvent.ACTION, handleHint);
+		handleHint.attach(hintp);
+		
 		// Create token count text fields
 		p1Count = new TokenCounter("X : ", 'X');
 		p2Count = new TokenCounter("O : ", 'O');
@@ -90,7 +99,7 @@ public class OthelloApplication extends Application {
 
 				MoveAttemptEventHandler moveToClick = new MoveAttemptEventHandler(othello, grid);
 				boardSquare.addEventHandler(ActionEvent.ACTION, moveToClick); // CONTROLLER->MODEL hookup
-
+				moveToClick.attach(hintp);
 				grid.add(boardSquare, col, row);
 				boardSquare.setPrefSize(35, 35);
 				
@@ -110,6 +119,9 @@ public class OthelloApplication extends Application {
 		// add player type trackers to view
 		grid.add(currentPlayerTypeP1, 9, 7);
 		grid.add(currentPlayerTypeP2, 9, 8);
+		// Add AI Hint to view
+		grid.add(hint, 9, 9);
+		grid.add(hintp, 9, 10);
 		
 		// opponent chooser GUI Event Handler
 		OpponentChooserEventHandler chooseOpponentHandler = new OpponentChooserEventHandler(othello, timer);
