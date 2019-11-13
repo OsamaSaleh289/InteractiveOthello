@@ -82,6 +82,7 @@ public class OthelloApplication extends Application {
 
 				grid.add(boardSquare, col, row);
 				boardSquare.setPrefSize(35, 35);
+				System.out.println("Osama");
 				
 				othello.attach(boardSquare); // MODEL->VIEW hookup
 			}

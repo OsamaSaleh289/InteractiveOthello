@@ -150,9 +150,12 @@ Nov 11,2019
 	Obstacles I face: Implementing the description above using MVC.
 
 Nov 12,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Confirmed my animation in office hours and tired different ways of implementation
+	but few corresponded to an MVC pattern
+	What I will do today: I figured out a strategy to implement this user story based on saving the token
+	value in the observer for each board square and checking if it changes. I will try implmenting it 
+	that way
+	Obstacles I face: Getting the board to reset the colour after the animation. 
 
 Nov 13,2019
 	What I did yesterday:
