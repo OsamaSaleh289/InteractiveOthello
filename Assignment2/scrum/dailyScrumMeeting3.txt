@@ -110,13 +110,13 @@ Nov 12,2019
 	Obstacles I face: not sure if this user story was ok to implement with images - I've asked on the forum
 
 Nov 13,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: user story 1.14, fixed up layout of game
+	What I will do today: N/A (midterm for csc236)
+	Obstacles I face: N/A
 
 Nov 14,2019
-	What I did yesterday:
-	What I will do today:
+	What I did yesterday: N/A
+	What I will do today: Implement design patterns
 	Obstacles I face:
 
 Nov 15,2019

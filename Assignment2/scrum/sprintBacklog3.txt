@@ -73,7 +73,7 @@ ISSUE    : When a user makes a move, they see an animation associated
 with their placing a piece. 
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY 1.14 : watso166 : STATUS : Complete (NotStarted,InProgress, Incomplete,Complete)
+TYPE     : USER STORY 1.14 : watso166 : STATUS : Complete
 NAME     : Available moves
 OWNER    : Katrina Watson
 PRIORITY : (1,2,3)

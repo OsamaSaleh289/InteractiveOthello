@@ -49,9 +49,9 @@ a random hint could be selected as well
 
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY 1.15 : UTORID : STATUS : NotStarted (NotStarted,InProgress, Incomplete,Complete)
+TYPE     : USER STORY 1.15 : watso166 : STATUS : Started
 NAME     : Better strategy
-OWNER    : 
+OWNER    : Katrina Watson
 PRIORITY : (1,2,3)
 ESTIMATE : (1 hour, 2 hours, 4 hours, 1 day, 2 days, 4 days)    ACTUAL :  
 ISSUE    : A user can play the following, improved strategy:
@@ -61,9 +61,9 @@ maximizes the players presence in the middle 4 by 4 square of the board,
 otherwise choose the location maximizing the movers presence on the board. 
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : BUG 1.17 : watso166 : STATUS : NotStarted (NotStarted,InProgress, Incomplete,Complete)
+TYPE     : BUG 1.17 : UTORID : STATUS : NotStarted (NotStarted,InProgress, Incomplete,Complete)
 NAME     : Use Visitor for Othello board
-OWNER    : Katrina Watson
+OWNER    : 
 PRIORITY : (1,2,3)
 ESTIMATE : (1 hour, 2 hours, 4 hours, 1 day, 2 days, 4 days)    ACTUAL :  
 ISSUE    : There is a lot of replicated code in Othello and OthelloBoard, all of
@@ -74,7 +74,7 @@ and othello board to now create visitors and use them as appropriate.
 NOTE: Some private methods could be removed as a result of this.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : BUG 1.19 : watso166 : STATUS : NotStarted (NotStarted,InProgress, Incomplete,Complete)
+TYPE     : BUG 1.19 : watso166 : STATUS : NotStarted 
 NAME     : Use Visitor for Othello board
 OWNER    : Katrina Watson
 PRIORITY : (1,2,3)
