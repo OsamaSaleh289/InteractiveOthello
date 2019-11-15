@@ -78,11 +78,13 @@ public class OthelloApplication extends Application {
 				BoardSquare boardSquare = new BoardSquare(othello,row,col);
 
 				MoveAttemptEventHandler moveToClick = new MoveAttemptEventHandler(othello, grid);
+				//Animation Handler
+				//AnimationHandler animationHandler = new AnimationHandler(othello);
 				boardSquare.addEventHandler(ActionEvent.ACTION, moveToClick); // CONTROLLER->MODEL hookup
+				//boardSquare.addEventHandler(ActionEvent.ACTION, animationHandler);
 
 				grid.add(boardSquare, col, row);
 				boardSquare.setPrefSize(35, 35);
-				System.out.println("Osama");
 				
 				othello.attach(boardSquare); // MODEL->VIEW hookup
 			}
@@ -105,6 +107,7 @@ public class OthelloApplication extends Application {
 		OpponentChooserEventHandler chooseOpponentHandler = new OpponentChooserEventHandler(othello);
 		//Restart event handler creation
 		RestartEventHandler restartHandler = new RestartEventHandler(othello);
+		
 		
 		
 		// VIEW->CONTROLLER hookup

@@ -158,14 +158,16 @@ Nov 12,2019
 	Obstacles I face: Getting the board to reset the colour after the animation. 
 
 Nov 13,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: I got the animation to work its just that the coloured squares do not 
+	reset after the next move.
+	What I will do today: Will try and fix that issue and make the colours reset after every move
+	Obstacles I face: Reseting the animation
 
 Nov 14,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Tried different ways of getting the animation to reset but was unsuccessful
+	What I will do today: Get the animated boxes to reset and assign a differnet animation colour to 
+	each player
+	Obstacles I face: Combining the observer design pattern with the animation implmentation
 
 Nov 15,2019
 	What I did yesterday:

@@ -8,6 +8,7 @@ import javafx.scene.image.ImageView;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Capture an Othello game. This includes an OthelloBoard as well as knowledge
@@ -83,6 +84,13 @@ public class Othello extends Observable {
 		currentMove.setRow(row);
 		
 		this.notifyObservers();
+		/*try {
+			wait(500);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}*/
+
 	}
 
 	public Move getMove() {
