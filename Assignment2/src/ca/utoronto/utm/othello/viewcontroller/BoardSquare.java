@@ -27,9 +27,15 @@ public class BoardSquare extends Button implements Observer{
 	
 	@Override
 	public void update(Observable o) {
-		//We reset the color of the token if a different move has been made or we restarted the game
-		if (othello.getCount('X') + othello.getCount('O') > currNumTokens || othello.getCount('X') + othello.getCount('O') == 4) {
-			this.setStyle("");
+		//We reset the color of the coloured tokens if a different move has been made
+		if (othello.getCount('X') + othello.getCount('O') > currNumTokens) {
+			this.setStyle(""); 
+			
+		//We also reset the token's colours and our varibables if the game has been restarted
+		} else if ( othello.getCount('X') + othello.getCount('O') == 4) {
+			this.setStyle(""); 
+			prevTokenValue = othello.getToken(GridPane.getRowIndex(this), GridPane.getColumnIndex(this));
+			currNumTokens = othello.getCount('X') + othello.getCount('O');
 			
 		}
 		othello = (Othello) o;
