@@ -49,9 +49,12 @@ public class OthelloApplication extends Application {
 		Menu menu;
 		MenuItem menuItem;
 		MenuBar menuBar;
-		
+	
 		// GUI grid to add all buttons and text views onto
-		GridPane grid = new GridPane();
+		GridPane grid = new GridPane(); // CONTROLLER
+		grid.setHgap(5); 
+		grid.setVgap(5); 
+		grid.setPadding(new Insets(5, 5, 5, 5));
 		
 		// Create AI hint 
 //		Button hint = new Button("AI Hint");
@@ -81,14 +84,8 @@ public class OthelloApplication extends Application {
 		timedisplay = new TimerDisplay(timer);
 		timer.attach(timedisplay);
 		timedisplay.setEditable(false);
-		/*javax.swing.Timer t = new javax.swing.Timer(1000, new ActionListener() {
-	          public void actionPerformed(ActionEvent e) {
-	              p.repaint();
-	          }
-	       });*/
 		
 		
-		 
 		// MODEL->VIEW hookup
 		othello.attach(oc);
 		othello.attach(p1Count);
@@ -110,7 +107,7 @@ public class OthelloApplication extends Application {
 			for (int col = 0; col < 8; col++) {
 				BoardSquare boardSquare = new BoardSquare(othello,row,col);
 
-				MoveAttemptEventHandler moveToClick = new MoveAttemptEventHandler(othello, grid);
+				MoveAttemptEventHandler moveToClick = new MoveAttemptEventHandler(othello);
 				boardSquare.addEventHandler(ActionEvent.ACTION, moveToClick); // CONTROLLER->MODEL hookup
 				moveToClick.attach(rhintp);
 				moveToClick.attach(ghintp);
@@ -138,24 +135,19 @@ public class OthelloApplication extends Application {
 		menuBar.getMenus().add(menu);
 		
 		
-		
-		
 		// Add token counter and game tracker to view
-		grid.add(p1Count, 9, 0);
-		grid.add(p2Count, 9, 1);
-		grid.add(status, 9, 2);
+		grid.add(p1Count, 9, 1);
+		grid.add(p2Count, 10, 1);
+		grid.add(status, 9, 2, 2, 1);
 		// Add timer to view
-		grid.add(timedisplay, 9, 3);
+		grid.add(timedisplay, 9, 3, 2, 1);
 		// add opponent select buttons to view
-		grid.add(hVsHuman, 9, 4);
-		grid.add(hVsRandom, 9, 5);
-		grid.add(hVsGreedy, 9, 6);
+		grid.add(hVsHuman, 9, 5);
+		grid.add(hVsRandom, 9, 6);
+		grid.add(hVsGreedy, 9, 7);
 		// add player type trackers to view
-		grid.add(currentPlayerTypeP1, 9, 7);
-		grid.add(currentPlayerTypeP2, 9, 8);
-		// Add AI Hint to view
-//		grid.add(menu, 9, 9);
-//		grid.add(hintp, 9, 10);
+		grid.add(currentPlayerTypeP1, 9, 0);
+		grid.add(currentPlayerTypeP2, 10, 0);
 		
 		// opponent chooser GUI Event Handler
 		OpponentChooserEventHandler chooseOpponentHandler = new OpponentChooserEventHandler(othello, timer);
@@ -175,7 +167,6 @@ public class OthelloApplication extends Application {
 		BorderPane root = new BorderPane();
 		root.setTop(menuBar);
 		root.setCenter(grid);
-		
 		
 		
 		Scene scene = new Scene(root);

@@ -19,21 +19,20 @@ public class RandomHintPosition extends TextField implements Observer {
 
 	@Override
 	public void update(Observable o) {
-		// TODO Auto-generated method stub
 
 	    if (o instanceof RandomHintEventHandler) {
 	        for (Node node : gridPane.getChildren()) {
-//	            	   
+
 	        	node.setStyle("-fx-background-insets: 0 0 0 0, 0, 1, 2"); 
 	        }
-	    	
 	    	
 	    	Move m = othello.getRandomHint();
 	    	int r =  m.getRow();
 	    	int c =  m.getCol();
+	    	
 	        for (Node node : gridPane.getChildren()) {
 	            if(GridPane.getRowIndex(node) == r && GridPane.getColumnIndex(node) == c) {
-//	                node.setStyle("-fx-background-color: #00ff00");
+
 	            	node.setStyle("-fx-background-color: green");
 	                break;
 	            }
@@ -41,7 +40,7 @@ public class RandomHintPosition extends TextField implements Observer {
 //	    	this.setText("(" + m.getRow()+ ','+' ' + m.getCol() + ")");
 	    } else if (o instanceof MoveAttemptEventHandler) {
 	        for (Node node : gridPane.getChildren()) {
-//         	   
+
 	        	node.setStyle("-fx-background-insets: 0 0 0 0, 0, 1, 2"); 
 	        }
 	    } 

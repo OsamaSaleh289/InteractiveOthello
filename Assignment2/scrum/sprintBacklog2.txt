@@ -80,7 +80,7 @@ P1: Human  P2: Greedy
 P1: Random P2: Human
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : BUG 1.078 : UTORID : watso166 : Complete 
+TYPE     : BUG 1.078 : watso166 : STATUS : Complete
 NAME     : Observer/Observable
 OWNER    : Katrina Watson
 PRIORITY : (1,2,3)
@@ -90,7 +90,7 @@ This needs to be fixed and also observer/observable needs to be properly
 implemented in the correct classes. 
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : BUG 1.079 : UTORID : watso166 : Complete 
+TYPE     : BUG 1.079 : UTORID : watso166 : STATUS : Complete
 NAME     : Make the code MVC
 OWNER    : Katrina Watson
 PRIORITY : (1,2,3)

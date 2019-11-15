@@ -53,23 +53,9 @@ public class OthelloControllerHumanVSHuman extends OthelloController implements 
 			}
 		}
 	}
-	
-	public Othello getOthello() {
-		return this.othello;
-	}
 
 	@Override
 	public void update(Observable o) {
 		this.play();
 	}
-	/**
-	 * Run main to play two Humans against each other at the console.
-	 * 
-	 * @param args
-	 */
-//	public static void main(String[] args) {
-//		OthelloControllerHumanVSHuman oc = new OthelloControllerHumanVSHuman();
-//		oc.play();
-//	}
-
 }

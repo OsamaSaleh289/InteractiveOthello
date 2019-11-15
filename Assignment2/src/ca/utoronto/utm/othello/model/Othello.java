@@ -29,7 +29,6 @@ public class Othello extends Observable {
 	private OthelloBoard board = new OthelloBoard(Othello.DIMENSION);
 	private char whosTurn = OthelloBoard.P1;
 	private int numMoves = 0;
-	public Move currentMove = new Move(0, 0);
 	private String opponentP1 = "Human";
 	private String opponentP2 = "Human";
 	
@@ -67,16 +66,20 @@ public class Othello extends Observable {
 	public char getWhosTurn() {
 		return this.whosTurn;
 	}
-
-	/*public void setMove(int row, int col) {
-		currentMove.setCol(col);
-		currentMove.setRow(row);
-		
-		//this.notifyObservers();
-	}*/
-
-	public Move getMove() {
-		return currentMove;
+	
+	/*
+	 * return all moves for the Player who's turn it is
+	 */
+	private ArrayList<Move> allMoves() {
+		ArrayList<Move> moves = new ArrayList<Move>();
+		for (int row = 0; row < Othello.DIMENSION; row++) {
+			for (int col = 0; col < Othello.DIMENSION; col++) {
+				Othello othelloCopy = this.copy();
+				if (othelloCopy.move(row, col))
+					moves.add(new Move(row, col));
+			}
+		}
+		return moves;
 	}
 
 	/**
@@ -95,17 +98,27 @@ public class Othello extends Observable {
 	 * @param col
 	 * @return the image at position row, col.
 	 */
-	
 	public ImageView getImage(int row, int col) {
+		
+		ArrayList<Move> moves = this.allMoves();
+		boolean isIn = false;
+		
+		for(Move move: moves) {
+			if(move.getRow() == row && move.getCol() == col)
+				isIn = true;
+		}
 		
 	    InputStream input1 = OthelloApplication.class.getResourceAsStream("black.png");
 	    InputStream input2 = OthelloApplication.class.getResourceAsStream("white.png"); 
+	    InputStream input3 = OthelloApplication.class.getResourceAsStream("greenCircleOutline.png"); 
 	    
 	    Image black = new Image(input1); 
 	    Image white = new Image(input2); 
+	    Image green = new Image(input3);
 
 	    ImageView vblack = new ImageView(black); 
 	    ImageView vwhite = new ImageView(white);
+	    ImageView vgreen = new ImageView(green);
 	    
 	    ImageView result = null;
 		
@@ -113,10 +126,11 @@ public class Othello extends Observable {
 			result = vblack;
 		} else if(this.getToken(row, col) == 'O') {
 			result = vwhite;
+		} else if(this.getToken(row, col) == ' ' && isIn) {
+			result = vgreen;
 		}
 		return result;
 	}
-
 
 	/**
 	 * Attempt to make a move for P1 or P2 (depending on whos turn it is) at
@@ -231,27 +245,4 @@ public class Othello extends Observable {
 	public String getBoardString() {
 		return board.toString() + "\n";
 	}
-
-	/**
-	 * run this to test the current class. We play a completely random game. DO NOT
-	 * MODIFY THIS!! See the assignment page for sample outputs from this.
-	 * 
-	 * @param args
-	 */
-	/*public static void main(String[] args) {
-		Random rand = new Random();
-
-		Othello o = new Othello();
-		System.out.println(o.getBoardString());
-		while (!o.isGameOver()) {
-			int row = rand.nextInt(8);
-			int col = rand.nextInt(8);
-
-			if (o.move(row, col)) {
-				System.out.println("makes move (" + row + "," + col + ")");
-				System.out.println(o.getBoardString() + o.getWhosTurn() + " moves next");
-			}
-		}
-
-	}*/
 }

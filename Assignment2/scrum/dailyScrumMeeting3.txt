@@ -89,32 +89,34 @@ Nov 8,2019
 
 Nov 9,2019
 	What I did yesterday: N/A
-	What I will do today: 
-	Obstacles I face: 
+	What I will do today: check up on group - I don't want my code to conflict with 1.10
+	so I can't do my part until group members do theirs
+	Obstacles I face: N/A
 
 Nov 10,2019
-	What I did yesterday: 
-	What I will do today: 
-	Obstacles I face: 
+	What I did yesterday: checked in with group
+	What I will do today: Help teammate debug
+	Obstacles I face: N/A
 
 Nov 11,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: helped debug
+	What I will do today: lab, use that to plan user stories for implementing factory, strategy, 
+	command design patterns with group
+	Obstacles I face: N/A
 
 Nov 12,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: lab, planned user stories
+	What I will do today: user story 1.14, fix up layout of game
+	Obstacles I face: not sure if this user story was ok to implement with images - I've asked on the forum
 
 Nov 13,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: user story 1.14, fixed up layout of game
+	What I will do today: N/A (midterm for csc236)
+	Obstacles I face: N/A
 
 Nov 14,2019
-	What I did yesterday:
-	What I will do today:
+	What I did yesterday: N/A
+	What I will do today: Implement design patterns
 	Obstacles I face:
 
 Nov 15,2019
