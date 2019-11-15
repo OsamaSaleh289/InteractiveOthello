@@ -142,9 +142,9 @@ Nov 13,2019
 	Obstacles I face:
 
 Nov 14,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Not much (csc236 test)
+	What I will do today: US 1.091 
+	Obstacles I face: Never created a pop-up window in Java before; master JOptionPane
 
 Nov 15,2019
 	What I did yesterday:

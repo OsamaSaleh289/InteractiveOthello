@@ -49,6 +49,7 @@ public class OthelloApplication extends Application {
 		Menu menu;
 		MenuItem menuItem;
 		MenuBar menuBar;
+		JOptionPane popup;
 	
 		// GUI grid to add all buttons and text views onto
 		GridPane grid = new GridPane(); // CONTROLLER
@@ -84,6 +85,7 @@ public class OthelloApplication extends Application {
 		timedisplay = new TimerDisplay(timer);
 		timer.attach(timedisplay);
 		timedisplay.setEditable(false);
+		popup = new JOptionPane();
 		
 		
 		// MODEL->VIEW hookup
