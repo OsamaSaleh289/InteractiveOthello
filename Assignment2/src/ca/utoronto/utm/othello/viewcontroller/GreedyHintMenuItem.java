@@ -24,10 +24,7 @@ public class GreedyHintMenuItem extends MenuItem implements Observer{
 	    Image image = new Image(input1); 
 	    ImageView vimage = new ImageView(image); 
 	    		
-		if(vimage!=null)
-			return vimage;
-		
-		return null;
+		return vimage;
 	}
 
 	@Override

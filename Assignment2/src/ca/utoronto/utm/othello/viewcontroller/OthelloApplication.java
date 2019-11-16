@@ -1,5 +1,7 @@
 package ca.utoronto.utm.othello.viewcontroller;
 
+import javax.swing.JOptionPane;
+
 import ca.utoronto.utm.othello.model.*;
 
 import javafx.application.Application;
@@ -35,6 +37,7 @@ public class OthelloApplication extends Application {
 		TimeTracker timer;
 		Menu menu;
 		MenuBar menuBar;
+		JOptionPane popup;
 	
 		// GUI grid to add all buttons and text views onto
 		GridPane grid = new GridPane(); // CONTROLLER
@@ -62,6 +65,8 @@ public class OthelloApplication extends Application {
 		timedisplay = new TimerDisplay(timer);
 		timer.attach(timedisplay);
 		timedisplay.setEditable(false);
+		popup = new JOptionPane();
+		
 		// A menu for Hint
 		menuBar = new MenuBar();
 		menu = new Menu("AI Hint");

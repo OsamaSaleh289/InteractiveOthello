@@ -109,7 +109,7 @@ public class OthelloBoard {
 			return -1;
 		if (this.board[row][col] == player)
 			return 0;
-		if (this.board[row][col] == this.otherPlayer(player)) {
+		if (this.board[row][col] == OthelloBoard.otherPlayer(player)) {
 			int numChanged = this.flip(row + drow, col + dcol, drow, dcol, player);
 			if (numChanged >= 0) {
 				this.board[row][col] = player;
@@ -147,7 +147,7 @@ public class OthelloBoard {
 			char nextToken = this.get(row, col);
 			if (nextToken != P1 && nextToken != P2)
 				return EMPTY;
-			if (nextToken == this.otherPlayer(firstToken))
+			if (nextToken == OthelloBoard.otherPlayer(firstToken))
 				return nextToken;
 			row += drow;
 			col += dcol;
@@ -164,8 +164,8 @@ public class OthelloBoard {
 	 * @return P1,P2,EMPTY
 	 */
 	private char hasMove(int row, int col, int drow, int dcol) {
-		if (!this.validCoordinate(row, col) || this.board[row][col] != this.EMPTY)
-			return this.EMPTY;
+		if (!this.validCoordinate(row, col) || this.board[row][col] != OthelloBoard.EMPTY)
+			return OthelloBoard.EMPTY;
 		return this.alternation(row + drow, col + dcol, drow, dcol);
 	}
 

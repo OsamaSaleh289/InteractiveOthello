@@ -2,7 +2,6 @@ package ca.utoronto.utm.othello.viewcontroller;
 
 import java.io.InputStream;
 
-import ca.utoronto.utm.othello.model.Othello;
 import ca.utoronto.utm.othello.model.OthelloController;
 import ca.utoronto.utm.util.Observable;
 import ca.utoronto.utm.util.Observer;
@@ -22,15 +21,10 @@ public class RandomHintMenuItem extends MenuItem implements Observer{
 	
 	private ImageView getImage(String name) {
 		InputStream input1 = OthelloApplication.class.getResourceAsStream(name);
-	    
 	    Image image = new Image(input1); 
-
 	    ImageView vimage = new ImageView(image); 
 	    		
-		if(vimage!=null)
-			return vimage;
-		
-		return null;
+		return vimage;
 	}
 
 	@Override
