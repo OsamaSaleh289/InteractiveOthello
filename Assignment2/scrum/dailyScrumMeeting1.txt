@@ -152,9 +152,9 @@ Nov 15,2019
 	Obstacles I face: Not much time left - had a lot to do
 
 Nov 16,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Created a new branch
+	What I will do today: US 1.12 and other adjustments, such as improving the timer
+	Obstacles I face: I have work today
 
 Nov 17,2019
 	What I did yesterday:
