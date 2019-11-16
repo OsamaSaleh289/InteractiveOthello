@@ -66,6 +66,7 @@ public class OthelloApplication extends Application {
 		timer.attach(timedisplay);
 		timedisplay.setEditable(false);
 		popup = new JOptionPane();
+<<<<<<< HEAD
 		
 		// A menu for Hint
 		menuBar = new MenuBar();
@@ -77,6 +78,8 @@ public class OthelloApplication extends Application {
 		greedyMenuItem.addEventHandler(ActionEvent.ACTION, handleGreedyHint);
 		menu.getItems().add(greedyMenuItem);
 		menuBar.getMenus().add(menu);
+=======
+>>>>>>> 9ff6b0cb5eefac1702ea16ae749895eb97700900
 		
 		
 		// MODEL->VIEW hookup
