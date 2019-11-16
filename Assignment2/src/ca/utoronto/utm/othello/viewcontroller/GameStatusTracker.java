@@ -14,7 +14,6 @@ public class GameStatusTracker extends TextField implements Observer{
 
 	@Override
 	public void update(Observable o) {
-		// TODO Auto-generated method stub
 		othello = (Othello) o;
 		if (!othello.isGameOver()) {
 			this.setText(othello.getWhosTurn()+"'s" + " Turn");

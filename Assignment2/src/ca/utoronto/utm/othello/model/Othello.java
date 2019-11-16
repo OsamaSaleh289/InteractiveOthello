@@ -7,7 +7,6 @@ import javafx.scene.image.ImageView;
 
 import java.io.InputStream;
 import java.util.ArrayList;
-import java.util.Random;
 
 /**
  * Capture an Othello game. This includes an OthelloBoard as well as knowledge
@@ -25,38 +24,9 @@ import java.util.Random;
  */
 public class Othello extends Observable {
 	public static final int DIMENSION = 8; // This is an 8x8 game
-	private Random rand = new Random();
 	private OthelloBoard board = new OthelloBoard(Othello.DIMENSION);
 	private char whosTurn = OthelloBoard.P1;
 	private int numMoves = 0;
-	private String opponentP1 = "Human";
-	private String opponentP2 = "Human";
-	
-	// TODO: create enum type for opponents
-	
-	/*
-	 * 
-	 */
-	public void setOpponent(char p, String oppnt) {
-		// make sure it's "Human" "Random" or "Greedy"
-		if(p==OthelloBoard.P1)
-			opponentP1 = oppnt;
-		else if(p==OthelloBoard.P2)
-			opponentP2 = oppnt;
-		
-		this.notifyObservers();
-	}
-	
-	/*
-	 * 
-	 */
-	public String getOpponent(char p) {
-		if(p==OthelloBoard.P1)
-			return opponentP1;
-		else if(p==OthelloBoard.P2)
-			return opponentP2;
-		return null;
-	}
 	
 	/**
 	 * return P1,P2 or EMPTY depending on who moves next.
@@ -81,6 +51,20 @@ public class Othello extends Observable {
 		}
 		return moves;
 	}
+	
+	/**
+	 * 
+	 * @param row
+	 * @param col
+	 * @return whether this row and column is a current Move that can be made
+	 */
+	public boolean inAllMoves(int row, int col) {
+		for(Move move: this.allMoves()) {
+			if(move.getRow() == row && move.getCol() == col)
+				return true;
+		}
+		return false;
+	}
 
 	/**
 	 * 
@@ -99,26 +83,15 @@ public class Othello extends Observable {
 	 * @return the image at position row, col.
 	 */
 	public ImageView getImage(int row, int col) {
-		
-		ArrayList<Move> moves = this.allMoves();
-		boolean isIn = false;
-		
-		for(Move move: moves) {
-			if(move.getRow() == row && move.getCol() == col)
-				isIn = true;
-		}
-		
+	
 	    InputStream input1 = OthelloApplication.class.getResourceAsStream("black.png");
 	    InputStream input2 = OthelloApplication.class.getResourceAsStream("white.png"); 
-	    InputStream input3 = OthelloApplication.class.getResourceAsStream("greenCircleOutline.png"); 
 	    
 	    Image black = new Image(input1); 
 	    Image white = new Image(input2); 
-	    Image green = new Image(input3);
 
 	    ImageView vblack = new ImageView(black); 
 	    ImageView vwhite = new ImageView(white);
-	    ImageView vgreen = new ImageView(green);
 	    
 	    ImageView result = null;
 		
@@ -126,9 +99,8 @@ public class Othello extends Observable {
 			result = vblack;
 		} else if(this.getToken(row, col) == 'O') {
 			result = vwhite;
-		} else if(this.getToken(row, col) == ' ' && isIn) {
-			result = vgreen;
 		}
+		
 		return result;
 	}
 
@@ -151,7 +123,6 @@ public class Othello extends Observable {
 			this.notifyObservers();
 			return true;
 		} else {
-			
 			return false;
 		}
 	}
@@ -171,12 +142,15 @@ public class Othello extends Observable {
 	 * @return P1, P2 or EMPTY for no winner, or the game is not finished.
 	 */
 	public char getWinner() {
-		if (!this.isGameOver())
+		if (!this.isGameOver()) {
 			return OthelloBoard.EMPTY;
-		if (this.getCount(OthelloBoard.P1) > this.getCount(OthelloBoard.P2))
+		}
+		if (this.getCount(OthelloBoard.P1) > this.getCount(OthelloBoard.P2)) {
 			return OthelloBoard.P1;
-		if (this.getCount(OthelloBoard.P1) < this.getCount(OthelloBoard.P2))
+		}
+		if (this.getCount(OthelloBoard.P1) < this.getCount(OthelloBoard.P2)) {
 			return OthelloBoard.P2;
+		}
 		return OthelloBoard.EMPTY;
 	}
 
@@ -198,51 +172,5 @@ public class Othello extends Observable {
 		o.numMoves = this.numMoves;
 		o.whosTurn = this.whosTurn;
 		return o;
-	}
-	
-	/**
-	 * 
-	 * @return a greedy move
-	 */
-	public Move getGreedyHint() {
-		Othello othelloCopy = this.copy();
-		Move bestMove = new Move(0, 0);
-		int bestMoveCount = othelloCopy.getCount(this.whosTurn);
-		
-		for (int row = 0; row < Othello.DIMENSION; row++) {
-			for (int col = 0; col < Othello.DIMENSION; col++) {
-				othelloCopy = this.copy();
-				if (othelloCopy.move(row, col) && othelloCopy.getCount(this.whosTurn) > bestMoveCount) {
-					bestMoveCount = othelloCopy.getCount(this.whosTurn);
-					bestMove = new Move(row, col);
-				}
-			}
-		}
-		return bestMove;
-	}
-	
-	/**
-	 * 
-	 * @return one possible valid random move
-	 */
-	public Move getRandomHint() {
-		ArrayList<Move> moves = new ArrayList<Move>();
-		for (int row = 0; row < Othello.DIMENSION; row++) {
-			for (int col = 0; col < Othello.DIMENSION; col++) {
-				Othello othelloCopy = this.copy();
-				if (othelloCopy.move(row, col))
-					moves.add(new Move(row, col));
-			}
-		}
-		return moves.get(this.rand.nextInt(moves.size()));
-	}
-	
-
-	/**
-	 * 
-	 * @return a string representation of the board.
-	 */
-	public String getBoardString() {
-		return board.toString() + "\n";
 	}
 }

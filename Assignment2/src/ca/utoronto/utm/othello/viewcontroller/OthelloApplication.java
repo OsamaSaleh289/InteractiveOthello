@@ -1,12 +1,7 @@
 package ca.utoronto.utm.othello.viewcontroller;
 
-import java.io.FileInputStream;
-import java.io.InputStream;
-
 import ca.utoronto.utm.othello.model.*;
-import ca.utoronto.utm.util.*;
-import javax.swing.*;
-import javafx.animation.AnimationTimer;
+
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.geometry.Insets;
@@ -14,14 +9,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
-import javafx.scene.control.MenuItem;
-import javafx.scene.control.TextField;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 public class OthelloApplication extends Application {
@@ -38,16 +27,13 @@ public class OthelloApplication extends Application {
 
 		
 		// VIEWs:
-		OthelloControllerHumanVSHuman oc = new OthelloControllerHumanVSHuman(othello);
+		OthelloController oc = new OthelloController(othello);
 		TokenCounter p1Count;
 		TokenCounter p2Count;
 		GameStatusTracker status;
 		TimerDisplay timedisplay;
 		TimeTracker timer;
-		RandomHintPosition rhintp;
-		GreedyHintPosition ghintp;
 		Menu menu;
-		MenuItem menuItem;
 		MenuBar menuBar;
 	
 		// GUI grid to add all buttons and text views onto
@@ -56,27 +42,19 @@ public class OthelloApplication extends Application {
 		grid.setVgap(5); 
 		grid.setPadding(new Insets(5, 5, 5, 5));
 		
-		// Create AI hint 
-//		Button hint = new Button("AI Hint");
-		rhintp = new RandomHintPosition(othello,grid);
-		ghintp = new GreedyHintPosition(othello,grid);
-		
-		RandomHintEventHandler handleRandomHint = new RandomHintEventHandler();
-		GreedyHintEventHandler handleGreedyHint = new GreedyHintEventHandler();
-//		hint.addEventHandler(ActionEvent.ACTION, handleRandomHint);
-		handleRandomHint.attach(rhintp);
-		handleGreedyHint.attach(ghintp);
+		RandomHintEventHandler handleRandomHint = new RandomHintEventHandler(oc);
+		GreedyHintEventHandler handleGreedyHint = new GreedyHintEventHandler(oc);
 		// Create token count text fields
-		p1Count = new TokenCounter("X : ", 'X');
-		p2Count = new TokenCounter("O : ", 'O');
+		p1Count = new TokenCounter(OthelloBoard.P1 + " : "+othello.getCount(OthelloBoard.P1), OthelloBoard.P1);
+		p2Count = new TokenCounter(OthelloBoard.P2 + " : "+othello.getCount(OthelloBoard.P2), OthelloBoard.P2);
 		p1Count.setEditable(false);
 		p2Count.setEditable(false);
 		// Create text fields to track current game status
-		status = new GameStatusTracker("X's Turn");
+		status = new GameStatusTracker(OthelloBoard.P1 + "'s Turn");
 		status.setEditable(false);
 		// create text fields to track current player type
-		OpponentTrackerP1 currentPlayerTypeP1 = new OpponentTrackerP1("P1: "+othello.getOpponent(OthelloBoard.P2));
-		OpponentTrackerP2 currentPlayerTypeP2 = new OpponentTrackerP2("P2: "+othello.getOpponent(OthelloBoard.P1));
+		MoveStrategyTracker currentPlayerTypeP1 = new MoveStrategyTracker(OthelloBoard.P1 + " : "+oc.player1.getStrategyName());
+		MoveStrategyTracker currentPlayerTypeP2 = new MoveStrategyTracker(OthelloBoard.P2 + " : "+oc.player2.getStrategyName());
 		currentPlayerTypeP1.setEditable(false);
 		currentPlayerTypeP2.setEditable(false);
 		//create timer to track time for each player's move
@@ -84,6 +62,16 @@ public class OthelloApplication extends Application {
 		timedisplay = new TimerDisplay(timer);
 		timer.attach(timedisplay);
 		timedisplay.setEditable(false);
+		// A menu for Hint
+		menuBar = new MenuBar();
+		menu = new Menu("AI Hint");
+		RandomHintMenuItem randomMenuItem = new RandomHintMenuItem(oc);
+		randomMenuItem.addEventHandler(ActionEvent.ACTION, handleRandomHint);
+		menu.getItems().add(randomMenuItem);
+		GreedyHintMenuItem greedyMenuItem = new GreedyHintMenuItem(oc);
+		greedyMenuItem.addEventHandler(ActionEvent.ACTION, handleGreedyHint);
+		menu.getItems().add(greedyMenuItem);
+		menuBar.getMenus().add(menu);
 		
 		
 		// MODEL->VIEW hookup
@@ -92,8 +80,10 @@ public class OthelloApplication extends Application {
 		othello.attach(p2Count);
 		othello.attach(status);
 		othello.attach(timer);
-		othello.attach(currentPlayerTypeP1);
-		othello.attach(currentPlayerTypeP2);
+		oc.player1.attach(currentPlayerTypeP1);
+		oc.player2.attach(currentPlayerTypeP2);
+		oc.attach(randomMenuItem);
+		oc.attach(greedyMenuItem);
 		
 		
 		// CONTROLLERS:
@@ -105,36 +95,17 @@ public class OthelloApplication extends Application {
 		// create game board buttons
 		for (int row = 0; row < 8; row++) {
 			for (int col = 0; col < 8; col++) {
-				BoardSquare boardSquare = new BoardSquare(othello,row,col);
+				BoardSquare boardSquare = new BoardSquare(othello,row,col,oc);
 
 				MoveAttemptEventHandler moveToClick = new MoveAttemptEventHandler(othello);
 				boardSquare.addEventHandler(ActionEvent.ACTION, moveToClick); // CONTROLLER->MODEL hookup
-				moveToClick.attach(rhintp);
-				moveToClick.attach(ghintp);
 				grid.add(boardSquare, col, row);
 				boardSquare.setPrefSize(35, 35);
 				
 				othello.attach(boardSquare); // MODEL->VIEW hookup
+				oc.attach(boardSquare);
 			}
 		}
-		
-		// A menu for Hint
-		menuBar = new MenuBar();
-		menu = new Menu("AI Hint");
-
-		menuItem = new MenuItem("random hint");
-//		menuItem.setOnAction(this);
-		menuItem.addEventHandler(ActionEvent.ACTION, handleRandomHint);
-		menu.getItems().add(menuItem);
-
-		menuItem = new MenuItem("greedy hint");
-//		menuItem.setOnAction(this);
-		menuItem.addEventHandler(ActionEvent.ACTION, handleGreedyHint);
-		menu.getItems().add(menuItem);
-		
-		menuBar.getMenus().add(menu);
-		
-		
 		// Add token counter and game tracker to view
 		grid.add(p1Count, 9, 1);
 		grid.add(p2Count, 10, 1);
@@ -150,7 +121,9 @@ public class OthelloApplication extends Application {
 		grid.add(currentPlayerTypeP2, 10, 0);
 		
 		// opponent chooser GUI Event Handler
-		OpponentChooserEventHandler chooseOpponentHandler = new OpponentChooserEventHandler(othello, timer);
+		HumanOpponentEventHandler humanOpponentHandler = new HumanOpponentEventHandler(othello, timer, oc);
+		RandomOpponentEventHandler randomOpponentHandler = new RandomOpponentEventHandler(othello, timer, oc);
+		GreedyOpponentEventHandler greedyOpponentHandler = new GreedyOpponentEventHandler(othello, timer, oc);
 		
 		
 		// VIEW->CONTROLLER hookup
@@ -158,16 +131,15 @@ public class OthelloApplication extends Application {
 		
 		// CONTROLLER->MODEL hookup
 		// add eventHandlers to opponent chooser GUI
-		hVsHuman.addEventHandler(ActionEvent.ACTION, chooseOpponentHandler);
-		hVsRandom.addEventHandler(ActionEvent.ACTION, chooseOpponentHandler);
-		hVsGreedy.addEventHandler(ActionEvent.ACTION, chooseOpponentHandler);
+		hVsHuman.addEventHandler(ActionEvent.ACTION, humanOpponentHandler);
+		hVsRandom.addEventHandler(ActionEvent.ACTION, randomOpponentHandler);
+		hVsGreedy.addEventHandler(ActionEvent.ACTION, greedyOpponentHandler);
 		
 		
 		// SCENE
 		BorderPane root = new BorderPane();
 		root.setTop(menuBar);
 		root.setCenter(grid);
-		
 		
 		Scene scene = new Scene(root);
 		stage.setTitle("Othello");
@@ -179,7 +151,7 @@ public class OthelloApplication extends Application {
 	
 
 	public static void main(String[] args) {
-		OthelloApplication view = new OthelloApplication();
+		new OthelloApplication();
 		launch(args);
 	}
 }

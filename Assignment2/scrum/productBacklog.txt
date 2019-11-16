@@ -3,18 +3,18 @@
 # If a USER STORY is large, break it into smaller user stories.
 
 --------------------------------------------------------------------------
-TYPE     : BUG 0.01 : wronadom : STATUS : Complete (NotStarted,InProgress, Incomplete,Complete)
+TYPE     : BUG 0.01 : UTORID : STATUS : NotStarted (NotStarted,InProgress, Incomplete,Complete)
 NAME     : Configure and use system
 OWNER    : 
 PRIORITY : 1
 ESTIMATE :    ACTUAL :  2 hrs or so (had some technical issues)
-ISSUE    : Dominik Wrona 
+ISSUE    : Member 1 
 - demonstrates that they have added, committed and pushed members.txt. 
 - demonstrates that they can run OthelloControllerHumanVSHuman on their dev platform
 - demonstrates that they can run MVCApplication on their dev platform
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : BUG 0.02 : watso166 : STATUS : Complete (NotStarted,InProgress, Incomplete,Complete)
+TYPE     : BUG 0.02 : UTORID : STATUS : NotStarted (NotStarted,InProgress, Incomplete,Complete)
 NAME     : Configure and use system
 OWNER    : 
 PRIORITY : 1
@@ -25,12 +25,12 @@ ISSUE    : Member 2
 - demonstrates that they can run MVCApplication on their dev platform
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : BUG 0.03 : chenj628 : STATUS : Complete (NotStarted,InProgress, Incomplete,Complete)
+TYPE     : BUG 0.03 : UTORID : STATUS : NotStarted (NotStarted,InProgress, Incomplete,Complete)
 NAME     : Configure and use system
-OWNER    : chenj628
+OWNER    : 
 PRIORITY : (1,2,3)
 ESTIMATE : (1 hour, 2 hours, 4 hours, 1 day, 2 days, 4 days)    ACTUAL :  2hours
-ISSUE    : Jiaqi Chen
+ISSUE    : Member3
 - demonstrates that they have added, committed and pushed members.txt. 
 - demonstrates that they can run OthelloControllerHumanVSHuman on their dev platform
 - demonstrates that they can run MVCApplication on their dev platform
@@ -47,7 +47,7 @@ ISSUE    : Member 4
 - demonstrates that they can run MVCApplication on their dev platform
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY 1.01 : wronadom : STATUS : Complete
+TYPE     : USER STORY 1.01 : UTORID : STATUS : NotStarted (NotStarted,InProgress, Incomplete,Complete)
 NAME     : OthelloGUI Click Registration
 OWNER    : 
 PRIORITY : (1,2,3)
@@ -57,7 +57,7 @@ OthelloApplication. At this stage, a click results in a print out of
 the (row,col) that the user clicked.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY 1.011 : chenj628 : STATUS : Complete (NotStarted,InProgress, Incomplete,Complete)
+TYPE     : USER STORY 1.011 : UTORID : STATUS : Complete (NotStarted,InProgress, Incomplete,Complete)
 NAME     : OthelloGUI Buttons Active, Console View
 OWNER    : chenj628
 PRIORITY : (1,2,3)
@@ -72,7 +72,7 @@ If you didn't then file BUG 1.012 to fix the implementation.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
 
-TYPE     : USER STORY 1.02 : watso166 : STATUS : Completed (NotStarted,InProgress, Incomplete,Complete)
+TYPE     : USER STORY 1.02 : UTORID : STATUS : Completed (NotStarted,InProgress, Incomplete,Complete)
 NAME     : Othello Board Human VS Human
 OWNER    : 
 PRIORITY : (1,2,3)
@@ -119,7 +119,7 @@ ISSUE    : When users play, the current status of the game is on display, showin
 of the winner of the game.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY 1.06 : chenj628 : STATUS : Complete (NotStarted,InProgress, Incomplete,Complete)
+TYPE     : USER STORY 1.06 : UTORID : STATUS : Complete (NotStarted,InProgress, Incomplete,Complete)
 NAME     : Change tokens to Images
 OWNER    : chenj628
 PRIORITY : (1,2,3)
