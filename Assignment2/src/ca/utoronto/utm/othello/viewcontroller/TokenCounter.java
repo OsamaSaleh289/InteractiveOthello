@@ -16,7 +16,6 @@ public class TokenCounter extends TextField implements Observer  {
 
 	@Override
 	public void update(Observable o) {
-		// TODO Auto-generated method stub
 		othello = (Othello) o;
 		this.setText(token + " : " + othello.getCount(token));
 	}

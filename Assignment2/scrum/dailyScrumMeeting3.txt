@@ -121,7 +121,7 @@ Nov 14,2019
 
 Nov 15,2019
 	What I did yesterday:
-	What I will do today:
+	What I will do today: UserStory 1.15, fix userstory 1.10, redo userstory 1.14, implement Strategy design pattern on move algorithms
 	Obstacles I face:
 
 Nov 16,2019
