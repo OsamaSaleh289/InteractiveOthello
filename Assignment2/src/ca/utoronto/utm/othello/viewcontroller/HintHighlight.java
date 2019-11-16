@@ -1,5 +1,6 @@
 package ca.utoronto.utm.othello.viewcontroller;
 
+import ca.utoronto.utm.othello.model.BetterMoveStrategy;
 import ca.utoronto.utm.othello.model.GreedyMoveStrategy;
 import ca.utoronto.utm.othello.model.Move;
 import ca.utoronto.utm.othello.model.Othello;
@@ -23,8 +24,8 @@ public class HintHighlight extends InnerShadow{
 		
 		this.setOffsetX(0f);
 		this.setOffsetY(0f);
-		this.setWidth(20);
-		this.setHeight(20);
+		this.setWidth(25);
+		this.setHeight(25);
 		this.setBlurType(BlurType.ONE_PASS_BOX);
 	}
 	
@@ -33,10 +34,14 @@ public class HintHighlight extends InnerShadow{
 			this.setColor(null);
 		
 		Move greedyHint = (new GreedyMoveStrategy(this.othello)).getMove();
-		if(this.oc.greedyHintOn && (greedyHint.getRow()==this.row && greedyHint.getCol()==this.col))
-				this.setColor(Color.rgb(222, 2, 2));
+		Move betterHint = (new BetterMoveStrategy(this.othello)).getMove();
+		
+		if(this.oc.betterHintOn && (betterHint.getRow()==this.row && betterHint.getCol()==this.col))
+			this.setColor(Color.rgb(11, 222, 211));
+		else if(this.oc.greedyHintOn && (greedyHint.getRow()==this.row && greedyHint.getCol()==this.col))
+			this.setColor(Color.rgb(222, 2, 2));
 		else if(this.oc.randomHintOn && (this.oc.randomHint.getRow()==this.row && this.oc.randomHint.getCol()==this.col)) 
-				this.setColor(Color.rgb(164, 8, 199));
+			this.setColor(Color.rgb(164, 8, 199));
 		else if(this.othello.inAllMoves(row, col))
 			this.setColor(Color.rgb(67, 209, 6));
 		else

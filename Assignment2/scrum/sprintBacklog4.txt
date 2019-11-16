@@ -49,6 +49,36 @@ a random hint could be selected as well
 
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
+TYPE     : BUG 1.103 : watso166 STATUS : Complete
+NAME     : Hint Fixes
+OWNER    : Katrina Watson
+PRIORITY : (1,2,3)
+ESTIMATE : 3 hours    ACTUAL : 4 hours 
+ISSUE    : 
+Random and greedy hints have graphics that appear checked when the menu item 
+is clicked, and uncheck when clicked again. These checkboxes match the 
+highlight color of the hint. Hints now work for more than just until the 
+user clicks on the screen and now reocurr every turn until the user unchecks
+the box. Greedy and random hints reuse the strategies from Player's 
+MoveStrategies. 1.14 has been redone to use the same highlight method. 
+When the game is over, the user can still click the menu items but nothing
+will highlight on the board. The checkboxes on the menu items will still 
+respond. 
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : BUG 1.081 : watso166 STATUS : Complete
+NAME     : Strategy Design Pattern
+OWNER    : Katrina Watson
+PRIORITY : (1,2,3)
+ESTIMATE : 4 hours    ACTUAL : 6 hours 
+ISSUE    : 
+Player opponents are no longer updated through Othello and unnecessary methods
+and fields in Othello are now gone. Player has the Strategy design pattern
+to set a MoveStrategy which is triggered by the user clicking on one of the 
+three opponent buttons. Unnecessary classes are now deleted instead of 
+commented out. 
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
 TYPE     : USER STORY 1.091 : UTORID : STATUS : Complete 
 NAME     : Othello Timer User Specified Time
 OWNER    : wronadom
@@ -67,16 +97,36 @@ ESTIMATE : (1 hour, 2 hours, 4 hours, 1 day, 2 days, 4 days)    ACTUAL :
 ISSUE    : A user has the ability to undo the last move or moves.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY 1.15 : watso166 : STATUS : Started
+TYPE     : USER STORY 1.15 : watso166 : STATUS : Complete
 NAME     : Better strategy
 OWNER    : Katrina Watson
 PRIORITY : (1,2,3)
-ESTIMATE : (1 hour, 2 hours, 4 hours, 1 day, 2 days, 4 days)    ACTUAL :  
+ESTIMATE : 2 hours    ACTUAL : 3 hours 
 ISSUE    : A user can play the following, improved strategy:
 Choose a corner if available,
-otherwise choose a side if available, otherwise choose a space that
-maximizes the players presence in the middle 4 by 4 square of the board,
+otherwise choose a side if available, 
+otherwise choose a space that maximizes the players presence in the middle 4 by 4 square of the board,
 otherwise choose the location maximizing the movers presence on the board. 
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : BUG 1.104 : watso166 : STATUS : Started
+NAME     : Factory Design Pattern
+OWNER    : Katrina Watson
+PRIORITY : (1,2,3)
+ESTIMATE : 3 hours    ACTUAL :  hours 
+ISSUE    : 
+Hints are now implemented using the factory design pattern to clean up 
+a lot of code. 
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : BUG 1.16 : watso166 : STATUS : NotStarted
+NAME     : Command Design Pattern
+OWNER    : Katrina Watson
+PRIORITY : (1,2,3)
+ESTIMATE : 4 hours    ACTUAL :  hours 
+ISSUE    : 
+Game moves are now implemented using the Command design pattern so that 
+moves can be undone. 
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
 TYPE     : BUG 1.17 : UTORID : STATUS : NotStarted (NotStarted,InProgress, Incomplete,Complete)

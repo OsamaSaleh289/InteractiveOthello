@@ -45,8 +45,9 @@ public class OthelloApplication extends Application {
 		grid.setVgap(5); 
 		grid.setPadding(new Insets(5, 5, 5, 5));
 		
-		RandomHintEventHandler handleRandomHint = new RandomHintEventHandler(oc);
-		GreedyHintEventHandler handleGreedyHint = new GreedyHintEventHandler(oc);
+		HintEventHandler handleRandomHint = new HintEventHandler(oc);
+		HintEventHandler handleGreedyHint = new HintEventHandler(oc);
+		HintEventHandler handleBetterHint = new HintEventHandler(oc);
 		// Create token count text fields
 		p1Count = new TokenCounter(OthelloBoard.P1 + " : "+othello.getCount(OthelloBoard.P1), OthelloBoard.P1);
 		p2Count = new TokenCounter(OthelloBoard.P2 + " : "+othello.getCount(OthelloBoard.P2), OthelloBoard.P2);
@@ -68,13 +69,16 @@ public class OthelloApplication extends Application {
 		popup = new JOptionPane();
 		// A menu for Hint
 		menuBar = new MenuBar();
-		menu = new Menu("AI Hint");
-		RandomHintMenuItem randomMenuItem = new RandomHintMenuItem(oc);
+		menu = new Menu("Hint Menu");
+		HintMenuItem randomMenuItem = new HintMenuItem(oc, "random");
 		randomMenuItem.addEventHandler(ActionEvent.ACTION, handleRandomHint);
 		menu.getItems().add(randomMenuItem);
-		GreedyHintMenuItem greedyMenuItem = new GreedyHintMenuItem(oc);
+		HintMenuItem greedyMenuItem = new HintMenuItem(oc, "greedy");
 		greedyMenuItem.addEventHandler(ActionEvent.ACTION, handleGreedyHint);
 		menu.getItems().add(greedyMenuItem);
+		HintMenuItem betterMenuItem = new HintMenuItem(oc, "better");
+		betterMenuItem.addEventHandler(ActionEvent.ACTION, handleBetterHint);
+		menu.getItems().add(betterMenuItem);
 		menuBar.getMenus().add(menu);
 		
 		
@@ -88,13 +92,19 @@ public class OthelloApplication extends Application {
 		oc.player2.attach(currentPlayerTypeP2);
 		oc.attach(randomMenuItem);
 		oc.attach(greedyMenuItem);
+		oc.attach(betterMenuItem);
 		
 		
 		// CONTROLLERS:
 		// Create buttons to select which opponent to play
 		Button hVsHuman = new Button("Human vs. Human");
+		hVsHuman.setPrefSize(190, 20);
 		Button hVsRandom = new Button("Human vs. Random");
+		hVsRandom.setPrefSize(190, 20);
 		Button hVsGreedy = new Button("Human vs. Greedy");
+		hVsGreedy.setPrefSize(190, 20);
+		Button hVsBetter = new Button("Human vs. Better");
+		hVsBetter.setPrefSize(190, 20);
 
 		// create game board buttons
 		for (int row = 0; row < 8; row++) {
@@ -119,7 +129,8 @@ public class OthelloApplication extends Application {
 		// add opponent select buttons to view
 		grid.add(hVsHuman, 9, 5);
 		grid.add(hVsRandom, 9, 6);
-		grid.add(hVsGreedy, 9, 7);
+		grid.add(hVsGreedy, 10, 5);
+		grid.add(hVsBetter, 10, 6);
 		// add player type trackers to view
 		grid.add(currentPlayerTypeP1, 9, 0);
 		grid.add(currentPlayerTypeP2, 10, 0);
@@ -128,7 +139,7 @@ public class OthelloApplication extends Application {
 		HumanOpponentEventHandler humanOpponentHandler = new HumanOpponentEventHandler(othello, timer, oc);
 		RandomOpponentEventHandler randomOpponentHandler = new RandomOpponentEventHandler(othello, timer, oc);
 		GreedyOpponentEventHandler greedyOpponentHandler = new GreedyOpponentEventHandler(othello, timer, oc);
-		
+		BetterOpponentEventHandler betterOpponentHandler = new BetterOpponentEventHandler(othello, timer, oc);
 		
 		// VIEW->CONTROLLER hookup
 		
@@ -138,6 +149,7 @@ public class OthelloApplication extends Application {
 		hVsHuman.addEventHandler(ActionEvent.ACTION, humanOpponentHandler);
 		hVsRandom.addEventHandler(ActionEvent.ACTION, randomOpponentHandler);
 		hVsGreedy.addEventHandler(ActionEvent.ACTION, greedyOpponentHandler);
+		hVsBetter.addEventHandler(ActionEvent.ACTION, betterOpponentHandler);
 		
 		
 		// SCENE

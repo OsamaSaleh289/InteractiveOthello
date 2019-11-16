@@ -55,7 +55,7 @@ instead of displaying X and O as players, the users see
 appropriate black/white tokens.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY 1.07 : watso166 : STATUS : Complete (NotStarted,InProgress, Incomplete,Complete)
+TYPE     : USER STORY 1.07 : watso166 : STATUS : Complete
 NAME     : Opponent Chooser GUI Selection
 OWNER    : Katrina Watson
 PRIORITY : (1,2,3)
@@ -90,7 +90,7 @@ This needs to be fixed and also observer/observable needs to be properly
 implemented in the correct classes. 
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : BUG 1.079 : UTORID : watso166 : STATUS : Complete
+TYPE     : BUG 1.079 : watso166 : STATUS : Complete
 NAME     : Make the code MVC
 OWNER    : Katrina Watson
 PRIORITY : (1,2,3)
@@ -100,7 +100,7 @@ MVC so I had to go back and redo a ton of code and create/fix/delete
 several classes.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY 1.08 : UTORID : watso166 : Complete
+TYPE     : USER STORY 1.08 : watso166 : STATUS : Complete
 NAME     : Opponent Chooser Implementation
 OWNER    : Katrina Watson
 PRIORITY : (1,2,3)

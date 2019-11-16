@@ -40,7 +40,7 @@ public class Othello extends Observable {
 	/*
 	 * return all moves for the Player who's turn it is
 	 */
-	private ArrayList<Move> allMoves() {
+	public ArrayList<Move> allMoves() {
 		ArrayList<Move> moves = new ArrayList<Move>();
 		for (int row = 0; row < Othello.DIMENSION; row++) {
 			for (int col = 0; col < Othello.DIMENSION; col++) {
@@ -134,6 +134,15 @@ public class Othello extends Observable {
 	 */
 	public int getCount(char player) {
 		return board.getCount(player);
+	}
+	
+	/**
+	 * 
+	 * @param player P1 or P2
+	 * @return the number of tokens for player on the board
+	 */
+	public int getCount4x4(char player) {
+		return board.getCount4x4(player);
 	}
 
 	/**

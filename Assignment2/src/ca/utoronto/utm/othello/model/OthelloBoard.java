@@ -1,5 +1,7 @@
 package ca.utoronto.utm.othello.model;
 
+import java.util.ArrayList;
+
 /**
  * Keep track of all of the tokens on the board. This understands some
  * interesting things about an Othello board, what the board looks like at the
@@ -240,6 +242,27 @@ public class OthelloBoard {
 		for (int row = 0; row < this.dim; row++) {
 			for (int col = 0; col < this.dim; col++) {
 				if (board[row][col] == player)
+					count++;
+			}
+		}
+		return count;
+	}
+	
+	/**
+	 * 
+	 * @param player P1 or P2
+	 * @return the number of tokens on the board for player
+	 */
+	public int getCount4x4(char player) {
+		int count = 0;
+		ArrayList<Integer> centre = new ArrayList<Integer>();
+		centre.add(2);
+		centre.add(3);
+		centre.add(4);
+		centre.add(5);
+		for (int row = 0; row < this.dim; row++) {
+			for (int col = 0; col < this.dim; col++) {
+				if (board[row][col] == player && centre.contains(row) && centre.contains(col))
 					count++;
 			}
 		}

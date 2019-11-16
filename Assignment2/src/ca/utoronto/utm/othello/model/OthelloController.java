@@ -12,6 +12,7 @@ public class OthelloController extends Observable implements Observer {
 	public boolean randomHintOn = false;
 	public Move randomHint = null;
 	public boolean greedyHintOn = false;
+	public boolean betterHintOn = false;
 	
 	/**
 	 * Constructs a new OthelloController with a new Othello game, ready to play
@@ -45,6 +46,18 @@ public class OthelloController extends Observable implements Observer {
 			this.greedyHintOn = false;
 		} else {
 			this.greedyHintOn = true;
+		}
+		this.notifyObservers();
+	}
+	
+	/**
+	 * 
+	 */
+	public void toggleBetterHint() {
+		if(this.betterHintOn) {
+			this.betterHintOn = false;
+		} else {
+			this.betterHintOn = true;
 		}
 		this.notifyObservers();
 	}

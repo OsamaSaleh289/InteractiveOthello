@@ -23,6 +23,8 @@ public class Player extends Observable{
 			this.setStrategyName("Random");
 		else if(strategy instanceof GreedyMoveStrategy) 
 			this.setStrategyName("Greedy");
+		else if(strategy instanceof BetterMoveStrategy) 
+			this.setStrategyName("Better");
 	}
 	
 	public void setStrategyName(String name) {

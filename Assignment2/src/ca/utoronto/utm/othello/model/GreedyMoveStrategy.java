@@ -11,13 +11,13 @@ public class GreedyMoveStrategy  implements MoveStrategy{
 		if(this.othello.isGameOver())
 			return new Move(-1,-1);
 		
-		Othello othelloCopy = othello.copy();
-		Move bestMove = new Move(0, 0);
+		Othello othelloCopy = this.othello.copy();
+		Move bestMove = new Move(0, 0); 
 		int bestMoveCount = othelloCopy.getCount(this.othello.getWhosTurn());
 		
 		for (int row = 0; row < Othello.DIMENSION; row++) {
 			for (int col = 0; col < Othello.DIMENSION; col++) {
-				othelloCopy = othello.copy();
+				othelloCopy = this.othello.copy();
 				if (othelloCopy.move(row, col) && othelloCopy.getCount(this.othello.getWhosTurn()) > bestMoveCount) {
 					bestMoveCount = othelloCopy.getCount(this.othello.getWhosTurn());
 					bestMove = new Move(row, col);
