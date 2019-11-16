@@ -19,12 +19,12 @@ public class HumanOpponentEventHandler implements EventHandler<ActionEvent> {
 	}
 	
 	public void handle(ActionEvent event) {
-		
+		TimeQuery query = new TimeQuery(timer);
 		if(this.othello.getWhosTurn()==OthelloBoard.P1)
 			this.oc.player2.setStrategy(new HumanMoveStrategy(this.othello));
 		else if(this.othello.getWhosTurn()==OthelloBoard.P2)
 			this.oc.player1.setStrategy(new HumanMoveStrategy(this.othello));
-			
+		query.run();	
 		timer.startTimer();
 	}
 }
