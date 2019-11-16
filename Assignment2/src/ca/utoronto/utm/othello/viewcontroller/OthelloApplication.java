@@ -102,9 +102,15 @@ public class OthelloApplication extends Application {
 		Button hVsRandom = new Button("Human vs. Random");
 		hVsRandom.setPrefSize(190, 20);
 		Button hVsGreedy = new Button("Human vs. Greedy");
+<<<<<<< HEAD
 		hVsGreedy.setPrefSize(190, 20);
 		Button hVsBetter = new Button("Human vs. Better");
 		hVsBetter.setPrefSize(190, 20);
+=======
+		
+		//Setup the restart button
+		Button restart = new Button("Restart");
+>>>>>>> b44216d57a70a9ffb5e26aa2ba3983d0f6e77e82
 
 		// create game board buttons
 		for (int row = 0; row < 8; row++) {
@@ -126,6 +132,8 @@ public class OthelloApplication extends Application {
 		grid.add(status, 9, 2, 2, 1);
 		// Add timer to view
 		grid.add(timedisplay, 9, 3, 2, 1);
+		//Add the restart button to the view
+		grid.add(restart, 9, 4);
 		// add opponent select buttons to view
 		grid.add(hVsHuman, 9, 5);
 		grid.add(hVsRandom, 9, 6);
@@ -139,8 +147,14 @@ public class OthelloApplication extends Application {
 		HumanOpponentEventHandler humanOpponentHandler = new HumanOpponentEventHandler(othello, timer, oc);
 		RandomOpponentEventHandler randomOpponentHandler = new RandomOpponentEventHandler(othello, timer, oc);
 		GreedyOpponentEventHandler greedyOpponentHandler = new GreedyOpponentEventHandler(othello, timer, oc);
+<<<<<<< HEAD
 		BetterOpponentEventHandler betterOpponentHandler = new BetterOpponentEventHandler(othello, timer, oc);
 		
+=======
+		
+		//Restart event handler creation
+		RestartEventHandler restartHandler = new RestartEventHandler(othello);
+>>>>>>> b44216d57a70a9ffb5e26aa2ba3983d0f6e77e82
 		// VIEW->CONTROLLER hookup
 		
 		
@@ -151,7 +165,8 @@ public class OthelloApplication extends Application {
 		hVsGreedy.addEventHandler(ActionEvent.ACTION, greedyOpponentHandler);
 		hVsBetter.addEventHandler(ActionEvent.ACTION, betterOpponentHandler);
 		
-		
+		//Add the restart handler to our button
+		restart.addEventHandler(ActionEvent.ACTION, restartHandler);
 		// SCENE
 		BorderPane root = new BorderPane();
 		root.setTop(menuBar);
