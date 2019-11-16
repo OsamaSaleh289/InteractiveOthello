@@ -147,9 +147,9 @@ Nov 14,2019
 	Obstacles I face: Never created a pop-up window in Java before; master JOptionPane
 
 Nov 15,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Completed US 1.091 - my biggest problem was I tried to use Swing components for what is essentially a javafx application
+	What I will do today: Start US 1.12, with Command design pattern hopefully
+	Obstacles I face: Not much time left - had a lot to do
 
 Nov 16,2019
 	What I did yesterday:

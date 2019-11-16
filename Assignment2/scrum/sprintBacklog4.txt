@@ -61,7 +61,7 @@ After a player makes a move the timer switches off for the player and on for the
 --------------------------------------------------------------------------
 TYPE     : USER STORY 1.12 : UTORID : STATUS : NotStarted (NotStarted,InProgress, Incomplete,Complete)
 NAME     : Undo
-OWNER    : 
+OWNER    : wronadom
 PRIORITY : (1,2,3)
 ESTIMATE : (1 hour, 2 hours, 4 hours, 1 day, 2 days, 4 days)    ACTUAL :  
 ISSUE    : A user has the ability to undo the last move or moves.
