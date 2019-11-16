@@ -39,6 +39,7 @@ public class BoardSquare extends Button implements Observer{
 		if(hintHighlight.getColor()!=null && !this.othello.isGameOver()) {
 			this.setEffect(hintHighlight);
 		}
+		
 		//We reset the color of the coloured tokens if a different move has been made
 		if (othello.getCount('X') + othello.getCount('O') > currNumTokens) {
 			this.setStyle(""); 
@@ -64,6 +65,10 @@ public class BoardSquare extends Button implements Observer{
 			prevTokenValue = currTokenValue;
 			currNumTokens = othello.getCount('X') + othello.getCount('O');	
 		}	
+	}
+
+	public char getTokenValue() {
+		return this.currTokenValue;
 	}
 
 }

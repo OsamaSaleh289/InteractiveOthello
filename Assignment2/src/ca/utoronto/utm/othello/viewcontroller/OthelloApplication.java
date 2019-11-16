@@ -1,7 +1,5 @@
 package ca.utoronto.utm.othello.viewcontroller;
 
-import javax.swing.JOptionPane;
-
 import ca.utoronto.utm.othello.model.*;
 
 import javafx.application.Application;
@@ -37,7 +35,6 @@ public class OthelloApplication extends Application {
 		TimeTracker timer;
 		Menu menu;
 		MenuBar menuBar;
-		JOptionPane popup;
 	
 		// GUI grid to add all buttons and text views onto
 		GridPane grid = new GridPane(); // CONTROLLER
@@ -66,7 +63,7 @@ public class OthelloApplication extends Application {
 		timedisplay = new TimerDisplay(timer);
 		timer.attach(timedisplay);
 		timedisplay.setEditable(false);
-		popup = new JOptionPane();
+
 		// A menu for Hint
 		menuBar = new MenuBar();
 		menu = new Menu("Hint Menu");
@@ -102,15 +99,12 @@ public class OthelloApplication extends Application {
 		Button hVsRandom = new Button("Human vs. Random");
 		hVsRandom.setPrefSize(190, 20);
 		Button hVsGreedy = new Button("Human vs. Greedy");
-<<<<<<< HEAD
 		hVsGreedy.setPrefSize(190, 20);
 		Button hVsBetter = new Button("Human vs. Better");
 		hVsBetter.setPrefSize(190, 20);
-=======
 		
 		//Setup the restart button
 		Button restart = new Button("Restart");
->>>>>>> b44216d57a70a9ffb5e26aa2ba3983d0f6e77e82
 
 		// create game board buttons
 		for (int row = 0; row < 8; row++) {
@@ -147,14 +141,12 @@ public class OthelloApplication extends Application {
 		HumanOpponentEventHandler humanOpponentHandler = new HumanOpponentEventHandler(othello, timer, oc);
 		RandomOpponentEventHandler randomOpponentHandler = new RandomOpponentEventHandler(othello, timer, oc);
 		GreedyOpponentEventHandler greedyOpponentHandler = new GreedyOpponentEventHandler(othello, timer, oc);
-<<<<<<< HEAD
 		BetterOpponentEventHandler betterOpponentHandler = new BetterOpponentEventHandler(othello, timer, oc);
-		
-=======
-		
+				
 		//Restart event handler creation
 		RestartEventHandler restartHandler = new RestartEventHandler(othello);
->>>>>>> b44216d57a70a9ffb5e26aa2ba3983d0f6e77e82
+		
+		
 		// VIEW->CONTROLLER hookup
 		
 		
