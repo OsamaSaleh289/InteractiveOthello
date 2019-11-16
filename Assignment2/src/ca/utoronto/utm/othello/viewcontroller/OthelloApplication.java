@@ -95,6 +95,9 @@ public class OthelloApplication extends Application {
 		Button hVsHuman = new Button("Human vs. Human");
 		Button hVsRandom = new Button("Human vs. Random");
 		Button hVsGreedy = new Button("Human vs. Greedy");
+		
+		//Setup the restart button
+		Button restart = new Button("Restart");
 
 		// create game board buttons
 		for (int row = 0; row < 8; row++) {
@@ -116,6 +119,8 @@ public class OthelloApplication extends Application {
 		grid.add(status, 9, 2, 2, 1);
 		// Add timer to view
 		grid.add(timedisplay, 9, 3, 2, 1);
+		//Add the restart button to the view
+		grid.add(restart, 9, 4);
 		// add opponent select buttons to view
 		grid.add(hVsHuman, 9, 5);
 		grid.add(hVsRandom, 9, 6);
@@ -129,7 +134,8 @@ public class OthelloApplication extends Application {
 		RandomOpponentEventHandler randomOpponentHandler = new RandomOpponentEventHandler(othello, timer, oc);
 		GreedyOpponentEventHandler greedyOpponentHandler = new GreedyOpponentEventHandler(othello, timer, oc);
 		
-		
+		//Restart event handler creation
+		RestartEventHandler restartHandler = new RestartEventHandler(othello);
 		// VIEW->CONTROLLER hookup
 		
 		
@@ -139,7 +145,8 @@ public class OthelloApplication extends Application {
 		hVsRandom.addEventHandler(ActionEvent.ACTION, randomOpponentHandler);
 		hVsGreedy.addEventHandler(ActionEvent.ACTION, greedyOpponentHandler);
 		
-		
+		//Add the restart handler to our button
+		restart.addEventHandler(ActionEvent.ACTION, restartHandler);
 		// SCENE
 		BorderPane root = new BorderPane();
 		root.setTop(menuBar);
