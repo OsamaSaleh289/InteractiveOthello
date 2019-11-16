@@ -173,4 +173,13 @@ public class Othello extends Observable {
 		o.whosTurn = this.whosTurn;
 		return o;
 	}
+	
+	public void resetOthello() {
+		board = new OthelloBoard(Othello.DIMENSION);
+		whosTurn = OthelloBoard.P1;
+		numMoves = 0;
+		this.notifyObservers();
+		
+		
+	}
 }

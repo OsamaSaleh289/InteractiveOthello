@@ -126,39 +126,48 @@ Nov 7,2019
 	Obstacles I face: No major obstacles.
 
 Nov 8,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Started US1.13 and finished studying for my tests.
+	What I will do today: Finish US1.11. Expecting US1.11 to take a little bit more time.
+	Obstacles I face: Not really sure what US1.13 is asking
 
 Nov 9,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Spent most of the time researching animations in JavaFX and how to implement them.
+	What I will do today: Finish US1.11 since I didn't get to work on it much
+	Obstacles I face: Using animations
 
 Nov 10,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Finished US1.11 and now I fully understand what US1.13 is asking
+	(I posted on the discussion board).
+	What I will do today: Work more on US1.13. Brainstorm how I want to implement the animation
+	Obstacles I face: Figuring out exactly how I'm going to present my animation
 
 Nov 11,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Struggling to figure out ways to implement US1.13 using MVC. I figured out
+	the animation I want though and will confirm it in office hours.
+	What I will do today: Confirm animation I want in office hours. Figure out different strategies to implement the animation using MVC. I'm 
+	trying to imlement a fading animation which colors the boxes that were changed and the color 
+	then fades away.
+	Obstacles I face: Implementing the description above using MVC.
 
 Nov 12,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Confirmed my animation in office hours and tired different ways of implementation
+	but few corresponded to an MVC pattern
+	What I will do today: I figured out a strategy to implement this user story based on saving the token
+	value in the observer for each board square and checking if it changes. I will try implmenting it 
+	that way
+	Obstacles I face: Getting the board to reset the colour after the animation. 
 
 Nov 13,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: I got the animation to work its just that the coloured squares do not 
+	reset after the next move.
+	What I will do today: Will try and fix that issue and make the colours reset after every move
+	Obstacles I face: Reseting the animation
 
 Nov 14,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Tried different ways of getting the animation to reset but was unsuccessful
+	What I will do today: Get the animated boxes to reset and assign a differnet animation colour to 
+	each player
+	Obstacles I face: Combining the observer design pattern with the animation implmentation
 
 Nov 15,2019
 	What I did yesterday:
