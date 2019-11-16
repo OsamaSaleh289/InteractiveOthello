@@ -27,6 +27,7 @@ public class Othello extends Observable {
 	private OthelloBoard board = new OthelloBoard(Othello.DIMENSION);
 	private char whosTurn = OthelloBoard.P1;
 	private int numMoves = 0;
+	private ArrayList<Othello> boards = new ArrayList<Othello>();
 	
 	/**
 	 * return P1,P2 or EMPTY depending on who moves next.
@@ -121,9 +122,26 @@ public class Othello extends Observable {
 				this.whosTurn = allowedMove;
 			this.numMoves++;
 			this.notifyObservers();
+			boards.add(this.copy());
 			return true;
 		} else {
 			return false;
+		}
+	}
+	public void undo() {
+		if (boards.size() == 1) {
+			boards.remove(boards.size()-1);
+			this.resetOthello();
+		}
+		else if (boards.size() != 0) {
+		boards.remove(boards.size()-1);
+		Othello current = boards.get(boards.size()-1);
+		board = current.board;
+		whosTurn = current.whosTurn;
+		numMoves = current.numMoves;
+		this.notifyObservers();
+		
+		
 		}
 	}
 

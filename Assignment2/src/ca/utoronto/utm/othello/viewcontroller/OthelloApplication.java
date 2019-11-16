@@ -103,8 +103,9 @@ public class OthelloApplication extends Application {
 		Button hVsBetter = new Button("Human vs. Better");
 		hVsBetter.setPrefSize(190, 20);
 		
-		//Setup the restart button
+		//Setup the restart and undo buttons
 		Button restart = new Button("Restart");
+		Button undo = new Button("Undo");
 
 		// create game board buttons
 		for (int row = 0; row < 8; row++) {
@@ -128,6 +129,7 @@ public class OthelloApplication extends Application {
 		grid.add(timedisplay, 9, 3, 2, 1);
 		//Add the restart button to the view
 		grid.add(restart, 9, 4);
+		grid.add(undo, 10, 4);
 		// add opponent select buttons to view
 		grid.add(hVsHuman, 9, 5);
 		grid.add(hVsRandom, 9, 6);
@@ -143,8 +145,9 @@ public class OthelloApplication extends Application {
 		GreedyOpponentEventHandler greedyOpponentHandler = new GreedyOpponentEventHandler(othello, timer, oc);
 		BetterOpponentEventHandler betterOpponentHandler = new BetterOpponentEventHandler(othello, timer, oc);
 				
-		//Restart event handler creation
+		//Restart and undo event handler creation
 		RestartEventHandler restartHandler = new RestartEventHandler(othello);
+		UndoInvoker undoInvoker = new UndoInvoker(othello);
 		
 		
 		// VIEW->CONTROLLER hookup
@@ -157,8 +160,9 @@ public class OthelloApplication extends Application {
 		hVsGreedy.addEventHandler(ActionEvent.ACTION, greedyOpponentHandler);
 		hVsBetter.addEventHandler(ActionEvent.ACTION, betterOpponentHandler);
 		
-		//Add the restart handler to our button
+		//Add the restart and undo handler to our button
 		restart.addEventHandler(ActionEvent.ACTION, restartHandler);
+		undo.addEventHandler(ActionEvent.ACTION, undoInvoker);
 		// SCENE
 		BorderPane root = new BorderPane();
 		root.setTop(menuBar);
