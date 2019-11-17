@@ -2,6 +2,9 @@ package ca.utoronto.utm.othello.model;
 
 import java.util.ArrayList;
 
+import ca.utoronto.utm.othello.viewcontroller.MoveVisitor;
+import ca.utoronto.utm.othello.viewcontroller.Visitor;
+
 /**
  * Keep track of all of the tokens on the board. This understands some
  * interesting things about an Othello board, what the board looks like at the
@@ -33,6 +36,11 @@ public class OthelloBoard {
 		this.board[mid - 1][mid - 1] = this.board[mid][mid] = P1;
 		this.board[mid][mid - 1] = this.board[mid - 1][mid] = P2;
 	}
+	
+	public int getDimensions() {
+		
+		return this.dim;
+	}
 
 	/**
 	 * 
@@ -60,6 +68,11 @@ public class OthelloBoard {
 		else
 			return EMPTY;
 	}
+	
+	public char[][] getBoardList() {
+		return board;
+		
+	}
 
 	public int getDimension() {
 		return this.dim;
@@ -85,7 +98,7 @@ public class OthelloBoard {
 	 * @return whether (row,col) is a position on the board. Example: (6,12) is not
 	 *         a position on the board with dim 8x8.
 	 */
-	private boolean validCoordinate(int row, int col) {
+	public boolean validCoordinate(int row, int col) {
 		return 0 <= row && row < this.dim && 0 <= col && col < this.dim;
 	}
 
@@ -104,7 +117,7 @@ public class OthelloBoard {
 	 *         a valid move in this one direction, that is, EMPTY or the end of the
 	 *         board is reached before seeing a player token.
 	 */
-	private int flip(int row, int col, int drow, int dcol, char player) {
+	public int flip(int row, int col, int drow, int dcol, char player) {
 		if (!validCoordinate(row, col))
 			return -1;
 		if (this.board[row][col] == EMPTY)
@@ -209,27 +222,8 @@ public class OthelloBoard {
 	 * @return true if player moved successfully at (row,col), false otherwise
 	 */
 	public boolean move(int row, int col, char player) {
-		if (!validCoordinate(row, col))
-			return false;
-		if (this.board[row][col] != EMPTY)
-			return false;
-
-		int numChangedTotal = 0;
-
-		for (int drow = -1; drow <= 1; drow++) {
-			for (int dcol = -1; dcol <= 1; dcol++) {
-				if (drow == 0 && dcol == 0)
-					continue;
-				int numChanged = flip(row + drow, col + dcol, drow, dcol, player);
-				if (numChanged >= 0)
-					numChangedTotal += numChanged;
-			}
-		}
-		if (numChangedTotal > 0) {
-			this.board[row][col] = player;
-			return true;
-		}
-		return false;
+		MoveVisitor moveVisitor = new MoveVisitor();
+		return moveVisitor.visit(this, row, col, player);
 	}
 
 	/**
@@ -237,7 +231,7 @@ public class OthelloBoard {
 	 * @param player P1 or P2
 	 * @return the number of tokens on the board for player
 	 */
-	public int getCount(char player) {
+	/*public int getCount(char player) {
 		int count = 0;
 		for (int row = 0; row < this.dim; row++) {
 			for (int col = 0; col < this.dim; col++) {
@@ -246,14 +240,28 @@ public class OthelloBoard {
 			}
 		}
 		return count;
-	}
+	}*/
 	
 	/**
 	 * 
 	 * @param player P1 or P2
 	 * @return the number of tokens on the board for player
 	 */
-	public int getCount4x4(char player) {
+	public void setCoordinate(int row, int col, char player) {
+		board[row][col] = player;
+		
+		
+	}
+	
+	
+	
+	
+	/**
+	 * 
+	 * @param player P1 or P2
+	 * @return the number of tokens on the board for player
+	 */
+	/*public int getCount4x4(char player) {
 		int count = 0;
 		ArrayList<Integer> centre = new ArrayList<Integer>();
 		centre.add(2);
@@ -268,4 +276,9 @@ public class OthelloBoard {
 		}
 		return count;
 	}
+	
+	public void accept(Visitor v) {
+		v.visit(this);
+		
+	}*/
 }

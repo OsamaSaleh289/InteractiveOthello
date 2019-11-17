@@ -1,6 +1,11 @@
 package ca.utoronto.utm.othello.model;
 
+import ca.utoronto.utm.othello.viewcontroller.FourxFour_TokenCountVisitor;
+import ca.utoronto.utm.othello.viewcontroller.MoveVisitor;
 import ca.utoronto.utm.othello.viewcontroller.OthelloApplication;
+import ca.utoronto.utm.othello.viewcontroller.TokenCountVisitor;
+import ca.utoronto.utm.othello.viewcontroller.TokenVisitor;
+import ca.utoronto.utm.othello.viewcontroller.Visitor;
 import ca.utoronto.utm.util.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -75,7 +80,24 @@ public class Othello extends Observable {
 	 * @return the token at position row, col.
 	 */
 	public char getToken(int row, int col) {
-		return this.board.get(row, col);
+		TokenVisitor tokenVisitor = new TokenVisitor();
+		return tokenVisitor.visit(board, row, col);
+	}
+	/**
+	 * 
+	 * @return change number of moves committed
+	 */
+	public void incrementNumMoves() {
+		numMoves++;
+		
+	}
+	/**
+	 * @param num
+	 * @return change number of moves committed
+	 */
+	public void setWhosTurn(int num) {
+		numMoves = num;
+		
 	}
 	
 	/**
@@ -116,7 +138,9 @@ public class Othello extends Observable {
 	 * @return whether the move was successfully made.
 	 */
 	public boolean move(int row, int col) {
-		if (this.board.move(row, col, this.whosTurn)) {
+		MoveVisitor boardVisitor = new MoveVisitor();
+		//Visitor that makes visits the board and attempts to make a move
+		if (boardVisitor.visit(board, row, col, this.whosTurn)) {
 			this.whosTurn = OthelloBoard.otherPlayer(this.whosTurn);
 			char allowedMove = board.hasMove();
 			if (allowedMove != OthelloBoard.BOTH)
@@ -151,7 +175,8 @@ public class Othello extends Observable {
 	 * @return the number of tokens for player on the board
 	 */
 	public int getCount(char player) {
-		return board.getCount(player);
+		TokenCountVisitor tokenCounter = new TokenCountVisitor();
+		return tokenCounter.visit(board, player);
 	}
 	
 	/**
@@ -160,7 +185,8 @@ public class Othello extends Observable {
 	 * @return the number of tokens for player on the board
 	 */
 	public int getCount4x4(char player) {
-		return board.getCount4x4(player);
+		FourxFour_TokenCountVisitor fourBYfourcounter = new FourxFour_TokenCountVisitor();
+		return fourBYfourcounter.visit(board, player);
 	}
 
 	/**
@@ -223,4 +249,6 @@ public class Othello extends Observable {
 		numMoves = 0;
 		this.notifyObservers();
 	}
+	
+	
 }
