@@ -152,7 +152,7 @@ ISSUE    : Use the factory and strategy design pattern to implement the differen
 game opponents. 
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : BUG 1.2 : chenj628 : STATUS : NotStarted (NotStarted,InProgress, Incomplete,Complete)
+TYPE     : BUG 9.99 : chenj628 : STATUS : NotStarted (NotStarted,InProgress, Incomplete,Complete)
 NAME     : Architecture Document
 OWNER    : 
 PRIORITY : (1,2,3)
