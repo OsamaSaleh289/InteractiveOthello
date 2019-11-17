@@ -9,7 +9,7 @@ import javafx.scene.layout.GridPane;
 
 public class MoveAttemptEventHandler extends Observable implements EventHandler<ActionEvent> {
 	private Othello othello;
-
+	
 	MoveAttemptEventHandler(Othello othello) {
 		this.othello = othello;
 	}
@@ -21,6 +21,6 @@ public class MoveAttemptEventHandler extends Observable implements EventHandler<
 		int col = GridPane.getColumnIndex(button);
 
 		othello.move(row,col);
-		this.notifyObservers();
+		//this.notifyObservers();
 	}
 }

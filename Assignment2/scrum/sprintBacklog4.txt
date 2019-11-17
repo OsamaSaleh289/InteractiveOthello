@@ -119,14 +119,15 @@ Hints are now implemented using the factory design pattern to clean up
 a lot of code. 
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : BUG 1.16 : watso166 : STATUS : NotStarted
-NAME     : Command Design Pattern
+TYPE     : BUG 1.131 : watso166 : STATUS : Started
+NAME     : Animation
 OWNER    : Katrina Watson
 PRIORITY : (1,2,3)
-ESTIMATE : 4 hours    ACTUAL :  hours 
+ESTIMATE : 3 hours    ACTUAL :  hours 
 ISSUE    : 
-Game moves are now implemented using the Command design pattern so that 
-moves can be undone. 
+Javafx animation implemented using animation, player can now only make 
+a move when it's their turn, there is now a delay between animation and 
+AI turn.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
 TYPE     : BUG 1.17 : UTORID : STATUS : NotStarted (NotStarted,InProgress, Incomplete,Complete)
@@ -140,15 +141,6 @@ visitor design pattern on the OthelloBoard and rewrite code using othello
 and othello board to now create visitors and use them as appropriate.
 
 NOTE: Some private methods could be removed as a result of this.
---------------------------------------------------------------------------
---------------------------------------------------------------------------
-TYPE     : BUG 1.19 : watso166 : STATUS : NotStarted 
-NAME     : Use Visitor for Othello board
-OWNER    : Katrina Watson
-PRIORITY : (1,2,3)
-ESTIMATE : (1 hour, 2 hours, 4 hours, 1 day, 2 days, 4 days)    ACTUAL :  
-ISSUE    : Use the factory and strategy design pattern to implement the different 
-game opponents. 
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
 TYPE     : BUG 9.99 : UTORID : STATUS : NotStarted (NotStarted,InProgress, Incomplete,Complete)

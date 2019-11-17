@@ -24,9 +24,6 @@ public class OthelloController extends Observable implements Observer {
 		this.player2 = new Player(this.othello, OthelloBoard.P2);
 	}
 
-	/**
-	 * 
-	 */
 	public void toggleRandomHint() {
 		if(this.randomHintOn) {
 			this.randomHintOn = false;
@@ -37,10 +34,7 @@ public class OthelloController extends Observable implements Observer {
 		}
 		this.notifyObservers();
 	}
-	
-	/**
-	 * 
-	 */
+
 	public void toggleGreedyHint() {
 		if(this.greedyHintOn) {
 			this.greedyHintOn = false;
@@ -49,10 +43,7 @@ public class OthelloController extends Observable implements Observer {
 		}
 		this.notifyObservers();
 	}
-	
-	/**
-	 * 
-	 */
+
 	public void toggleBetterHint() {
 		if(this.betterHintOn) {
 			this.betterHintOn = false;
@@ -63,12 +54,12 @@ public class OthelloController extends Observable implements Observer {
 	}
 	
 	public void play() {
-		if (!othello.isGameOver()) {
+		if (!othello.isGameOver()) {			
 			if(this.randomHintOn) {
 				this.randomHint = (new RandomMoveStrategy(this.othello)).getMove();
 			}
 
-			Move move = null;
+			/*Move move = null;
 			char whosTurn = othello.getWhosTurn();
 			
 			if(whosTurn==OthelloBoard.P1)move = player1.getMove();
@@ -76,7 +67,7 @@ public class OthelloController extends Observable implements Observer {
 
 			if (move != null) {
 				othello.move(move.getRow(), move.getCol());
-			}
+			}*/
 		}
 	}
 
