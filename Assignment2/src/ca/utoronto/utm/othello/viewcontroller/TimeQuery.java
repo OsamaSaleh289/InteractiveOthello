@@ -18,6 +18,7 @@ public class TimeQuery {
 		TextInputDialog dialogp2 = new TextInputDialog();
 		dialogp2.setTitle("");
 		dialogp2.setHeaderText("Please enter the time (in minutes) for Player 2");
+		dialogp2.setGraphic(null);
 		Optional<String> result2 = dialogp2.showAndWait();
 		result2.ifPresent(time -> {try {int p2time = Integer.parseInt(time);TimeTracker.setMinutesP2(p2time);} catch(Exception e) {
 			System.out.println("invalid, time must be an integer");}

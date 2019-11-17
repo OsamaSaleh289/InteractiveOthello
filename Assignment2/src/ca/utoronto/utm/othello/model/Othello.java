@@ -165,6 +165,16 @@ public class Othello extends Observable {
 			board = current.board;
 			whosTurn = current.whosTurn;
 			numMoves = current.numMoves;
+			if (whosTurn == player1.player) {
+				if (player1.strategyName != "Human") {
+					this.undo();
+				}
+			}
+			else if (whosTurn == player2.player) {
+				if (player2.strategyName != "Human") {
+					this.undo();
+				}
+			}
 			this.notifyObservers();		
 		}
 	}
