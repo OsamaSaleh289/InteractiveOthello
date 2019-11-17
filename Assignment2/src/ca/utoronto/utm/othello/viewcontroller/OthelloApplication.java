@@ -42,9 +42,6 @@ public class OthelloApplication extends Application {
 		grid.setVgap(5); 
 		grid.setPadding(new Insets(5, 5, 5, 5));
 		
-		HintEventHandler handleRandomHint = new HintEventHandler(oc);
-		HintEventHandler handleGreedyHint = new HintEventHandler(oc);
-		HintEventHandler handleBetterHint = new HintEventHandler(oc);
 		// Create token count text fields
 		p1Count = new TokenCounter(OthelloBoard.P1 + " : "+othello.getCount(OthelloBoard.P1), OthelloBoard.P1);
 		p2Count = new TokenCounter(OthelloBoard.P2 + " : "+othello.getCount(OthelloBoard.P2), OthelloBoard.P2);
@@ -68,19 +65,16 @@ public class OthelloApplication extends Application {
 		menuBar = new MenuBar();
 		menu = new Menu("Hint Menu");
 		HintMenuItem randomMenuItem = new HintMenuItem(oc, "random");
-		randomMenuItem.addEventHandler(ActionEvent.ACTION, handleRandomHint);
 		menu.getItems().add(randomMenuItem);
 		HintMenuItem greedyMenuItem = new HintMenuItem(oc, "greedy");
-		greedyMenuItem.addEventHandler(ActionEvent.ACTION, handleGreedyHint);
 		menu.getItems().add(greedyMenuItem);
 		HintMenuItem betterMenuItem = new HintMenuItem(oc, "better");
-		betterMenuItem.addEventHandler(ActionEvent.ACTION, handleBetterHint);
 		menu.getItems().add(betterMenuItem);
 		menuBar.getMenus().add(menu);
 		
 		
 		// MODEL->VIEW hookup
-		othello.attach(oc);
+		//othello.attach(oc);
 		othello.attach(p1Count);
 		othello.attach(p2Count);
 		othello.attach(status);
@@ -144,7 +138,14 @@ public class OthelloApplication extends Application {
 		RandomOpponentEventHandler randomOpponentHandler = new RandomOpponentEventHandler(othello, timer, oc);
 		GreedyOpponentEventHandler greedyOpponentHandler = new GreedyOpponentEventHandler(othello, timer, oc);
 		BetterOpponentEventHandler betterOpponentHandler = new BetterOpponentEventHandler(othello, timer, oc);
-				
+		
+		HintEventHandler handleRandomHint = new HintEventHandler(oc);
+		HintEventHandler handleGreedyHint = new HintEventHandler(oc);
+		HintEventHandler handleBetterHint = new HintEventHandler(oc);
+		randomMenuItem.addEventHandler(ActionEvent.ACTION, handleRandomHint);
+		greedyMenuItem.addEventHandler(ActionEvent.ACTION, handleGreedyHint);
+		betterMenuItem.addEventHandler(ActionEvent.ACTION, handleBetterHint);
+		
 		//Restart and undo event handler creation
 		RestartEventHandler restartHandler = new RestartEventHandler(othello);
 		UndoInvoker undoInvoker = new UndoInvoker(othello);
@@ -163,6 +164,8 @@ public class OthelloApplication extends Application {
 		//Add the restart and undo handler to our button
 		restart.addEventHandler(ActionEvent.ACTION, restartHandler);
 		undo.addEventHandler(ActionEvent.ACTION, undoInvoker);
+		
+		
 		// SCENE
 		BorderPane root = new BorderPane();
 		root.setTop(menuBar);
