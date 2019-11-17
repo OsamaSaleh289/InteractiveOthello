@@ -120,16 +120,6 @@ wasn't their turn (they now cannot make a move for the AI while AI waits for
 the animation to finish).
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-<<<<<<< HEAD
-TYPE     : BUG 1.16 : watso166 : STATUS : NotStarted
-NAME     : Command Design Pattern
-OWNER    : Katrina Watson
-PRIORITY : (1,2,3)
-ESTIMATE : 4 hours    ACTUAL :  hours 
-ISSUE    : 
-Game moves are now implemented using the Command design pattern so that 
-moves can be undone. 
-=======
 TYPE     : BUG 1.131 : watso166 : STATUS : Complete
 NAME     : Animation
 OWNER    : Katrina Watson
@@ -138,7 +128,6 @@ ESTIMATE : 3 hours    ACTUAL : 4 hours
 ISSUE    : 
 Javafx animation fixed and implemented using animation, there is now a delay 
 between animation and AI turn.
->>>>>>> BUG1.104
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
 TYPE     : BUG 1.17 : UTORID : STATUS : NotStarted (NotStarted,InProgress, Incomplete,Complete)

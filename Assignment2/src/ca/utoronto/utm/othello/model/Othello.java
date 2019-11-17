@@ -188,7 +188,7 @@ public class Othello extends Observable {
 	public boolean isGameOver() {
 		return this.whosTurn == OthelloBoard.EMPTY;
 	}
-<<<<<<< HEAD
+
 	public void noTime() {
 		timeout = true;
 		if (this.whosTurn == OthelloBoard.P1) {
@@ -206,13 +206,8 @@ public class Othello extends Observable {
 	}
 	public boolean checkTime() {
 		return timeout;
-=======
-	
-	/*public void noTime() {
-		
->>>>>>> BUG1.104
-	}
-	
+	}	
+
 	/**
 	 * 
 	 * @return a copy of this. The copy can be manipulated without impacting this.

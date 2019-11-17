@@ -110,12 +110,7 @@ public class TimeTracker extends Observable implements Observer {
 				countdownP2.play();
 			}
 		}
-<<<<<<< HEAD
-=======
-		/*if (othello.getNumMoves() == 0) {
-			
-		}*/
->>>>>>> BUG1.104
+
 	}
 
 	

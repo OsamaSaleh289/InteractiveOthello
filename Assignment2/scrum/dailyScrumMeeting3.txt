@@ -126,7 +126,7 @@ Nov 15,2019
 
 Nov 16,2019
 	What I did yesterday:
-	What I will do today: BUG1.131
+	What I will do today: BUG1.131, BUG1.104
 	Obstacles I face:
 
 Nov 17,2019
