@@ -139,8 +139,7 @@ public class Othello extends Observable {
 		board = current.board;
 		whosTurn = current.whosTurn;
 		numMoves = current.numMoves;
-		this.notifyObservers();
-		
+		this.notifyObservers();		
 		
 		}
 	}
@@ -188,7 +187,9 @@ public class Othello extends Observable {
 	public boolean isGameOver() {
 		return this.whosTurn == OthelloBoard.EMPTY;
 	}
-
+	public void noTime() {
+		
+	}
 	/**
 	 * 
 	 * @return a copy of this. The copy can be manipulated without impacting this.
