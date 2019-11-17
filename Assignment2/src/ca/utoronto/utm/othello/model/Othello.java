@@ -4,6 +4,7 @@ import ca.utoronto.utm.othello.viewcontroller.FourxFour_TokenCountVisitor;
 import ca.utoronto.utm.othello.viewcontroller.MoveVisitor;
 import ca.utoronto.utm.othello.viewcontroller.OthelloApplication;
 import ca.utoronto.utm.othello.viewcontroller.TokenCountVisitor;
+import ca.utoronto.utm.othello.viewcontroller.TokenVisitor;
 import ca.utoronto.utm.othello.viewcontroller.Visitor;
 import ca.utoronto.utm.util.*;
 import javafx.scene.image.Image;

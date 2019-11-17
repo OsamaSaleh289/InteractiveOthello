@@ -36,11 +36,6 @@ public class BoardSquare extends Button implements Observer{
 		int row = GridPane.getRowIndex(this);
 		int col = GridPane.getColumnIndex(this);
 		
-		FadeTransition fade = new FadeTransition();
-		fade.setNode(this);
-		
-		
-		this.setGraphic(this.othello.getImage(row,col));
 
 		HintHighlight hintHighlight = new HintHighlight(this.othello,row,col,this.oc);
 		if(hintHighlight.getColor()!=null && !this.othello.isGameOver()) {
@@ -54,14 +49,14 @@ public class BoardSquare extends Button implements Observer{
 		//We also reset the token's colours and our varibables if the game has been restarted
 		} else if ( othello.getCount('X') + othello.getCount('O') == 4) {
 			this.setStyle(""); 
-			prevTokenValue = othello.getToken(GridPane.getRowIndex(this), GridPane.getColumnIndex(this));
+			prevTokenValue = othello.getToken(row, col);
 			currNumTokens = othello.getCount('X') + othello.getCount('O');
 					
 		}
 		
 		currTokenValue = othello.getToken(row, col);
 		this.setGraphic(othello.getImage(row,col));
-		//The second condition is to make sure our boxes don't get colored yellow 
+		//The second condition is to make sure our boxes don't get colored  
 		//when we change values of board squares due to restarting the game
 		if (currTokenValue != prevTokenValue && othello.getCount('X') + othello.getCount('O') != 4) {
 			if (currTokenValue == 'X') {
@@ -74,8 +69,5 @@ public class BoardSquare extends Button implements Observer{
 		}	
 	}
 
-	public char getTokenValue() {
-		return this.currTokenValue;
-	}
-
+	
 }

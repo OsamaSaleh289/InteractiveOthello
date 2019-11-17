@@ -1,3 +1,5 @@
+package ca.utoronto.utm.othello.viewcontroller;
+
 import ca.utoronto.utm.othello.model.OthelloBoard;
 import ca.utoronto.utm.othello.viewcontroller.TokenGetterVisitorInterface;
 
