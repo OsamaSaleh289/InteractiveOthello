@@ -19,12 +19,12 @@ public class RandomOpponentEventHandler implements EventHandler<ActionEvent> {
 	}
 	
 	public void handle(ActionEvent event) {
-		TimeQuery query = new TimeQuery(timer);
+		//TimeQuery query = new TimeQuery(timer);
 		if(this.othello.getWhosTurn()==OthelloBoard.P1)
 			this.oc.player2.setStrategy(new RandomMoveStrategy(this.othello));
 		else if(this.othello.getWhosTurn()==OthelloBoard.P2)
 			this.oc.player1.setStrategy(new RandomMoveStrategy(this.othello));
-		query.run();	
-		timer.startTimer();
+		//query.run();	
+		//timer.startTimer();
 	}
 }

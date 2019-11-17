@@ -37,6 +37,9 @@ public class Othello extends Observable {
 	public char getWhosTurn() {
 		return this.whosTurn;
 	}
+	public int getNumMoves() {
+		return this.numMoves;
+	}
 	
 	/*
 	 * return all moves for the Player who's turn it is

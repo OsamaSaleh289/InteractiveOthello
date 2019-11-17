@@ -23,5 +23,7 @@ public class TimeQuery {
 		Optional<String> result2 = dialogp2.showAndWait();
 		result2.ifPresent(time -> {int p2time = Integer.parseInt(time);
 		TimeTracker.minutesP2 = p2time;});
+		TimeTracker.secondsP1 = 0;
+		TimeTracker.secondsP2 = 0;
 	}
 }

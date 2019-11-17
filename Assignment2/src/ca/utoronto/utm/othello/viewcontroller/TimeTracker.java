@@ -87,15 +87,7 @@ public class TimeTracker extends Observable implements Observer {
 	}
 	@Override
 	public void update(Observable o) {
-		// TODO Auto-generated method stub
-		/*if (countdownP1.getStatus() == Animation.Status.RUNNING) {
-			countdownP1.pause();
-			countdownP2.play();
-		}
-		else if (countdownP2.getStatus() == Animation.Status.RUNNING) {
-			countdownP2.pause();
-			countdownP1.play();
-		}*/
+		
 		othello = (Othello) o;
 		if (othello.isGameOver()) {
 			countdownP1.stop();
@@ -111,6 +103,9 @@ public class TimeTracker extends Observable implements Observer {
 				countdownP1.pause();
 				countdownP2.play();
 			}
+		}
+		if (othello.getNumMoves() == 0) {
+			
 		}
 	}
 

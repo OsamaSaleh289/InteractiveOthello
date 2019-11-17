@@ -9,8 +9,13 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 public class OthelloApplication extends Application {
@@ -101,6 +106,13 @@ public class OthelloApplication extends Application {
 		Button restart = new Button("Restart");
 		Button undo = new Button("Undo");
 
+		//Setup Play button
+		Color buttongreen = Color.web("#4AA02C");
+		CornerRadii corners = new CornerRadii(2);
+		Button play = new Button("Play");
+		//play.setStyle("-fx-background-colour: #347235;");
+		play.setBackground(new Background(new BackgroundFill(buttongreen, corners, null)));
+		play.setPrefSize(190, 20);
 		// create game board buttons
 		for (int row = 0; row < 8; row++) {
 			for (int col = 0; col < 8; col++) {
@@ -115,15 +127,20 @@ public class OthelloApplication extends Application {
 				oc.attach(boardSquare);
 			}
 		}
+		//create Hbox to fit two buttons in one grid pane cell
+		HBox box = new HBox();
+		box.setPadding(new Insets(5, 5, 5, 5));
+		box.getChildren().addAll(restart, undo);
 		// Add token counter and game tracker to view
 		grid.add(p1Count, 9, 1);
 		grid.add(p2Count, 10, 1);
 		grid.add(status, 9, 2, 2, 1);
 		// Add timer to view
 		grid.add(timedisplay, 9, 3, 2, 1);
-		//Add the restart button to the view
-		grid.add(restart, 9, 4);
-		grid.add(undo, 10, 4);
+		//Add the restart/undo buttons to the view
+		grid.add(box, 9, 4);
+		//Add play button to view
+		grid.add(play, 10, 4);
 		// add opponent select buttons to view
 		grid.add(hVsHuman, 9, 5);
 		grid.add(hVsRandom, 9, 6);
@@ -147,8 +164,9 @@ public class OthelloApplication extends Application {
 		betterMenuItem.addEventHandler(ActionEvent.ACTION, handleBetterHint);
 		
 		//Restart and undo event handler creation
-		RestartEventHandler restartHandler = new RestartEventHandler(othello);
+		RestartEventHandler restartHandler = new RestartEventHandler(othello, timer);
 		UndoInvoker undoInvoker = new UndoInvoker(othello);
+		PlayEventHandler playHandler = new PlayEventHandler(othello, timer);
 		
 		
 		// VIEW->CONTROLLER hookup
@@ -161,9 +179,10 @@ public class OthelloApplication extends Application {
 		hVsGreedy.addEventHandler(ActionEvent.ACTION, greedyOpponentHandler);
 		hVsBetter.addEventHandler(ActionEvent.ACTION, betterOpponentHandler);
 		
-		//Add the restart and undo handler to our button
+		//Add the restart,undo, handlers to our buttons
 		restart.addEventHandler(ActionEvent.ACTION, restartHandler);
 		undo.addEventHandler(ActionEvent.ACTION, undoInvoker);
+		play.addEventHandler(ActionEvent.ACTION, playHandler);
 		
 		
 		// SCENE
@@ -183,5 +202,6 @@ public class OthelloApplication extends Application {
 	public static void main(String[] args) {
 		new OthelloApplication();
 		launch(args);
+		
 	}
 }
