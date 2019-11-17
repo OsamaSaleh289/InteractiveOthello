@@ -143,6 +143,18 @@ and othello board to now create visitors and use them as appropriate.
 NOTE: Some private methods could be removed as a result of this.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
+<<<<<<< HEAD
+=======
+TYPE     : BUG 1.19 : watso166 : STATUS : NotStarted 
+NAME     : Use Visitor for Othello board
+OWNER    : Katrina Watson
+PRIORITY : (1,2,3)
+ESTIMATE : (1 hour, 2 hours, 4 hours, 1 day, 2 days, 4 days)    ACTUAL :  
+ISSUE    : Use the factory and strategy design pattern to implement the different 
+game opponents. 
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+>>>>>>> f2b79bf58f53643a790bfc633f006504ed37c19d
 TYPE     : BUG 9.99 : chenj628 : STATUS : NotStarted (NotStarted,InProgress, Incomplete,Complete)
 NAME     : Architecture Document
 OWNER    : 

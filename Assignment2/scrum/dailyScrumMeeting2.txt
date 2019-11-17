@@ -127,11 +127,11 @@ Nov 15,2019
 
 Nov 16,2019
 	What I did yesterday:N/A
-	What I will do today:start working on bug1.2
+	What I will do today:start working on bug9.99
 	Obstacles I face:
 
 Nov 17,2019
 	What I did yesterday:start working on bug1.2
-	What I will do today:finish bug1.2
+	What I will do today:finish bug9.99
 	Obstacles I face:
 

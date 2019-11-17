@@ -4,8 +4,40 @@
 # your marks. Start by looking at the design patterns we covered in class.
 
 # USED 
-Observer/Observable : Created by arnold, to be used by the View to observe the Model.
+1.Observer/Observable : Created by arnold, to be used by the View to observe the Model.
 
+Observable: Observable.java
+ConcreteObservableA : Othello.java	(Observed by Hints.java,TokenCounter.java, GameStatusTracker.java, TimeTracker.java, MoveStrategyTracker.java, BoardSquare.java)
+ConcreteObservableB : Player.java
+ConcreteObservableC : AITurnEventHandler.java
+ConcreteObservableD : TimeTracker.java (Observed by TimerDisplay.java)
+ConcreteObservableE : Hints.java (Observed by HintMenuItem.java, BoardSquare.java)
+Observer : Observer.java
+ConcreteObserverA: BoardSquare.java
+ConcreteObserverB: GameStatusTracker.java
+ConcreteObserverC: HintMenuItem.java
+ConcreteObserverD: MoveStrategyTracker.java
+ConcreteObserverE: TimerDisplay.java
+ConcreteObserverF: TimeTracker.java
+ConcreteObserverG: TokenCounter.java
+ConcreteObserverH: Hints.java
+
+
+2.Strategy: 
+
+Context: Othello.java
+IStrategy: MoveStrategy.java
+ConcreteStrategyA: RandomMoveStrategy.java
+ConcreteStrategyB: GreedyMoveStrategy.java
+ConcreteStrategyC: BetterMoveStrategy.java
+
+3.Command
+
+- Command: GameStatusCommand.java
+- ConcreteCommand: UndoCommand.java
+- Client: UndoInvoker.java
+- Invoker: UndoInvoker.java
+- Receiver: Othello.java
 
 
 # UNUSED
@@ -13,10 +45,8 @@ Factory
 Observer/Observable
 Singleton
 Decorator
-Strategy
 State
 Adapter
-Command
 Iterator
 Flyweight
 Facade
