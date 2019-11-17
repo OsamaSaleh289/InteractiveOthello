@@ -1,0 +1,13 @@
+watso166 / Katrina Watson:
+
+I didn't realize we had to configure our branches for upstream at first 
+so I think there's at least one branch where I didn't do that and 
+possibly others where I forgot since the website you linked us to 
+that explained the process didn't say to do that.
+
+Also, I didn't know you would be looking for individual branches for 
+each user story/bug so if it made sense (ie. the user stories/bugs
+were closely related or the bug came up while doing the user story) 
+then I did them all on that one branch. I'm pretty sure I still made
+all major changes on a branch though. 
+
