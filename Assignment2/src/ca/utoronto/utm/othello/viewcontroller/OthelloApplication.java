@@ -61,7 +61,7 @@ public class OthelloApplication extends Application {
 		currentPlayerTypeP1.setEditable(false);
 		currentPlayerTypeP2.setEditable(false);
 		//create timer to track time for each player's move
-		timer = new TimeTracker();
+		timer = new TimeTracker(othello);
 		timedisplay = new TimerDisplay(timer);
 		timer.attach(timedisplay);
 		timedisplay.setEditable(false);

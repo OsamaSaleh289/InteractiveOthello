@@ -22,6 +22,7 @@ public class RestartEventHandler implements EventHandler<ActionEvent> {
 		TimeQuery query = new TimeQuery(timer);
 		othello.resetOthello();
 		query.run();
+		timer.startTimer();
 	}
 
 }

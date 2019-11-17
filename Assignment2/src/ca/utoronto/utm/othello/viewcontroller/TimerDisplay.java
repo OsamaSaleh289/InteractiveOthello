@@ -18,6 +18,7 @@ class TimerDisplay extends TextField implements Observer{
 		this.setText(minute + ":"+ second);
 		this.timer = tracker;
 		
+		
 	}
 
 	@Override

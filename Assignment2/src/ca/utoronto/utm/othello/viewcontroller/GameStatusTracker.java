@@ -15,7 +15,10 @@ public class GameStatusTracker extends TextField implements Observer{
 	@Override
 	public void update(Observable o) {
 		othello = (Othello) o;
-		if (!othello.isGameOver()) {
+		if (othello.checkTime()) {
+			this.setText("No time left!" + " " + othello.getLoser() + " loses.");
+		}
+		else if (!othello.isGameOver()) {
 			this.setText(othello.getWhosTurn()+"'s" + " Turn");
 		} else {
 			this.setText("Winner: " + othello.getWinner());

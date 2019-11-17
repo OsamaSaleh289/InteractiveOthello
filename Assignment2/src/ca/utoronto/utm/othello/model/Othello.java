@@ -27,6 +27,8 @@ public class Othello extends Observable {
 	private OthelloBoard board = new OthelloBoard(Othello.DIMENSION);
 	private char whosTurn = OthelloBoard.P1;
 	private int numMoves = 0;
+	private boolean timeout = false;
+	private char loser = OthelloBoard.EMPTY;
 	private ArrayList<Othello> boards = new ArrayList<Othello>();
 	
 	/**
@@ -191,7 +193,22 @@ public class Othello extends Observable {
 		return this.whosTurn == OthelloBoard.EMPTY;
 	}
 	public void noTime() {
-		
+		timeout = true;
+		if (this.whosTurn == OthelloBoard.P1) {
+			loser = OthelloBoard.P1;
+		}
+		else if (this.whosTurn == OthelloBoard.P2) {
+			loser = OthelloBoard.P2;
+		}
+		whosTurn = OthelloBoard.EMPTY;
+		this.notifyObservers();
+	
+	}
+	public char getLoser() {
+		return loser;
+	}
+	public boolean checkTime() {
+		return timeout;
 	}
 	/**
 	 * 

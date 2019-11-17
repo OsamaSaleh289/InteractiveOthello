@@ -18,22 +18,38 @@ public class TimeTracker extends Observable implements Observer {
 	public static int minutesP2 = 5;
 	public static int secondsP2 = 0;
 	private char whosTurn = 'X';
+	public static boolean checkP1 = false;
+	public static boolean checkP2 = false;
 	
 	
 	Timeline countdownP1 = new Timeline();
 	Timeline countdownP2 = new Timeline();
+	
+	public TimeTracker(Othello o) {
+		this.othello = o;
+		countdownP1.setCycleCount(Timeline.INDEFINITE);
+		countdownP2.setCycleCount(Timeline.INDEFINITE);
+		
+		KeyFrame secondsFrameP1 = new KeyFrame(Duration.seconds(1), timeEventHandlerP1);
+		KeyFrame secondsFrameP2 = new KeyFrame(Duration.seconds(1), timeEventHandlerP2);
+		
+		countdownP1.getKeyFrames().add(secondsFrameP1);
+		countdownP2.getKeyFrames().add(secondsFrameP2);
+		
+	}
 	
 	EventHandler timeEventHandlerP1 = new EventHandler() {
 		
 		public void handle(Event event) {
 			secondsP1--;
 			notifyObservers();
-			if (secondsP1<=0) {
+			if (secondsP1<=1) {
 				minutesP1 -=1;
-				secondsP1 = 59;
+				secondsP1 = 60;
 			}
 			if (minutesP1<0) {
 				countdownP1.stop();
+				othello.noTime();
 			}
 			
 		}
@@ -45,9 +61,9 @@ public class TimeTracker extends Observable implements Observer {
 		public void handle(Event event) {
 			secondsP2--;
 			notifyObservers();
-			if (secondsP2<=0) {
+			if (secondsP2<=1) {
 				minutesP2 -=1;
-				secondsP2 =59;
+				secondsP2 =60;
 			}
 			if (minutesP2<0) {
 				countdownP2.stop();
@@ -56,17 +72,7 @@ public class TimeTracker extends Observable implements Observer {
 
 	};
 	
-	public TimeTracker() {
-		countdownP1.setCycleCount(Timeline.INDEFINITE);
-		countdownP2.setCycleCount(Timeline.INDEFINITE);
-		
-		KeyFrame secondsFrameP1 = new KeyFrame(Duration.seconds(1), timeEventHandlerP1);
-		KeyFrame secondsFrameP2 = new KeyFrame(Duration.seconds(1), timeEventHandlerP2);
-		
-		countdownP1.getKeyFrames().add(secondsFrameP1);
-		countdownP2.getKeyFrames().add(secondsFrameP2);
-		
-	}
+
 	public int getMinutes() {
 		if (countdownP1.getStatus() == Animation.Status.RUNNING) {
 			return minutesP1; }
@@ -103,9 +109,6 @@ public class TimeTracker extends Observable implements Observer {
 				countdownP1.pause();
 				countdownP2.play();
 			}
-		}
-		if (othello.getNumMoves() == 0) {
-			
 		}
 	}
 
