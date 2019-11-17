@@ -31,6 +31,8 @@ public class OthelloApplication extends Application {
 		Othello othello=new Othello();
 		Hints hints = new Hints(othello);
 		TimeTracker timer = new TimeTracker(othello);
+		othello.attach(hints);
+		
 		
 		
 		// VIEWs:
@@ -110,7 +112,6 @@ public class OthelloApplication extends Application {
 		
 		
 		// MODEL->VIEW hookup
-		othello.attach(hints);
 		othello.attach(p1Count);
 		othello.attach(p2Count);
 		othello.attach(status);

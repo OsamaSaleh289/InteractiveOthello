@@ -68,7 +68,11 @@ public class OthelloBoard {
 		else
 			return EMPTY;
 	}
-	
+	/**
+	 * 
+	 * @param row starting row, in {0,...,dim-1} (typically {0,...,7})
+	 * Return list of tokens on the board to be used by the visitor classes
+	 */
 	public char[][] getBoardList() {
 		return board;
 		
@@ -221,10 +225,10 @@ public class OthelloBoard {
 	 * @param player P1 or P2
 	 * @return true if player moved successfully at (row,col), false otherwise
 	 */
-	public boolean move(int row, int col, char player) {
+	/*public boolean move(int row, int col, char player) {
 		MoveVisitor moveVisitor = new MoveVisitor();
 		return moveVisitor.visit(this, row, col, player);
-	}
+	}*/
 
 	/**
 	 * 
@@ -245,7 +249,7 @@ public class OthelloBoard {
 	/**
 	 * 
 	 * @param player P1 or P2
-	 * @return the number of tokens on the board for player
+	 * Update the board's coordinates
 	 */
 	public void setCoordinate(int row, int col, char player) {
 		board[row][col] = player;
