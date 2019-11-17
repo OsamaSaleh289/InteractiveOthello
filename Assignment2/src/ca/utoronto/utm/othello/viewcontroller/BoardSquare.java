@@ -1,9 +1,12 @@
 package ca.utoronto.utm.othello.viewcontroller;
 
+import java.time.Duration;
+
 import ca.utoronto.utm.othello.model.Othello;
 import ca.utoronto.utm.othello.model.OthelloController;
 import ca.utoronto.utm.util.Observable;
 import ca.utoronto.utm.util.Observer;
+import javafx.animation.FadeTransition;
 import javafx.scene.control.Button;
 import javafx.scene.layout.GridPane;
 
@@ -32,8 +35,12 @@ public class BoardSquare extends Button implements Observer{
 	public void update(Observable o) {
 		int row = GridPane.getRowIndex(this);
 		int col = GridPane.getColumnIndex(this);
+		
+		FadeTransition fade = new FadeTransition();
+		fade.setNode(this);
+		
+		
 		this.setGraphic(this.othello.getImage(row,col));
-		this.setEffect(null);
 
 		HintHighlight hintHighlight = new HintHighlight(this.othello,row,col,this.oc);
 		if(hintHighlight.getColor()!=null && !this.othello.isGameOver()) {

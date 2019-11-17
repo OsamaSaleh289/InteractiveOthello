@@ -170,14 +170,15 @@ Nov 14,2019
 	Obstacles I face: Combining the observer design pattern with the animation implmentation
 
 Nov 15,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Succcessfully completed the animation
+	What I will do today: Work on understanding the visitor design pattern
+	Obstacles I face: Implmenting US1.17 is a bit confusing
 
 Nov 16,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Fully understood the visitor pattern
+	What I will do today: Fix some issues with animations with help from our partner Katrina and 
+	finish US1.17
+	Obstacles I face: Fully grasping how to implment the visitor design pattern. Should overcome it though.
 
 Nov 17,2019
 	What I did yesterday:

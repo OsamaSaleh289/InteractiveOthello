@@ -42,9 +42,9 @@ public class OthelloApplication extends Application {
 		grid.setVgap(5); 
 		grid.setPadding(new Insets(5, 5, 5, 5));
 		
-		HintEventHandler handleRandomHint = new HintEventHandler(oc);
-		HintEventHandler handleGreedyHint = new HintEventHandler(oc);
-		HintEventHandler handleBetterHint = new HintEventHandler(oc);
+		//HintEventHandler handleRandomHint = new HintEventHandler(oc);
+		//HintEventHandler handleGreedyHint = new HintEventHandler(oc);
+		//HintEventHandler handleBetterHint = new HintEventHandler(oc);
 		// Create token count text fields
 		p1Count = new TokenCounter(OthelloBoard.P1 + " : "+othello.getCount(OthelloBoard.P1), OthelloBoard.P1);
 		p2Count = new TokenCounter(OthelloBoard.P2 + " : "+othello.getCount(OthelloBoard.P2), OthelloBoard.P2);
@@ -65,7 +65,7 @@ public class OthelloApplication extends Application {
 		timedisplay.setEditable(false);
 
 		// A menu for Hint
-		menuBar = new MenuBar();
+		/*menuBar = new MenuBar();
 		menu = new Menu("Hint Menu");
 		HintMenuItem randomMenuItem = new HintMenuItem(oc, "random");
 		randomMenuItem.addEventHandler(ActionEvent.ACTION, handleRandomHint);
@@ -76,7 +76,7 @@ public class OthelloApplication extends Application {
 		HintMenuItem betterMenuItem = new HintMenuItem(oc, "better");
 		betterMenuItem.addEventHandler(ActionEvent.ACTION, handleBetterHint);
 		menu.getItems().add(betterMenuItem);
-		menuBar.getMenus().add(menu);
+		menuBar.getMenus().add(menu);*/
 		
 		
 		// MODEL->VIEW hookup
@@ -87,9 +87,9 @@ public class OthelloApplication extends Application {
 		othello.attach(timer);
 		oc.player1.attach(currentPlayerTypeP1);
 		oc.player2.attach(currentPlayerTypeP2);
-		oc.attach(randomMenuItem);
-		oc.attach(greedyMenuItem);
-		oc.attach(betterMenuItem);
+		//oc.attach(randomMenuItem);
+		//oc.attach(greedyMenuItem);
+		//oc.attach(betterMenuItem);
 		
 		
 		// CONTROLLERS:
@@ -141,7 +141,7 @@ public class OthelloApplication extends Application {
 		HumanOpponentEventHandler humanOpponentHandler = new HumanOpponentEventHandler(othello, timer, oc);
 		RandomOpponentEventHandler randomOpponentHandler = new RandomOpponentEventHandler(othello, timer, oc);
 		GreedyOpponentEventHandler greedyOpponentHandler = new GreedyOpponentEventHandler(othello, timer, oc);
-		BetterOpponentEventHandler betterOpponentHandler = new BetterOpponentEventHandler(othello, timer, oc);
+		//BetterOpponentEventHandler betterOpponentHandler = new BetterOpponentEventHandler(othello, timer, oc);
 				
 		//Restart event handler creation
 		RestartEventHandler restartHandler = new RestartEventHandler(othello);
@@ -155,13 +155,13 @@ public class OthelloApplication extends Application {
 		hVsHuman.addEventHandler(ActionEvent.ACTION, humanOpponentHandler);
 		hVsRandom.addEventHandler(ActionEvent.ACTION, randomOpponentHandler);
 		hVsGreedy.addEventHandler(ActionEvent.ACTION, greedyOpponentHandler);
-		hVsBetter.addEventHandler(ActionEvent.ACTION, betterOpponentHandler);
+		//hVsBetter.addEventHandler(ActionEvent.ACTION, betterOpponentHandler);
 		
 		//Add the restart handler to our button
 		restart.addEventHandler(ActionEvent.ACTION, restartHandler);
 		// SCENE
 		BorderPane root = new BorderPane();
-		root.setTop(menuBar);
+		//root.setTop(menuBar);
 		root.setCenter(grid);
 		
 		Scene scene = new Scene(root);

@@ -129,11 +129,11 @@ Game moves are now implemented using the Command design pattern so that
 moves can be undone. 
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : BUG 1.17 : UTORID : STATUS : NotStarted (NotStarted,InProgress, Incomplete,Complete)
+TYPE     : BUG 1.17 : salehosa: STATUS : Complete
 NAME     : Use Visitor for Othello board
-OWNER    : 
+OWNER    : Osama Saleh
 PRIORITY : (1,2,3)
-ESTIMATE : (1 hour, 2 hours, 4 hours, 1 day, 2 days, 4 days)    ACTUAL :  
+ESTIMATE : 4 hours    ACTUAL : 5 hours
 ISSUE    : There is a lot of replicated code in Othello and OthelloBoard, all of
 which visits the board in one of a few different ways. Implement the 
 visitor design pattern on the OthelloBoard and rewrite code using othello
