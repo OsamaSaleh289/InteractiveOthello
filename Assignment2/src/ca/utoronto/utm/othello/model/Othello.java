@@ -14,10 +14,7 @@ import java.util.ArrayList;
  * OthelloBoard.P2). It knows how to make a move using the board and can tell
  * you statistics about the game, such as how many tokens P1 has and how many
  * tokens P2 has. It knows who the winner of the game is, and when the game is
- * over.
- * 
- * See the following for a short, simple introduction.
- * https://www.youtube.com/watch?v=Ol3Id7xYsY4
+ * over. It also has two players.
  * 
  * @author arnold
  *

@@ -1,7 +1,7 @@
 package ca.utoronto.utm.othello.model;
 
 public class GreedyMoveStrategy  implements MoveStrategy{
-	protected Othello othello;
+	private Othello othello;
 
 	public GreedyMoveStrategy(Othello othello) {
 		this.othello = othello;

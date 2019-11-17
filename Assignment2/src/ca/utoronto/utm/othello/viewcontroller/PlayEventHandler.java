@@ -1,26 +1,23 @@
 package ca.utoronto.utm.othello.viewcontroller;
 
-import ca.utoronto.utm.othello.model.Othello;
+import ca.utoronto.utm.othello.model.TimeTracker;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Node;
-import javafx.scene.control.Button;
 
 public class PlayEventHandler implements EventHandler<ActionEvent> {
-	Othello game;
-	TimeTracker timer;
+	private TimeTracker timer;
 	
-	PlayEventHandler(Othello o, TimeTracker timer) {
-		game = o;
+	PlayEventHandler(TimeTracker timer) {
 		this.timer = timer;
 	}
+	
 	@Override
 	public void handle(ActionEvent event) {
-		// TODO Auto-generated method stub
-		TimeQuery query = new TimeQuery(timer);
+		TimeQuery query = new TimeQuery();
 		((Node) event.getSource()).setVisible(false);
 		query.run();
-		timer.startTimer();
+		this.timer.startTimer();
 	}
 	
 

@@ -3,12 +3,11 @@ package ca.utoronto.utm.othello.viewcontroller;
 import ca.utoronto.utm.othello.model.Move;
 import ca.utoronto.utm.othello.model.Othello;
 import ca.utoronto.utm.othello.model.OthelloBoard;
-import ca.utoronto.utm.util.Observable;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 
-public class AITurnEventHandler extends Observable implements EventHandler<ActionEvent> {
-	protected Othello othello;
+public class AITurnEventHandler implements EventHandler<ActionEvent> {
+	private Othello othello;
 	
 	/**
 	 * Constructs a new OthelloController with a new Othello game, ready to play

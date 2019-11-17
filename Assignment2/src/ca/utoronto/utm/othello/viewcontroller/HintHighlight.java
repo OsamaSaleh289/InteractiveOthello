@@ -7,7 +7,7 @@ import javafx.scene.effect.InnerShadow;
 import javafx.scene.paint.Color;
 
 public class HintHighlight extends InnerShadow{
-	public Othello othello;
+	private Othello othello;
 	private int row, col;
 	private Hints hints;
 

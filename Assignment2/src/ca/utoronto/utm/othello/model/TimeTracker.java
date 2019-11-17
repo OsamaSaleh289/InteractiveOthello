@@ -1,6 +1,5 @@
-package ca.utoronto.utm.othello.viewcontroller;
+package ca.utoronto.utm.othello.model;
 
-import java.awt.event.ActionListener;
 import ca.utoronto.utm.util.*;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -8,19 +7,14 @@ import javafx.animation.*;
 import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.util.Duration;
-import javax.swing.*;
-import ca.utoronto.utm.othello.model.Othello;
 
 public class TimeTracker extends Observable implements Observer {
 	private Othello othello;
-	public static int minutesP1 = 5;
-	public static int secondsP1 = 0;
-	public static int minutesP2 = 5;
-	public static int secondsP2 = 0;
+	private static int minutesP1 = 5;
+	private static int secondsP1 = 0;
+	private static int minutesP2 = 5;
+	private static int secondsP2 = 0;
 	private char whosTurn = 'X';
-	public static boolean checkP1 = false;
-	public static boolean checkP2 = false;
-	
 	
 	Timeline countdownP1 = new Timeline();
 	Timeline countdownP2 = new Timeline();
@@ -35,19 +29,18 @@ public class TimeTracker extends Observable implements Observer {
 		
 		countdownP1.getKeyFrames().add(secondsFrameP1);
 		countdownP2.getKeyFrames().add(secondsFrameP2);
-		
 	}
 	
 	EventHandler timeEventHandlerP1 = new EventHandler() {
 		
 		public void handle(Event event) {
-			secondsP1--;
+			setSecondsP1(getSecondsP1() - 1);
 			notifyObservers();
-			if (secondsP1<=1) {
-				minutesP1 -=1;
-				secondsP1 = 60;
+			if (getSecondsP1()<=1) {
+				setMinutesP1(getMinutesP1() - 1);
+				setSecondsP1(60);
 			}
-			if (minutesP1<0) {
+			if (getMinutesP1()<0) {
 				countdownP1.stop();
 				othello.noTime();
 			}
@@ -59,13 +52,13 @@ public class TimeTracker extends Observable implements Observer {
 		
 		@Override
 		public void handle(Event event) {
-			secondsP2--;
+			setSecondsP2(getSecondsP2() - 1);
 			notifyObservers();
-			if (secondsP2<=1) {
-				minutesP2 -=1;
-				secondsP2 =60;
+			if (getSecondsP2()<=1) {
+				setMinutesP2(getMinutesP2() - 1);
+				setSecondsP2(60);
 			}
-			if (minutesP2<0) {
+			if (getMinutesP2()<0) {
 				countdownP2.stop();
 			}
 		}
@@ -75,17 +68,17 @@ public class TimeTracker extends Observable implements Observer {
 
 	public int getMinutes() {
 		if (countdownP1.getStatus() == Animation.Status.RUNNING) {
-			return minutesP1; }
+			return getMinutesP1(); }
 		else {
-			return minutesP2;
+			return getMinutesP2();
 		}
 	}
 	public int getSeconds() {
 		if (countdownP1.getStatus() == Animation.Status.RUNNING) {
-			return secondsP1;
+			return getSecondsP1();
 		}
 		else {
-			return secondsP2;
+			return getSecondsP2();
 		}
 	}
 	public void startTimer() {
@@ -111,6 +104,31 @@ public class TimeTracker extends Observable implements Observer {
 			}
 		}
 
+	}
+
+	public static int getMinutesP1() {
+		return minutesP1;
+	}
+	public static void setMinutesP1(int minutesP1) {
+		TimeTracker.minutesP1 = minutesP1;
+	}
+	public static int getMinutesP2() {
+		return minutesP2;
+	}
+	public static void setMinutesP2(int minutesP2) {
+		TimeTracker.minutesP2 = minutesP2;
+	}
+	public static int getSecondsP1() {
+		return secondsP1;
+	}
+	public static void setSecondsP1(int secondsP1) {
+		TimeTracker.secondsP1 = secondsP1;
+	}
+	public static int getSecondsP2() {
+		return secondsP2;
+	}
+	public static void setSecondsP2(int secondsP2) {
+		TimeTracker.secondsP2 = secondsP2;
 	}
 
 	

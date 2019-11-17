@@ -1,6 +1,7 @@
 package ca.utoronto.utm.othello.viewcontroller;
 
 import ca.utoronto.utm.othello.model.Othello;
+import ca.utoronto.utm.othello.model.TimeTracker;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 
@@ -8,21 +9,17 @@ public class RestartEventHandler implements EventHandler<ActionEvent> {
 	private Othello othello;
 	private TimeTracker timer;
 	
-	public RestartEventHandler(Othello o, TimeTracker timer) {
-		othello = o;
-		this.timer = timer;
-		
-		
+	public RestartEventHandler(Othello othello, TimeTracker timer) {
+		this.othello = othello;
+		this.timer = timer;	
 	}
-	
 
 	@Override
 	public void handle(ActionEvent event) {
-		// TODO Auto-generated method stub
-		TimeQuery query = new TimeQuery(timer);
-		othello.resetOthello();
+		TimeQuery query = new TimeQuery();
+		this.othello.resetOthello();
 		query.run();
-		timer.startTimer();
+		this.timer.startTimer();
 	}
 
 }

@@ -5,19 +5,19 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 
 public class HintEventHandler implements EventHandler<ActionEvent> {
-	private Hints oc;
+	private Hints hints;
 	
-	public HintEventHandler(Hints oc) {
-		this.oc = oc;
+	public HintEventHandler(Hints hints) {
+		this.hints = hints;
 	}
 
 	public void handle(ActionEvent event) {		
 		HintMenuItem menuitem= (HintMenuItem) event.getSource();
 		if(menuitem.getHintType()=="greedy")
-			this.oc.toggleGreedyHint();
+			this.hints.toggleGreedyHint();
 		else if(menuitem.getHintType()=="random")
-			this.oc.toggleRandomHint();
+			this.hints.toggleRandomHint();
 		else if(menuitem.getHintType()=="better")
-			this.oc.toggleBetterHint();
+			this.hints.toggleBetterHint();
 	}
 }

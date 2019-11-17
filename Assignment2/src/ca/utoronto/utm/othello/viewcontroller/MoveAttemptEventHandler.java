@@ -21,8 +21,7 @@ public class MoveAttemptEventHandler implements EventHandler<ActionEvent> {
 
 		if((this.othello.getWhosTurn()==this.othello.player1.getPlayer() && this.othello.player1.getStrategyName()=="Human")
 				||(this.othello.getWhosTurn()==this.othello.player2.getPlayer() && this.othello.player2.getStrategyName()=="Human")) {
-			othello.move(row,col);
-				
+			othello.move(row,col);	
 		}
 	}
 }

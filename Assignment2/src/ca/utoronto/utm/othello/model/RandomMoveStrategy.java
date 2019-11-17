@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class RandomMoveStrategy implements MoveStrategy{
-	protected Othello othello;
+	private Othello othello;
 	private Random rand = new Random();
 
 	public RandomMoveStrategy(Othello othello) {

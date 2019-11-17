@@ -73,7 +73,7 @@ PRIORITY : (1,2,3)
 ESTIMATE : 4 hours    ACTUAL : 6 hours 
 ISSUE    : 
 Player opponents are no longer updated through Othello and unnecessary methods
-and fields in Othello are now gone. Player has the Strategy design pattern
+and fields in Othello are now gone. Player now has the Strategy design pattern
 to set a MoveStrategy which is triggered by the user clicking on one of the 
 three opponent buttons. Unnecessary classes are now deleted instead of 
 commented out. 
@@ -143,16 +143,7 @@ and othello board to now create visitors and use them as appropriate.
 NOTE: Some private methods could be removed as a result of this.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : BUG 1.19 : watso166 : STATUS : NotStarted 
-NAME     : Use Visitor for Othello board
-OWNER    : Katrina Watson
-PRIORITY : (1,2,3)
-ESTIMATE : (1 hour, 2 hours, 4 hours, 1 day, 2 days, 4 days)    ACTUAL :  
-ISSUE    : Use the factory and strategy design pattern to implement the different 
-game opponents. 
---------------------------------------------------------------------------
---------------------------------------------------------------------------
-TYPE     : BUG 1.2 : chenj628 : STATUS : NotStarted (NotStarted,InProgress, Incomplete,Complete)
+TYPE     : BUG 9.99 : chenj628 : STATUS : NotStarted (NotStarted,InProgress, Incomplete,Complete)
 NAME     : Architecture Document
 OWNER    : 
 PRIORITY : (1,2,3)

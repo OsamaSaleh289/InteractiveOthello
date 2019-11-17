@@ -25,7 +25,6 @@ public class HintMenuItem extends MenuItem implements Observer{
 		InputStream input1 = OthelloApplication.class.getResourceAsStream(name);
 	    Image image = new Image(input1); 
 	    ImageView vimage = new ImageView(image); 
-	    		
 		return vimage;
 	}
 	

@@ -3,7 +3,7 @@ package ca.utoronto.utm.othello.model;
 import java.util.ArrayList;
 
 public class BetterMoveStrategy implements MoveStrategy{
-	protected Othello othello;
+	private Othello othello;
 
 	public BetterMoveStrategy(Othello othello) {
 		this.othello = othello;

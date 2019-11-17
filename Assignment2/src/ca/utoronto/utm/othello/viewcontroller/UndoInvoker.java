@@ -5,14 +5,13 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 
 class UndoInvoker implements EventHandler<ActionEvent> {
-	Othello game;
+	private Othello game;
 	
-	public UndoInvoker(Othello o) {
-		game = o;
+	public UndoInvoker(Othello othello) {
+		this.game = othello;
 	}
 	@Override
 	public void handle(ActionEvent event) {
-		// TODO Auto-generated method stub
 		UndoCommand undo = new UndoCommand(game);
 		undo.execute();
 	}
