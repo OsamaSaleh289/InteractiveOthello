@@ -1,13 +1,13 @@
 package ca.utoronto.utm.othello.viewcontroller;
 
-import ca.utoronto.utm.othello.model.OthelloController;
+import ca.utoronto.utm.othello.model.Hints;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 
 public class HintEventHandler implements EventHandler<ActionEvent> {
-	private OthelloController oc;
+	private Hints oc;
 	
-	public HintEventHandler(OthelloController oc) {
+	public HintEventHandler(Hints oc) {
 		this.oc = oc;
 	}
 

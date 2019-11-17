@@ -30,6 +30,8 @@ public class Othello extends Observable {
 	private boolean timeout = false;
 	private char loser = OthelloBoard.EMPTY;
 	private ArrayList<Othello> boards = new ArrayList<Othello>();
+	public Player player1 = new Player(this, OthelloBoard.P1);
+	public Player player2 = new Player(this, OthelloBoard.P2);
 	
 	/**
 	 * return P1,P2 or EMPTY depending on who moves next.
@@ -38,9 +40,6 @@ public class Othello extends Observable {
 	 */
 	public char getWhosTurn() {
 		return this.whosTurn;
-	}
-	public int getNumMoves() {
-		return this.numMoves;
 	}
 	
 	/*
@@ -133,19 +132,19 @@ public class Othello extends Observable {
 			return false;
 		}
 	}
+	
 	public void undo() {
 		if (boards.size() == 1) {
 			boards.remove(boards.size()-1);
 			this.resetOthello();
 		}
 		else if (boards.size() != 0) {
-		boards.remove(boards.size()-1);
-		Othello current = boards.get(boards.size()-1);
-		board = current.board;
-		whosTurn = current.whosTurn;
-		numMoves = current.numMoves;
-		this.notifyObservers();		
-		
+			boards.remove(boards.size()-1);
+			Othello current = boards.get(boards.size()-1);
+			board = current.board;
+			whosTurn = current.whosTurn;
+			numMoves = current.numMoves;
+			this.notifyObservers();		
 		}
 	}
 
@@ -173,15 +172,12 @@ public class Othello extends Observable {
 	 * @return P1, P2 or EMPTY for no winner, or the game is not finished.
 	 */
 	public char getWinner() {
-		if (!this.isGameOver()) {
+		if (!this.isGameOver()) 
 			return OthelloBoard.EMPTY;
-		}
-		if (this.getCount(OthelloBoard.P1) > this.getCount(OthelloBoard.P2)) {
+		if (this.getCount(OthelloBoard.P1) > this.getCount(OthelloBoard.P2))
 			return OthelloBoard.P1;
-		}
-		if (this.getCount(OthelloBoard.P1) < this.getCount(OthelloBoard.P2)) {
+		if (this.getCount(OthelloBoard.P1) < this.getCount(OthelloBoard.P2))
 			return OthelloBoard.P2;
-		}
 		return OthelloBoard.EMPTY;
 	}
 
@@ -192,6 +188,7 @@ public class Othello extends Observable {
 	public boolean isGameOver() {
 		return this.whosTurn == OthelloBoard.EMPTY;
 	}
+<<<<<<< HEAD
 	public void noTime() {
 		timeout = true;
 		if (this.whosTurn == OthelloBoard.P1) {
@@ -209,7 +206,13 @@ public class Othello extends Observable {
 	}
 	public boolean checkTime() {
 		return timeout;
+=======
+	
+	/*public void noTime() {
+		
+>>>>>>> BUG1.104
 	}
+	
 	/**
 	 * 
 	 * @return a copy of this. The copy can be manipulated without impacting this.
@@ -227,7 +230,5 @@ public class Othello extends Observable {
 		whosTurn = OthelloBoard.P1;
 		numMoves = 0;
 		this.notifyObservers();
-		
-		
 	}
 }
