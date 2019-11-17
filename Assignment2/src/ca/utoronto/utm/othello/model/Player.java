@@ -11,13 +11,13 @@ public class Player extends Observable{
 	public Player(Othello othello, char player) {
 		this.othello = othello;
 		this.player = player;
-		this.strategy = new HumanMoveStrategy(this.othello);
-		this.strategyName = "Human";
+		
+		this.setStrategy(null);
 	}
 
 	public void setStrategy(MoveStrategy strategy) {
 		this.strategy = strategy;
-		if(strategy instanceof HumanMoveStrategy)
+		if(strategy == null)
 			this.setStrategyName("Human");
 		else if(strategy instanceof RandomMoveStrategy) 
 			this.setStrategyName("Random");
@@ -41,6 +41,8 @@ public class Player extends Observable{
 	}
 	
 	public Move getMove() {
-		return this.strategy.getMove();
+		if(this.strategy!=null)
+			return this.strategy.getMove();
+		return null;
 	}
 }

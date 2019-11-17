@@ -2,7 +2,7 @@ package ca.utoronto.utm.othello.viewcontroller;
 
 import java.io.InputStream;
 
-import ca.utoronto.utm.othello.model.OthelloController;
+import ca.utoronto.utm.othello.model.Hints;
 import ca.utoronto.utm.util.Observable;
 import ca.utoronto.utm.util.Observer;
 import javafx.scene.control.MenuItem;
@@ -10,11 +10,11 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 public class HintMenuItem extends MenuItem implements Observer{
-	private OthelloController oc;
+	private Hints hints;
 	private String hintType;
 	
-	public HintMenuItem(OthelloController oc, String hintType) {
-		this.oc = oc;
+	public HintMenuItem(Hints oc, String hintType) {
+		this.hints = oc;
 		this.hintType = hintType;
 		
 		this.setText(this.hintType + " hint");
@@ -36,19 +36,19 @@ public class HintMenuItem extends MenuItem implements Observer{
 	@Override
 	public void update(Observable o) {
 		if(this.hintType == "greedy") {
-			if(this.oc.greedyHintOn)
+			if(this.hints.isGreedyHintOn())
 				this.setGraphic(this.getImage(this.hintType + "checkbox.png"));
 			else
 				this.setGraphic(this.getImage(this.hintType + "outline.png"));
 		}
 		else if(this.hintType == "random") {
-			if(this.oc.randomHintOn)
+			if(this.hints.isRandomHintOn())
 				this.setGraphic(this.getImage(this.hintType + "checkbox.png"));
 			else
 				this.setGraphic(this.getImage(this.hintType + "outline.png"));
 		}
 		else if(this.hintType == "better") {
-			if(this.oc.betterHintOn)
+			if(this.hints.isBetterHintOn())
 				this.setGraphic(this.getImage(this.hintType + "checkbox.png"));
 			else
 				this.setGraphic(this.getImage(this.hintType + "outline.png"));

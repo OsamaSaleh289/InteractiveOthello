@@ -109,25 +109,25 @@ otherwise choose a space that maximizes the players presence in the middle 4 by 
 otherwise choose the location maximizing the movers presence on the board. 
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : BUG 1.104 : watso166 : STATUS : Started
-NAME     : Factory Design Pattern
+TYPE     : BUG 1.104 : watso166 : STATUS : Complete
+NAME     : OthelloController and Hint
 OWNER    : Katrina Watson
 PRIORITY : (1,2,3)
-ESTIMATE : 3 hours    ACTUAL :  hours 
+ESTIMATE : 3 hours    ACTUAL : 4 hours 
 ISSUE    : 
-Hints are now implemented using the factory design pattern to clean up 
-a lot of code. 
+This bug had to be done to fix the player being able to make a move when it
+wasn't their turn (they now cannot make a move for the AI while AI waits for
+the animation to finish).
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : BUG 1.131 : watso166 : STATUS : Started
+TYPE     : BUG 1.131 : watso166 : STATUS : Complete
 NAME     : Animation
 OWNER    : Katrina Watson
 PRIORITY : (1,2,3)
-ESTIMATE : 3 hours    ACTUAL :  hours 
+ESTIMATE : 3 hours    ACTUAL : 4 hours 
 ISSUE    : 
-Javafx animation implemented using animation, player can now only make 
-a move when it's their turn, there is now a delay between animation and 
-AI turn.
+Javafx animation fixed and implemented using animation, there is now a delay 
+between animation and AI turn.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
 TYPE     : BUG 1.17 : UTORID : STATUS : NotStarted (NotStarted,InProgress, Incomplete,Complete)

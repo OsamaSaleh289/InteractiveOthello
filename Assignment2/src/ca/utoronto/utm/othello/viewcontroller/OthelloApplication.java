@@ -5,6 +5,7 @@ import ca.utoronto.utm.othello.model.*;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.geometry.Insets;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Menu;
@@ -32,7 +33,7 @@ public class OthelloApplication extends Application {
 
 		
 		// VIEWs:
-		OthelloController oc = new OthelloController(othello);
+		Hints hints = new Hints(othello);
 		TokenCounter p1Count;
 		TokenCounter p2Count;
 		GameStatusTracker status;
@@ -56,8 +57,8 @@ public class OthelloApplication extends Application {
 		status = new GameStatusTracker(OthelloBoard.P1 + "'s Turn");
 		status.setEditable(false);
 		// create text fields to track current player type
-		MoveStrategyTracker currentPlayerTypeP1 = new MoveStrategyTracker(OthelloBoard.P1 + " : "+oc.player1.getStrategyName());
-		MoveStrategyTracker currentPlayerTypeP2 = new MoveStrategyTracker(OthelloBoard.P2 + " : "+oc.player2.getStrategyName());
+		MoveStrategyTracker currentPlayerTypeP1 = new MoveStrategyTracker(OthelloBoard.P1 + " : "+othello.player1.getStrategyName());
+		MoveStrategyTracker currentPlayerTypeP2 = new MoveStrategyTracker(OthelloBoard.P2 + " : "+othello.player2.getStrategyName());
 		currentPlayerTypeP1.setEditable(false);
 		currentPlayerTypeP2.setEditable(false);
 		//create timer to track time for each player's move
@@ -69,26 +70,26 @@ public class OthelloApplication extends Application {
 		// A menu for Hint
 		menuBar = new MenuBar();
 		menu = new Menu("Hint Menu");
-		HintMenuItem randomMenuItem = new HintMenuItem(oc, "random");
+		HintMenuItem randomMenuItem = new HintMenuItem(hints, "random");
 		menu.getItems().add(randomMenuItem);
-		HintMenuItem greedyMenuItem = new HintMenuItem(oc, "greedy");
+		HintMenuItem greedyMenuItem = new HintMenuItem(hints, "greedy");
 		menu.getItems().add(greedyMenuItem);
-		HintMenuItem betterMenuItem = new HintMenuItem(oc, "better");
+		HintMenuItem betterMenuItem = new HintMenuItem(hints, "better");
 		menu.getItems().add(betterMenuItem);
 		menuBar.getMenus().add(menu);
 		
 		
 		// MODEL->VIEW hookup
-		//othello.attach(oc);
+		othello.attach(hints);
 		othello.attach(p1Count);
 		othello.attach(p2Count);
 		othello.attach(status);
 		othello.attach(timer);
-		oc.player1.attach(currentPlayerTypeP1);
-		oc.player2.attach(currentPlayerTypeP2);
-		oc.attach(randomMenuItem);
-		oc.attach(greedyMenuItem);
-		oc.attach(betterMenuItem);
+		othello.player1.attach(currentPlayerTypeP1);
+		othello.player2.attach(currentPlayerTypeP2);
+		hints.attach(randomMenuItem);
+		hints.attach(greedyMenuItem);
+		hints.attach(betterMenuItem);
 		
 		
 		// CONTROLLERS:
@@ -110,13 +111,12 @@ public class OthelloApplication extends Application {
 		Color buttongreen = Color.web("#4AA02C");
 		CornerRadii corners = new CornerRadii(2);
 		Button play = new Button("Play");
-		//play.setStyle("-fx-background-colour: #347235;");
 		play.setBackground(new Background(new BackgroundFill(buttongreen, corners, null)));
 		play.setPrefSize(190, 20);
 		// create game board buttons
 		for (int row = 0; row < 8; row++) {
 			for (int col = 0; col < 8; col++) {
-				BoardSquare boardSquare = new BoardSquare(othello,row,col,oc);
+				BoardSquare boardSquare = new BoardSquare(othello,row,col,hints);
 
 				MoveAttemptEventHandler moveToClick = new MoveAttemptEventHandler(othello);
 				boardSquare.addEventHandler(ActionEvent.ACTION, moveToClick); // CONTROLLER->MODEL hookup
@@ -124,7 +124,7 @@ public class OthelloApplication extends Application {
 				boardSquare.setPrefSize(35, 35);
 				
 				othello.attach(boardSquare); // MODEL->VIEW hookup
-				oc.attach(boardSquare);
+				hints.attach(boardSquare);
 			}
 		}
 		//create Hbox to fit two buttons in one grid pane cell
@@ -150,15 +150,16 @@ public class OthelloApplication extends Application {
 		grid.add(currentPlayerTypeP1, 9, 0);
 		grid.add(currentPlayerTypeP2, 10, 0);
 		
-		// opponent chooser GUI Event Handler
-		HumanOpponentEventHandler humanOpponentHandler = new HumanOpponentEventHandler(othello, timer, oc);
-		RandomOpponentEventHandler randomOpponentHandler = new RandomOpponentEventHandler(othello, timer, oc);
-		GreedyOpponentEventHandler greedyOpponentHandler = new GreedyOpponentEventHandler(othello, timer, oc);
-		BetterOpponentEventHandler betterOpponentHandler = new BetterOpponentEventHandler(othello, timer, oc);
 		
-		HintEventHandler handleRandomHint = new HintEventHandler(oc);
-		HintEventHandler handleGreedyHint = new HintEventHandler(oc);
-		HintEventHandler handleBetterHint = new HintEventHandler(oc);
+		// opponent chooser GUI Event Handler
+		OpponentEventHandler humanOpponentHandler = new OpponentEventHandler(othello);
+		OpponentEventHandler randomOpponentHandler = new OpponentEventHandler(othello);
+		OpponentEventHandler greedyOpponentHandler = new OpponentEventHandler(othello);
+		OpponentEventHandler betterOpponentHandler = new OpponentEventHandler(othello);
+		
+		HintEventHandler handleRandomHint = new HintEventHandler(hints);
+		HintEventHandler handleGreedyHint = new HintEventHandler(hints);
+		HintEventHandler handleBetterHint = new HintEventHandler(hints);
 		randomMenuItem.addEventHandler(ActionEvent.ACTION, handleRandomHint);
 		greedyMenuItem.addEventHandler(ActionEvent.ACTION, handleGreedyHint);
 		betterMenuItem.addEventHandler(ActionEvent.ACTION, handleBetterHint);
