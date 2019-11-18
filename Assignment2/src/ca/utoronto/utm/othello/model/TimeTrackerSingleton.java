@@ -21,7 +21,6 @@ public class TimeTrackerSingleton extends Observable implements Observer {
 	Timeline countdownP2 = new Timeline();
 	
 	private TimeTrackerSingleton(Othello o) {
-		//this.othello = o;
 		countdownP1.setCycleCount(Timeline.INDEFINITE);
 		countdownP2.setCycleCount(Timeline.INDEFINITE);
 		
@@ -74,7 +73,10 @@ public class TimeTrackerSingleton extends Observable implements Observer {
 
 	};
 	
-
+	/**
+	 * 
+	 * @return the minutes for the player whose timer is running
+	 */
 	public int getMinutes() {
 		if (countdownP1.getStatus() == Animation.Status.RUNNING) {
 			return getMinutesP1(); }
@@ -82,6 +84,10 @@ public class TimeTrackerSingleton extends Observable implements Observer {
 			return getMinutesP2();
 		}
 	}
+	/**
+	 * 
+	 * @return the seconds for the player whose timer is running
+	 */
 	public int getSeconds() {
 		if (countdownP1.getStatus() == Animation.Status.RUNNING) {
 			return getSecondsP1();
@@ -90,6 +96,9 @@ public class TimeTrackerSingleton extends Observable implements Observer {
 			return getSecondsP2();
 		}
 	}
+	/**
+	 * starts the timer
+	 */
 	public void startTimer() {
 		countdownP1.play();
 	}
