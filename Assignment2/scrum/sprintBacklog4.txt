@@ -79,9 +79,9 @@ three opponent buttons. Unnecessary classes are now deleted instead of
 commented out. 
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY 1.091 : UTORID : STATUS : Complete 
+TYPE     : USER STORY 1.091 : wronadom : STATUS : Complete 
 NAME     : Othello Timer User Specified Time
-OWNER    : wronadom
+OWNER    : Dominik Wrona
 PRIORITY : (1,2,3)
 ESTIMATE : 2 hours    ACTUAL :  3 hours
 ISSUE    : When users play, they see a chess like timer for the othello game. 
@@ -89,9 +89,9 @@ For this user story, the user is allowed to specify the time for each user.
 After a player makes a move the timer switches off for the player and on for the next mover.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY 1.12 : UTORID : STATUS : Complete 
+TYPE     : USER STORY 1.12 : wronadom : STATUS : Complete 
 NAME     : Undo
-OWNER    : wronadom
+OWNER    : Dominik Wrona
 PRIORITY : (1,2,3)
 ESTIMATE : 1 hours 30 minutes    ACTUAL :  1 hour 30 minutes
 ISSUE    : A user has the ability to undo the last move or moves.

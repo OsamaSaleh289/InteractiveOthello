@@ -63,7 +63,7 @@ NOTE: Make sure that you are using good MVC principles in implementing this.
 If you didn't then file BUG 1.012 to fix the implementation.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : BUG 1.021 : UTORID : wronadom STATUS : Completed (NotStarted,InProgress, Incomplete,Complete)
+TYPE     : BUG 1.021 : UTORID : wronadom STATUS : Complete (NotStarted,InProgress, Incomplete,Complete)
 NAME     : Check Architecture
 OWNER    : 
 PRIORITY : (1,2,3)
