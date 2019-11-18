@@ -6,11 +6,25 @@ import javafx.scene.effect.BlurType;
 import javafx.scene.effect.InnerShadow;
 import javafx.scene.paint.Color;
 
+/**
+ * An extension of InnerShadow that sets the color according to what the MoveStrategy of the Hint is.
+ * 
+ * @author katri
+ *
+ */
 public class HintHighlight extends InnerShadow{
 	private Othello othello;
 	private int row, col;
 	private Hints hints;
 
+	/**
+	 * Constructs a new HintHighlight for this BoardSquare to represent a Hint.
+	 * 
+	 * @param othello  the current Othello game
+	 * @param row  the row of this BoardSquare
+	 * @param col  the column of this BoardSquare
+	 * @param hints  the Hints for this game
+	 */
 	public HintHighlight(Othello othello, int row, int col, Hints hints) {
 		this.othello = othello;
 		this.hints = hints;
@@ -26,15 +40,18 @@ public class HintHighlight extends InnerShadow{
 		this.setBlurType(BlurType.ONE_PASS_BOX);
 	}
 	
+	/**
+	 * Sets the color according to the MoveStrategy of this Hint
+	 */
 	private void setHighlightColor() {
 		if(this.othello.getImage(row, col)!=null)
 			this.setColor(null);
 		
-		if(this.hints.isButtonBetterHint(row,col))
+		if(this.hints.betterHint.isButtonHint(row, col))
 			this.setColor(Color.rgb(11, 222, 211));
-		else if(this.hints.isButtonGreedyHint(row,col))
+		else if(this.hints.greedyHint.isButtonHint(row, col))
 			this.setColor(Color.rgb(222, 2, 2));
-		else if(this.hints.isButtonRandomHint(row,col)) 
+		else if(this.hints.randomHint.isButtonHint(row, col)) 
 			this.setColor(Color.rgb(164, 8, 199));
 		else if(this.othello.inAllMoves(row, col))
 			this.setColor(Color.rgb(67, 209, 6));

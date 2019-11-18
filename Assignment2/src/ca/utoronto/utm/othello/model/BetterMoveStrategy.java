@@ -2,13 +2,32 @@ package ca.utoronto.utm.othello.model;
 
 import java.util.ArrayList;
 
+/**
+ * A concrete implementation of MoveStrategy. 
+ * 
+ * This MoveStrategy uses the following algorithm:
+ * choose a corner if available,
+ * otherwise choose a side if available, 
+ * otherwise choose a space that maximizes the players presence in the middle 4 by 4 square of the board,
+ * otherwise choose the location maximizing the movers presence on the board. 
+ * 
+ * @author katri
+ *
+ */
 public class BetterMoveStrategy implements MoveStrategy{
 	private Othello othello;
 
+	/**
+	 * Constructs a new BetterMoveStrategy
+	 * @param othello  The Othello object we are using to run the game
+	 */
 	public BetterMoveStrategy(Othello othello) {
 		this.othello = othello;
 	}
 	
+	/**
+	 * @return a Move according to better strategy algorithm
+	 */
 	public Move getMove() {
 		if(this.othello.isGameOver())
 			return new Move(-1,-1);

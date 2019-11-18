@@ -31,6 +31,7 @@ public class OthelloApplication extends Application {
 		Othello othello=new Othello();
 		Hints hints = new Hints(othello);
 		TimeTracker timer = new TimeTracker(othello);
+		othello.attach(hints); // MODEL->MODEL
 		
 		
 		// VIEWs:
@@ -104,22 +105,23 @@ public class OthelloApplication extends Application {
 				boardSquare.setPrefSize(35, 35);
 				
 				othello.attach(boardSquare); // MODEL->VIEW hookup
-				hints.attach(boardSquare); // MODEL->VIEW hookup
+				hints.greedyHint.attach(boardSquare);
+				hints.randomHint.attach(boardSquare);
+				hints.betterHint.attach(boardSquare);
 			}
 		}
 		
 		
 		// MODEL->VIEW hookup
-		othello.attach(hints);
 		othello.attach(p1Count);
 		othello.attach(p2Count);
 		othello.attach(status);
 		othello.attach(timer);
 		othello.player1.attach(currentPlayerTypeP1);
 		othello.player2.attach(currentPlayerTypeP2);
-		hints.attach(randomMenuItem);
-		hints.attach(greedyMenuItem);
-		hints.attach(betterMenuItem);
+		hints.randomHint.attach(randomMenuItem);
+		hints.greedyHint.attach(greedyMenuItem);
+		hints.betterHint.attach(betterMenuItem);
 		timer.attach(timedisplay);
 		
 		
@@ -161,6 +163,7 @@ public class OthelloApplication extends Application {
 
 		// LAUNCH THE GUI
 		stage.show();
+		root.requestFocus();
 	}
 	
 

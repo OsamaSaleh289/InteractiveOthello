@@ -11,11 +11,26 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import javafx.util.Duration;
 
+/**
+ * A BoardSquare is a Button object that knows how to update to reflect
+ * the changes to Othello and Hints to represent an OthelloBoard square.
+ * 
+ * @author katri
+ *
+ */
 public class BoardSquare extends Button implements Observer{
 	private Othello othello;
 	private Hints hints;
 	private char prevTokenValue;
 	
+	/**
+	 * Constructs a Button to represent an Othello game BoardSquare
+	 * 
+	 * @param othello  the current Othello game
+	 * @param row  the row of this BoardSquare
+	 * @param col  the column of this BoardSquare
+	 * @param hints  the Hints for this game
+	 */
 	public BoardSquare(Othello othello, int row, int col, Hints hints) {
 		this.setText("");
 		this.othello = othello;
@@ -29,6 +44,9 @@ public class BoardSquare extends Button implements Observer{
 			this.setEffect(hintHighlight);
 	}
 	
+	/**
+	 * Updates the BoardSquare to reflect any changes
+	 */
 	@Override
 	public void update(Observable o) {
 		int row = GridPane.getRowIndex(this);
@@ -36,6 +54,11 @@ public class BoardSquare extends Button implements Observer{
 		this.setGraphic(this.othello.getImage(row,col));
 		this.setEffect(null);
 		
+		// if game restarted, we don't want the animation playing the changes
+		if(this.othello.getCount('X')==2)
+			this.prevTokenValue = this.othello.getToken(row, col);
+		
+		// move animations
 		if (othello.getToken(row, col) != this.prevTokenValue && othello.getToken(row, col) != ' ') {
 			FadeTransition ft = new FadeTransition(Duration.millis(2000), this);
 			ft.setFromValue(0);
@@ -55,6 +78,7 @@ public class BoardSquare extends Button implements Observer{
 			this.prevTokenValue = othello.getToken(row, col);
 		}
 		
+		// hints
 		if(!this.othello.isGameOver()) {
 			HintHighlight hintHighlight = new HintHighlight(this.othello,row,col,this.hints);
 			if(hintHighlight.getColor()!=null) {

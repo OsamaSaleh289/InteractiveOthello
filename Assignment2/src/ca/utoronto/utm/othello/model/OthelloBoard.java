@@ -1,9 +1,6 @@
 package ca.utoronto.utm.othello.model;
 
-import java.util.ArrayList;
-
 import ca.utoronto.utm.othello.viewcontroller.MoveVisitor;
-import ca.utoronto.utm.othello.viewcontroller.Visitor;
 
 /**
  * Keep track of all of the tokens on the board. This understands some
@@ -24,6 +21,11 @@ public class OthelloBoard {
 	private int dim = 8;
 	private char[][] board;
 
+	/**
+	 * Constructor for an OthelloBoard
+	 * 
+	 * @param dim	the dimension of this OthelloBoard
+	 */
 	public OthelloBoard(int dim) {
 		this.dim = dim;
 		board = new char[this.dim][this.dim];
@@ -37,13 +39,17 @@ public class OthelloBoard {
 		this.board[mid][mid - 1] = this.board[mid - 1][mid] = P2;
 	}
 	
+	/**
+	 * Returns the dimension of this OthelloBoard
+	 * @return	the dimension of the board
+	 */
 	public int getDimensions() {
 		
 		return this.dim;
 	}
 
 	/**
-	 * 
+	 * Returns a copy of this OthelloBoard
 	 * @return a copy of this
 	 */
 	public OthelloBoard copy() {
@@ -57,6 +63,7 @@ public class OthelloBoard {
 	}
 
 	/**
+	 * Return the token at (row,col) on the board.
 	 * 
 	 * @param row starting row, in {0,...,dim-1} (typically {0,...,7})
 	 * @param col starting col, in {0,...,dim-1} (typically {0,...,7})
@@ -71,14 +78,10 @@ public class OthelloBoard {
 	
 	public char[][] getBoardList() {
 		return board;
-		
-	}
-
-	public int getDimension() {
-		return this.dim;
 	}
 
 	/**
+	 * Returns the other/opposite player.
 	 * 
 	 * @param player either P1 or P2
 	 * @return P2 or P1, the opposite of player
@@ -92,11 +95,12 @@ public class OthelloBoard {
 	}
 
 	/**
+	 * Return whether (row,col) is a valid coordinate on the board.
 	 * 
 	 * @param row starting row, in {0,...,dim-1} (typically {0,...,7})
 	 * @param col starting col, in {0,...,dim-1} (typically {0,...,7})
 	 * @return whether (row,col) is a position on the board. Example: (6,12) is not
-	 *         a position on the board with dim 8x8.
+	 *         a position on the board.
 	 */
 	public boolean validCoordinate(int row, int col) {
 		return 0 <= row && row < this.dim && 0 <= col && col < this.dim;
@@ -185,6 +189,7 @@ public class OthelloBoard {
 	}
 
 	/**
+	 * Returns which player(s) have a move somewhere on the OthelloBoard.
 	 * 
 	 * @return whether P1,P2 or BOTH have a move somewhere on the board, EMPTY if
 	 *         neither do.
@@ -227,6 +232,7 @@ public class OthelloBoard {
 	}
 
 	/**
+	 * Return the number of tokens on the board for player.
 	 * 
 	 * @param player P1 or P2
 	 * @return the number of tokens on the board for player

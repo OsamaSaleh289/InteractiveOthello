@@ -10,8 +10,7 @@ public class AITurnEventHandler implements EventHandler<ActionEvent> {
 	private Othello othello;
 	
 	/**
-	 * Constructs a new OthelloController with a new Othello game, ready to play
-	 * with two users at the console.
+	 * 
 	 */
 	public AITurnEventHandler(Othello othello) {
 		this.othello = othello;
