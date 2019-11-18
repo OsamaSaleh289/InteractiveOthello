@@ -97,6 +97,15 @@ ESTIMATE : 1 hours 30 minutes    ACTUAL :  1 hour 30 minutes
 ISSUE    : A user has the ability to undo the last move or moves.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
+TYPE     : BUG 1.91 : UTORID : wronadom : STATUS : Complete
+NAME     : Timer Improvemnts
+OWNER    : wronadom
+PRIORITY : (1,2,3)
+ESTIMATE : 2 hours   ACTUAL :  2 hours
+ISSUE    : Change timer to start only on play/restart, gameover when time runs out, improve GUI of set timer dialogs. Make Timer 
+into Singleton pattern
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
 TYPE     : USER STORY 1.15 : watso166 : STATUS : Complete
 NAME     : Better strategy
 OWNER    : Katrina Watson
