@@ -1,7 +1,5 @@
 package ca.utoronto.utm.othello.model;
 
-import java.util.ArrayList;
-
 /**
  * Keep track of all of the tokens on the board. This understands some
  * interesting things about an Othello board, what the board looks like at the
@@ -21,6 +19,11 @@ public class OthelloBoard {
 	private int dim = 8;
 	private char[][] board;
 
+	/**
+	 * Constructor for an OthelloBoard
+	 * 
+	 * @param dim	the dimension of this OthelloBoard
+	 */
 	public OthelloBoard(int dim) {
 		this.dim = dim;
 		board = new char[this.dim][this.dim];
@@ -36,6 +39,30 @@ public class OthelloBoard {
 	
 
 	/**
+	 * Returns the dimension of this OthelloBoard
+	 * @return	the dimension of the board
+	 */
+	public int getDimension() {
+		
+		return this.dim;
+	}
+
+	/**
+	 * Returns a copy of this OthelloBoard
+	 * @return a copy of this
+	 */
+	public OthelloBoard copy() {
+		OthelloBoard ob = new OthelloBoard(this.dim);
+		for (int row = 0; row < this.dim; row++) {
+			for (int col = 0; col < this.dim; col++) {
+				ob.board[row][col] = this.board[row][col];
+			}
+		}
+		return ob;
+	}
+
+	/**
+	 * Return the token at (row,col) on the board.
 	 * 
 	 * @param row starting row, in {0,...,dim-1} (typically {0,...,7})
 	 * @param col starting col, in {0,...,dim-1} (typically {0,...,7})
@@ -47,21 +74,13 @@ public class OthelloBoard {
 		else
 			return EMPTY;
 	}
-	/**
-	 * 
-	 * @param row starting row, in {0,...,dim-1} (typically {0,...,7})
-	 * Return list of tokens on the board to be used by the visitor classes
-	 */
+	
 	public char[][] getBoardList() {
 		return board;
-		
-	}
-
-	public int getDimension() {
-		return this.dim;
 	}
 
 	/**
+	 * Returns the other/opposite player.
 	 * 
 	 * @param player either P1 or P2
 	 * @return P2 or P1, the opposite of player
@@ -75,11 +94,12 @@ public class OthelloBoard {
 	}
 
 	/**
+	 * Return whether (row,col) is a valid coordinate on the board.
 	 * 
 	 * @param row starting row, in {0,...,dim-1} (typically {0,...,7})
 	 * @param col starting col, in {0,...,dim-1} (typically {0,...,7})
 	 * @return whether (row,col) is a position on the board. Example: (6,12) is not
-	 *         a position on the board with dim 8x8.
+	 *         a position on the board.
 	 */
 	public boolean validCoordinate(int row, int col) {
 		return 0 <= row && row < this.dim && 0 <= col && col < this.dim;
@@ -137,7 +157,7 @@ public class OthelloBoard {
 	 *         alternation P1 ... P1 P2 in direction (dx,dy), EMPTY if there is no
 	 *         alternation
 	 */
-	public char alternation(int row, int col, int drow, int dcol) {
+	private char alternation(int row, int col, int drow, int dcol) {
 		if (drow == 0 && dcol == 0)
 			return EMPTY;
 		char firstToken = this.get(row, col);
@@ -161,7 +181,7 @@ public class OthelloBoard {
 	 * @param dcol the col direction, in {-1,0,1}
 	 * @return P1,P2,EMPTY
 	 */
-	public char hasMove(int row, int col, int drow, int dcol) {
+	char hasMove(int row, int col, int drow, int dcol) {
 		if (!this.validCoordinate(row, col) || this.board[row][col] != OthelloBoard.EMPTY)
 			return OthelloBoard.EMPTY;
 		return this.alternation(row + drow, col + dcol, drow, dcol);
@@ -170,17 +190,20 @@ public class OthelloBoard {
 	
 
 	
+
 	
 	/**
 	 * 
 	 * @param player P1 or P2
-	 * Update the board's coordinates
+	 * @return the number of tokens on the board for player
 	 */
 	public void setCoordinate(int row, int col, char player) {
 		board[row][col] = player;
 		
 		
 	}
+	
+	
 	
 	
 	

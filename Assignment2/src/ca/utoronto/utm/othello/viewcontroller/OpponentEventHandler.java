@@ -10,13 +10,30 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;
 
+/**
+ * An OpponentEventHandler handles the user clicking on a new opponent Button 
+ * by changing the opponent Player's MoveStrategy to correspond to the Button's
+ * text. 
+ * 
+ * @author katri
+ *
+ */
 public class OpponentEventHandler implements EventHandler<ActionEvent> {
 	private Othello othello;
 	
+	/**
+	 * Constructs a new OpponentEventHandler to handle the user clicking on
+	 * a new opponent Button
+	 * 
+	 * @param othello
+	 */
 	public OpponentEventHandler(Othello othello) {
 		this.othello = othello;
 	}
 	
+	/**
+	 * handles the user clicking on a new opponent by updating the other Player's MoveStrategy
+	 */
 	public void handle(ActionEvent event) {
 		Button button = (Button) event.getSource();
 		

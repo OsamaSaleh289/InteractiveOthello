@@ -1,8 +1,16 @@
 package ca.utoronto.utm.othello.model;
 
-public class HasMoveVisitor implements HasMoveVisitorInterface{
+/**
+ * 
+ * Checks for players that have a move on the board. Implmentation of a visitor.
+ * 
+ * @author Osama Saleh
+ */
 
+
+public class HasMoveVisitor implements HasMoveVisitorInterface{
 	/**
+	 * Returns which player(s) have a move somewhere on the OthelloBoard.
 	 * 
 	 * @return whether P1,P2 or BOTH have a move somewhere on the board, EMPTY if
 	 *         neither do.

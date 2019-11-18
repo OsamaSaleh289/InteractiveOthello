@@ -1,12 +1,27 @@
 package ca.utoronto.utm.othello.model;
 
+/**
+ * A concrete implementation of MoveStrategy. 
+ * 
+ * This MoveStrategy algorithm returns the Move that would lead to the highest token count for this Player.
+ * 
+ * @author katri
+ *
+ */
 public class GreedyMoveStrategy  implements MoveStrategy{
 	private Othello othello;
 
+	/**
+	 * Constructs a new GreedyMoveStrategy
+	 * @param othello  The Othello object we are using to run the game
+	 */
 	public GreedyMoveStrategy(Othello othello) {
 		this.othello = othello;
 	}
 	
+	/**
+	 * @return the Move that would result in the highest increased token count
+	 */
 	public Move getMove() {
 		if(this.othello.isGameOver())
 			return new Move(-1,-1);

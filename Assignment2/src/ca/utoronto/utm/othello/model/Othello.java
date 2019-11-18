@@ -272,7 +272,6 @@ public class Othello extends Observable {
 		board = new OthelloBoard(Othello.DIMENSION);
 		whosTurn = OthelloBoard.P1;
 		numMoves = 0;
-		
 		loser = OthelloBoard.EMPTY;
 		boards = new ArrayList<Othello>();
 		player1 = new Player(this, OthelloBoard.P1);

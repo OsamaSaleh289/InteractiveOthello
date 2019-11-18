@@ -1,6 +1,12 @@
 package ca.utoronto.utm.othello.model;
 
 import ca.utoronto.utm.othello.model.TokenGetterVisitorInterface;
+/**
+ * 
+ * Visits OthelloBoard and extracts the token at a certain position. Implmentation of a visitor
+ * 
+ * @author Osama Saleh
+ */
 
 public class TokenGetterVisitor implements TokenGetterVisitorInterface{
 	
@@ -15,7 +21,6 @@ public class TokenGetterVisitor implements TokenGetterVisitorInterface{
 	 */
 	@Override
 	public char visit(OthelloBoard board, int row, int col) {
-		// TODO Auto-generated method stub
 		if (board.validCoordinate(row, col))
 			return (board.getBoardList())[row][col];
 		else

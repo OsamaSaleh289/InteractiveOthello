@@ -1,5 +1,12 @@
 package ca.utoronto.utm.othello.model;
 
+/**
+ * 
+ * Visits OthelloBoard and extracts the token count for a certain player. Implmentation of a visitor
+ * 
+ * @author Osama Saleh
+ */
+
 public class TokenCountVisitor implements TokenCountVisitorInterface{
 	/**
 	 * 

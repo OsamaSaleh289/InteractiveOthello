@@ -18,6 +18,12 @@ import javafx.scene.layout.HBox;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
+/**
+ * 
+ * An OthelloApplication creates and runs an Othello game. 
+ * It attaches and creates the Models, Views, and Controllers to run the game.
+ *
+ */
 public class OthelloApplication extends Application {
 	// REMEMBER: To run this in the lab put
 	// --module-path "/usr/share/openjfx/lib" --add-modules
@@ -30,9 +36,8 @@ public class OthelloApplication extends Application {
 		// MODEL
 		Othello othello=new Othello();
 		Hints hints = new Hints(othello);
+		othello.attach(hints); // MODEL->MODEL
 		TimeTrackerSingleton timer = TimeTrackerSingleton.getInstance(othello);
-		othello.attach(hints);
-		
 		
 		
 		// VIEWs:
@@ -106,7 +111,9 @@ public class OthelloApplication extends Application {
 				boardSquare.setPrefSize(35, 35);
 				
 				othello.attach(boardSquare); // MODEL->VIEW hookup
-				hints.attach(boardSquare); // MODEL->VIEW hookup
+				hints.greedyHint.attach(boardSquare);
+				hints.randomHint.attach(boardSquare);
+				hints.betterHint.attach(boardSquare);
 			}
 		}
 		
@@ -118,9 +125,9 @@ public class OthelloApplication extends Application {
 		othello.attach(timer);
 		othello.player1.attach(currentPlayerTypeP1);
 		othello.player2.attach(currentPlayerTypeP2);
-		hints.attach(randomMenuItem);
-		hints.attach(greedyMenuItem);
-		hints.attach(betterMenuItem);
+		hints.randomHint.attach(randomMenuItem);
+		hints.greedyHint.attach(greedyMenuItem);
+		hints.betterHint.attach(betterMenuItem);
 		timer.attach(timedisplay);
 		
 		
@@ -162,6 +169,7 @@ public class OthelloApplication extends Application {
 
 		// LAUNCH THE GUI
 		stage.show();
+		root.requestFocus();
 	}
 	
 

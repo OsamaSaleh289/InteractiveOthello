@@ -3,14 +3,29 @@ package ca.utoronto.utm.othello.model;
 import java.util.ArrayList;
 import java.util.Random;
 
+/**
+ * A concrete implementation of MoveStrategy. 
+ * 
+ * This MoveStrategy algorithm returns a random Move that the Player can make this turn.
+ * 
+ * @author katri
+ *
+ */
 public class RandomMoveStrategy implements MoveStrategy{
 	private Othello othello;
 	private Random rand = new Random();
 
+	/**
+	 * Constructs a new RandomMoveStrategy
+	 * @param othello  The Othello object we are using to run the game
+	 */
 	public RandomMoveStrategy(Othello othello) {
 		this.othello = othello;
 	}
 	
+	/**
+	 * @return a random Move that the Player can make this turn
+	 */
 	public Move getMove() {
 		if(this.othello.isGameOver())
 			return new Move(-1,-1);

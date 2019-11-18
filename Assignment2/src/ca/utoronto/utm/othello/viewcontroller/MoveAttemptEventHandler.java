@@ -7,13 +7,28 @@ import javafx.event.EventHandler;
 import javafx.scene.control.Button;
 import javafx.scene.layout.GridPane;
 
+/**
+ * 
+ * A MoveAttemptEventHandler handles the user trying to make a move by clicking on a BoardSquare
+ * 
+ * @author katri
+ *
+ */
 public class MoveAttemptEventHandler implements EventHandler<ActionEvent> {
 	private Othello othello;
 	
-	MoveAttemptEventHandler(Othello othello) {
+	/**
+	 * Constructs a MoveAttemptEventHandler to handle the user clicking on a BoardSquare
+	 * 
+	 * @param othello the Othello game
+	 */
+	public MoveAttemptEventHandler(Othello othello) {
 		this.othello = othello;
 	}
 
+	/**
+	 * Tries to make a move with the BoardSquare the user clicked on
+	 */
 	public void handle(ActionEvent event) {
 		Button button = (Button) event.getSource();
 

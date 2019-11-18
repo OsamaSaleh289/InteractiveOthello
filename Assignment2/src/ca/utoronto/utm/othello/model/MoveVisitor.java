@@ -1,5 +1,13 @@
 package ca.utoronto.utm.othello.model;
 
+/**
+ * 
+ * Visits OthelloBoard and makes a move for a given player. Implmentation of a visitor.
+ * 
+ * @author Osama Saleh
+ */
+
+
 public class MoveVisitor implements MoveVisitorInterface{
 	
 	/**
