@@ -8,19 +8,20 @@ import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.util.Duration;
 
-public class TimeTracker extends Observable implements Observer {
-	private Othello othello;
+public class TimeTrackerSingleton extends Observable implements Observer {
+	private static Othello othello;
 	private static int minutesP1 = 5;
 	private static int secondsP1 = 0;
 	private static int minutesP2 = 5;
 	private static int secondsP2 = 0;
 	private char whosTurn = 'X';
+	private static TimeTrackerSingleton instance;
 	
 	Timeline countdownP1 = new Timeline();
 	Timeline countdownP2 = new Timeline();
 	
-	public TimeTracker(Othello o) {
-		this.othello = o;
+	private TimeTrackerSingleton(Othello o) {
+		//this.othello = o;
 		countdownP1.setCycleCount(Timeline.INDEFINITE);
 		countdownP2.setCycleCount(Timeline.INDEFINITE);
 		
@@ -30,13 +31,21 @@ public class TimeTracker extends Observable implements Observer {
 		countdownP1.getKeyFrames().add(secondsFrameP1);
 		countdownP2.getKeyFrames().add(secondsFrameP2);
 	}
+	public static synchronized TimeTrackerSingleton getInstance(Othello o) {
+		othello = o;
+		if (instance == null) {
+			instance = new TimeTrackerSingleton(othello);
+		}
+		return instance;
+		
+	}
 	
 	EventHandler timeEventHandlerP1 = new EventHandler() {
 		
 		public void handle(Event event) {
 			setSecondsP1(getSecondsP1() - 1);
 			notifyObservers();
-			if (getSecondsP1()<=1) {
+			if (getSecondsP1()<=0) {
 				setMinutesP1(getMinutesP1() - 1);
 				setSecondsP1(60);
 			}
@@ -54,7 +63,7 @@ public class TimeTracker extends Observable implements Observer {
 		public void handle(Event event) {
 			setSecondsP2(getSecondsP2() - 1);
 			notifyObservers();
-			if (getSecondsP2()<=1) {
+			if (getSecondsP2()<=0) {
 				setMinutesP2(getMinutesP2() - 1);
 				setSecondsP2(60);
 			}
@@ -110,25 +119,25 @@ public class TimeTracker extends Observable implements Observer {
 		return minutesP1;
 	}
 	public static void setMinutesP1(int minutesP1) {
-		TimeTracker.minutesP1 = minutesP1;
+		TimeTrackerSingleton.minutesP1 = minutesP1;
 	}
 	public static int getMinutesP2() {
 		return minutesP2;
 	}
 	public static void setMinutesP2(int minutesP2) {
-		TimeTracker.minutesP2 = minutesP2;
+		TimeTrackerSingleton.minutesP2 = minutesP2;
 	}
 	public static int getSecondsP1() {
 		return secondsP1;
 	}
 	public static void setSecondsP1(int secondsP1) {
-		TimeTracker.secondsP1 = secondsP1;
+		TimeTrackerSingleton.secondsP1 = secondsP1;
 	}
 	public static int getSecondsP2() {
 		return secondsP2;
 	}
 	public static void setSecondsP2(int secondsP2) {
-		TimeTracker.secondsP2 = secondsP2;
+		TimeTrackerSingleton.secondsP2 = secondsP2;
 	}
 
 	

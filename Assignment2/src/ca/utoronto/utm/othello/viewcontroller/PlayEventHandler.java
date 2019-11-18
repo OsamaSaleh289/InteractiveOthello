@@ -1,14 +1,14 @@
 package ca.utoronto.utm.othello.viewcontroller;
 
-import ca.utoronto.utm.othello.model.TimeTracker;
+import ca.utoronto.utm.othello.model.TimeTrackerSingleton;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Node;
 
 public class PlayEventHandler implements EventHandler<ActionEvent> {
-	private TimeTracker timer;
+	private TimeTrackerSingleton timer;
 	
-	PlayEventHandler(TimeTracker timer) {
+	PlayEventHandler(TimeTrackerSingleton timer) {
 		this.timer = timer;
 	}
 	

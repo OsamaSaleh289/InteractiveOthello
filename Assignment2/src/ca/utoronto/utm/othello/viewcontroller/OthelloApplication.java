@@ -30,7 +30,7 @@ public class OthelloApplication extends Application {
 		// MODEL
 		Othello othello=new Othello();
 		Hints hints = new Hints(othello);
-		TimeTracker timer = new TimeTracker(othello);
+		TimeTrackerSingleton timer = TimeTrackerSingleton.getInstance(othello);
 		othello.attach(hints);
 		
 		
