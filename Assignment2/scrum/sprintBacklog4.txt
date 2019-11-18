@@ -129,6 +129,16 @@ wasn't their turn (they now cannot make a move for the AI while AI waits for
 the animation to finish).
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
+TYPE     : BUG 1.1041 : watso166 : STATUS : Complete
+NAME     : Hint Strategy Design Pattern
+OWNER    : Katrina Watson
+PRIORITY : (1,2,3)
+ESTIMATE : 3 hours    ACTUAL : 4 hours 
+ISSUE    : 
+Hints are now implemented using the strategy design pattern and use the
+same MoveStrategies as Player. 
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
 TYPE     : BUG 1.131 : watso166 : STATUS : Complete
 NAME     : Animation
 OWNER    : Katrina Watson
@@ -152,11 +162,7 @@ and othello board to now create visitors and use them as appropriate.
 NOTE: Some private methods could be removed as a result of this.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-<<<<<<< HEAD
-TYPE     : BUG 9.99 : chenj628 : STATUS : NotStarted (NotStarted,InProgress, Incomplete,Complete)
-=======
 TYPE     : BUG 9.99 : chenj628 : STATUS : Complete 
->>>>>>> d0bfe579dd48f5e8824c93d1521c37d55983081b
 NAME     : Architecture Document
 OWNER    : 
 PRIORITY : (1,2,3)

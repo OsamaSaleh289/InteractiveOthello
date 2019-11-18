@@ -11,3 +11,5 @@ were closely related or the bug came up while doing the user story)
 then I did them all on that one branch. I'm pretty sure I still made
 all major changes on a branch though. 
 
+
+Also we have Images that are in viewcontroller that should be in the repo

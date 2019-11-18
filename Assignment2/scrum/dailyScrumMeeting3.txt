@@ -117,19 +117,19 @@ Nov 13,2019
 Nov 14,2019
 	What I did yesterday: N/A
 	What I will do today: Implement design patterns
-	Obstacles I face:
+	Obstacles I face: N/A
 
 Nov 15,2019
-	What I did yesterday:
+	What I did yesterday: Implemented design patterns
 	What I will do today: UserStory 1.15, fix userstory 1.10, redo userstory 1.14, implement Strategy design pattern on move algorithms
-	Obstacles I face:
+	Obstacles I face: N/A
 
 Nov 16,2019
-	What I did yesterday:
+	What I did yesterday: UserStory 1.15, fix userstory 1.10, redo userstory 1.14, implement Strategy design pattern on move algorithms
 	What I will do today: BUG1.131, BUG1.104
-	Obstacles I face:
+	Obstacles I face: N/A
 
 Nov 17,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: BUG1.131, BUG1.104
+	What I will do today: Make sure all code is documented, fix last minute bugs
+	Obstacles I face: N/A
