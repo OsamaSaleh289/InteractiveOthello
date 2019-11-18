@@ -79,9 +79,9 @@ three opponent buttons. Unnecessary classes are now deleted instead of
 commented out. 
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY 1.091 : UTORID : STATUS : Complete 
+TYPE     : USER STORY 1.091 : wronadom : STATUS : Complete 
 NAME     : Othello Timer User Specified Time
-OWNER    : wronadom
+OWNER    : Dominik Wrona
 PRIORITY : (1,2,3)
 ESTIMATE : 2 hours    ACTUAL :  3 hours
 ISSUE    : When users play, they see a chess like timer for the othello game. 
@@ -89,12 +89,21 @@ For this user story, the user is allowed to specify the time for each user.
 After a player makes a move the timer switches off for the player and on for the next mover.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY 1.12 : UTORID : STATUS : Complete 
+TYPE     : USER STORY 1.12 : wronadom : STATUS : Complete 
 NAME     : Undo
-OWNER    : wronadom
+OWNER    : Dominik Wrona
 PRIORITY : (1,2,3)
 ESTIMATE : 1 hours 30 minutes    ACTUAL :  1 hour 30 minutes
 ISSUE    : A user has the ability to undo the last move or moves.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : BUG 1.91 : UTORID : wronadom : STATUS : Complete
+NAME     : Timer Improvemnts
+OWNER    : wronadom
+PRIORITY : (1,2,3)
+ESTIMATE : 2 hours   ACTUAL :  2 hours
+ISSUE    : Change timer to start only on play/restart, gameover when time runs out, improve GUI of set timer dialogs. Make Timer 
+into Singleton pattern
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
 TYPE     : USER STORY 1.15 : watso166 : STATUS : Complete
@@ -143,7 +152,11 @@ and othello board to now create visitors and use them as appropriate.
 NOTE: Some private methods could be removed as a result of this.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
+<<<<<<< HEAD
 TYPE     : BUG 9.99 : chenj628 : STATUS : NotStarted (NotStarted,InProgress, Incomplete,Complete)
+=======
+TYPE     : BUG 9.99 : chenj628 : STATUS : Complete 
+>>>>>>> d0bfe579dd48f5e8824c93d1521c37d55983081b
 NAME     : Architecture Document
 OWNER    : 
 PRIORITY : (1,2,3)

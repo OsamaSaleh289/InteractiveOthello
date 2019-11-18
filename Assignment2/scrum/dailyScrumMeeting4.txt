@@ -181,9 +181,10 @@ Nov 16,2019
 	Obstacles I face: Fully grasping how to implment the visitor design pattern. Should overcome it though.
 
 Nov 17,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Finished US1.17 and fixed the issues in animation along with Katrina.
+	What I will do today: Polish and add more visitors to implment the visitor design pattern. 
+	Add comment and documentation. Make sure code is clear and concise
+	Obstacles I face: Not losing a lot of marks on documentation like A1 :).
 
 Nov 18,2019
 	What I did yesterday:

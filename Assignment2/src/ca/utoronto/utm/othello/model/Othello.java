@@ -1,11 +1,6 @@
 package ca.utoronto.utm.othello.model;
 
-import ca.utoronto.utm.othello.viewcontroller.FourxFour_TokenCountVisitor;
-import ca.utoronto.utm.othello.viewcontroller.MoveVisitor;
 import ca.utoronto.utm.othello.viewcontroller.OthelloApplication;
-import ca.utoronto.utm.othello.viewcontroller.TokenCountVisitor;
-import ca.utoronto.utm.othello.viewcontroller.TokenVisitor;
-import ca.utoronto.utm.othello.viewcontroller.Visitor;
 import ca.utoronto.utm.util.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -80,7 +75,7 @@ public class Othello extends Observable {
 	 * @return the token at position row, col.
 	 */
 	public char getToken(int row, int col) {
-		TokenVisitor tokenVisitor = new TokenVisitor();
+		TokenGetterVisitor tokenVisitor = new TokenGetterVisitor();
 		return tokenVisitor.visit(board, row, col);
 	}
 	/**
@@ -139,10 +134,11 @@ public class Othello extends Observable {
 	 */
 	public boolean move(int row, int col) {
 		MoveVisitor boardVisitor = new MoveVisitor();
+		HasMoveVisitor hasMoveVisitor = new HasMoveVisitor();
 		//Visitor that makes visits the board and attempts to make a move
 		if (boardVisitor.visit(board, row, col, this.whosTurn)) {
 			this.whosTurn = OthelloBoard.otherPlayer(this.whosTurn);
-			char allowedMove = board.hasMove();
+			char allowedMove = hasMoveVisitor.visit(board);
 			if (allowedMove != OthelloBoard.BOTH)
 				this.whosTurn = allowedMove;
 			this.numMoves++;
@@ -153,7 +149,9 @@ public class Othello extends Observable {
 			return false;
 		}
 	}
-	
+	/**
+	 * Undo the last move of a human player
+	 */
 	public void undo() {
 		if (boards.size() == 1) {
 			boards.remove(boards.size()-1);
@@ -165,6 +163,16 @@ public class Othello extends Observable {
 			board = current.board;
 			whosTurn = current.whosTurn;
 			numMoves = current.numMoves;
+			if (whosTurn == player1.player) {
+				if (player1.strategyName != "Human") {
+					this.undo();
+				}
+			}
+			else if (whosTurn == player2.player) {
+				if (player2.strategyName != "Human") {
+					this.undo();
+				}
+			}
 			this.notifyObservers();		
 		}
 	}
@@ -211,7 +219,9 @@ public class Othello extends Observable {
 	public boolean isGameOver() {
 		return this.whosTurn == OthelloBoard.EMPTY;
 	}
-
+	/**
+	 * Alert the game that time has run out for one of the players
+	 */
 	public void noTime() {
 		timeout = true;
 		if (this.whosTurn == OthelloBoard.P1) {
@@ -224,9 +234,17 @@ public class Othello extends Observable {
 		this.notifyObservers();
 	
 	}
+	/**
+	 * 
+	 * @return the player whose time has run out
+	 */
 	public char getLoser() {
 		return loser;
 	}
+	/**
+	 * 
+	 * @return if time has run out for one of the players
+	 */
 	public boolean checkTime() {
 		return timeout;
 	}	
@@ -237,11 +255,18 @@ public class Othello extends Observable {
 	 */
 	public Othello copy() {
 		Othello o = new Othello();
-		o.board = this.board.copy();
+		CopyVisitor copy = new CopyVisitor();
+		o.board = copy.visit(board);
 		o.numMoves = this.numMoves;
 		o.whosTurn = this.whosTurn;
 		return o;
 	}
+	
+	/**
+	 * Fully resets the game - Used by our restart button
+	 * 
+	 *
+	 */
 	
 	public void resetOthello() {
 		board = new OthelloBoard(Othello.DIMENSION);

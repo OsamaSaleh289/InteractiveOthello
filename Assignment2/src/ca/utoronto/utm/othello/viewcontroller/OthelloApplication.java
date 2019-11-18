@@ -18,6 +18,12 @@ import javafx.scene.layout.HBox;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
+/**
+ * 
+ * An OthelloApplication creates and runs an Othello game. 
+ * It attaches and creates the Models, Views, and Controllers to run the game.
+ *
+ */
 public class OthelloApplication extends Application {
 	// REMEMBER: To run this in the lab put
 	// --module-path "/usr/share/openjfx/lib" --add-modules
@@ -30,8 +36,8 @@ public class OthelloApplication extends Application {
 		// MODEL
 		Othello othello=new Othello();
 		Hints hints = new Hints(othello);
-		TimeTracker timer = new TimeTracker(othello);
 		othello.attach(hints); // MODEL->MODEL
+		TimeTrackerSingleton timer = TimeTrackerSingleton.getInstance(othello);
 		
 		
 		// VIEWs:

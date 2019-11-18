@@ -1,6 +1,4 @@
-package ca.utoronto.utm.othello.viewcontroller;
-
-import ca.utoronto.utm.othello.model.OthelloBoard;
+package ca.utoronto.utm.othello.model;
 
 public interface TokenGetterVisitorInterface {
 	public char visit(OthelloBoard board, int row, int col);

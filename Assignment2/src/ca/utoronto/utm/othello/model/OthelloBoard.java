@@ -1,7 +1,5 @@
 package ca.utoronto.utm.othello.model;
 
-import ca.utoronto.utm.othello.viewcontroller.MoveVisitor;
-
 /**
  * Keep track of all of the tokens on the board. This understands some
  * interesting things about an Othello board, what the board looks like at the
@@ -182,7 +180,7 @@ public class OthelloBoard {
 	 * @param dcol the col direction, in {-1,0,1}
 	 * @return P1,P2,EMPTY
 	 */
-	private char hasMove(int row, int col, int drow, int dcol) {
+	char hasMove(int row, int col, int drow, int dcol) {
 		if (!this.validCoordinate(row, col) || this.board[row][col] != OthelloBoard.EMPTY)
 			return OthelloBoard.EMPTY;
 		return this.alternation(row + drow, col + dcol, drow, dcol);
