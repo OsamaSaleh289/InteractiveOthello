@@ -39,6 +39,15 @@ ConcreteStrategyC: BetterMoveStrategy.java
 - Invoker: UndoInvoker.java
 - Receiver: Othello.java
 
+4.Visitor
+- Visitors: CopyVisitorInterface.java / HasMoveVisitorInterface.java / MoveVisitorInterface.java / TokenCountVisitorInterface.java / TokenGetterVisitorInterface.java
+- ConcreteVisitors: CopyVisitor.java / HasMoveVisitor.java / MoveVisitor.java / TokenCountVisitor.java/ TokenGetterVisitor.java / FourxFour_TokenCountVisitor.java
+- Visitable : OthelloBoard.java
+
+- The purpose of this design pattern was to establish a more elegant link between Othello.java and OthelloBoard.java. The way we did this is through creating visitors
+that Othello.java can use to access the operations we can perform on OthelloBoard. These visitors replaced a lot of the methods that had been present in OthelloBoard leading
+to less cluttered and more readable code. Operations implemented by the visitors include Move, hasMove, getCount, getToken, and copy.
+
 
 # UNUSED
 Factory
