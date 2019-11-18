@@ -39,7 +39,7 @@ ConcreteStrategyC: BetterMoveStrategy.java
 - Invoker: UndoInvoker.java
 - Receiver: Othello.java
 
-5. Singleton : 
+4. Singleton : 
 Singleton Class: TimeTrackerSingleton
 It is only possible to make one instance of this class, constructor is private, access allowed only through getInstance method
 
