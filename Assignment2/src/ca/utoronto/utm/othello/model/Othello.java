@@ -153,7 +153,9 @@ public class Othello extends Observable {
 			return false;
 		}
 	}
-	
+	/**
+	 * Undo the last move of a human player
+	 */
 	public void undo() {
 		if (boards.size() == 1) {
 			boards.remove(boards.size()-1);
@@ -221,7 +223,9 @@ public class Othello extends Observable {
 	public boolean isGameOver() {
 		return this.whosTurn == OthelloBoard.EMPTY;
 	}
-
+	/**
+	 * Alert the game that time has run out for one of the players
+	 */
 	public void noTime() {
 		timeout = true;
 		if (this.whosTurn == OthelloBoard.P1) {
@@ -234,9 +238,17 @@ public class Othello extends Observable {
 		this.notifyObservers();
 	
 	}
+	/**
+	 * 
+	 * @return the player whose time has run out
+	 */
 	public char getLoser() {
 		return loser;
 	}
+	/**
+	 * 
+	 * @return if time has run out for one of the players
+	 */
 	public boolean checkTime() {
 		return timeout;
 	}	
