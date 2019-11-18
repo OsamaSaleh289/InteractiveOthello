@@ -52,7 +52,7 @@ It is only possible to make one instance of this class, constructor is private, 
 that Othello.java can use to access the operations we can perform on OthelloBoard. These visitors replaced a lot of the methods that had been present in OthelloBoard leading
 to less cluttered and more readable code. Operations implemented by the visitors include Move, hasMove, getCount, getToken, and copy.
 
->>>>>>> US1.17_Extended
+
 
 # UNUSED
 Factory

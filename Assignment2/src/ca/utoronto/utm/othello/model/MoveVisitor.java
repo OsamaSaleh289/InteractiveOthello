@@ -38,11 +38,7 @@ public class MoveVisitor implements MoveVisitorInterface{
 	}
 
 
-	@Override
-	public void visit(OthelloBoard board) {
-		// TODO Auto-generated method stub
-		
-	}
+	
 
 	
 

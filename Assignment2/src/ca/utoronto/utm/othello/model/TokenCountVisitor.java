@@ -10,8 +10,8 @@ public class TokenCountVisitor implements TokenCountVisitorInterface{
 	public int visit(OthelloBoard board, char player) {
 		// TODO Auto-generated method stub
 		int count = 0;
-		for (int row = 0; row < board.getDimensions(); row++) {
-			for (int col = 0; col < board.getDimensions(); col++) {
+		for (int row = 0; row < board.getDimension(); row++) {
+			for (int col = 0; col < board.getDimension(); col++) {
 				if (board.get(row, col) == player)
 					count++;
 			}

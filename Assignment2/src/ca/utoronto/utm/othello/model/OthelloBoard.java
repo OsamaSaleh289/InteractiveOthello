@@ -34,9 +34,6 @@ public class OthelloBoard {
 		this.board[mid][mid - 1] = this.board[mid - 1][mid] = P2;
 	}
 	
-	public int getDimensions() {
-		return this.dim;
-	}
 
 	/**
 	 * 
