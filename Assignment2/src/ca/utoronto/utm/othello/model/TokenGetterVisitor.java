@@ -1,9 +1,8 @@
-package ca.utoronto.utm.othello.viewcontroller;
+package ca.utoronto.utm.othello.model;
 
-import ca.utoronto.utm.othello.model.OthelloBoard;
-import ca.utoronto.utm.othello.viewcontroller.TokenGetterVisitorInterface;
+import ca.utoronto.utm.othello.model.TokenGetterVisitorInterface;
 
-public class TokenVisitor implements TokenGetterVisitorInterface{
+public class TokenGetterVisitor implements TokenGetterVisitorInterface{
 	
 	/**
 	 * 

@@ -2,9 +2,6 @@ package ca.utoronto.utm.othello.model;
 
 import java.util.ArrayList;
 
-import ca.utoronto.utm.othello.viewcontroller.MoveVisitor;
-import ca.utoronto.utm.othello.viewcontroller.Visitor;
-
 /**
  * Keep track of all of the tokens on the board. This understands some
  * interesting things about an Othello board, what the board looks like at the

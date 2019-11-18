@@ -1,9 +1,6 @@
-package ca.utoronto.utm.othello.viewcontroller;
+package ca.utoronto.utm.othello.model;
 
-import ca.utoronto.utm.othello.model.Othello;
-import ca.utoronto.utm.othello.model.OthelloBoard;
-
-public class MoveVisitor implements Visitor{
+public class MoveVisitor implements MoveVisitorInterface{
 	
 	/**
 	 * Make a move for player at position (row,col) according to Othello rules,

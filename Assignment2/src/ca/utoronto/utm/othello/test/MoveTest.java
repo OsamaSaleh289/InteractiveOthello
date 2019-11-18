@@ -8,7 +8,7 @@ import org.junit.Test;
 import ca.utoronto.utm.othello.model.Move;
 
 public class MoveTest {
-	Move move;
+	/*Move move;
 
 	@Before
 	public void setUp() throws Exception {
@@ -28,6 +28,6 @@ public class MoveTest {
 	@Test
 	public void testToString() {
 		assertEquals("toString", move.toString(), "(3,5)");
-	}
+	}*/
 
 }

@@ -1,11 +1,6 @@
 package ca.utoronto.utm.othello.model;
 
-import ca.utoronto.utm.othello.viewcontroller.FourxFour_TokenCountVisitor;
-import ca.utoronto.utm.othello.viewcontroller.MoveVisitor;
 import ca.utoronto.utm.othello.viewcontroller.OthelloApplication;
-import ca.utoronto.utm.othello.viewcontroller.TokenCountVisitor;
-import ca.utoronto.utm.othello.viewcontroller.TokenVisitor;
-import ca.utoronto.utm.othello.viewcontroller.Visitor;
 import ca.utoronto.utm.util.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -80,7 +75,7 @@ public class Othello extends Observable {
 	 * @return the token at position row, col.
 	 */
 	public char getToken(int row, int col) {
-		TokenVisitor tokenVisitor = new TokenVisitor();
+		TokenGetterVisitor tokenVisitor = new TokenGetterVisitor();
 		return tokenVisitor.visit(board, row, col);
 	}
 	/**

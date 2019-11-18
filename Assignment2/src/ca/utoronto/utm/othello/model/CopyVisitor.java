@@ -1,6 +1,6 @@
 package ca.utoronto.utm.othello.model;
 
-public class CopyVisitor implements CopyInterface{
+public class CopyVisitor implements CopyVisitorInterface{
 	
 	/**
 	 * 
