@@ -1,11 +1,6 @@
 package ca.utoronto.utm.othello.model;
 
-import ca.utoronto.utm.othello.viewcontroller.FourxFour_TokenCountVisitor;
-import ca.utoronto.utm.othello.viewcontroller.MoveVisitor;
 import ca.utoronto.utm.othello.viewcontroller.OthelloApplication;
-import ca.utoronto.utm.othello.viewcontroller.TokenCountVisitor;
-import ca.utoronto.utm.othello.viewcontroller.TokenVisitor;
-import ca.utoronto.utm.othello.viewcontroller.Visitor;
 import ca.utoronto.utm.util.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -80,7 +75,7 @@ public class Othello extends Observable {
 	 * @return the token at position row, col.
 	 */
 	public char getToken(int row, int col) {
-		TokenVisitor tokenVisitor = new TokenVisitor();
+		TokenGetterVisitor tokenVisitor = new TokenGetterVisitor();
 		return tokenVisitor.visit(board, row, col);
 	}
 	/**
@@ -139,10 +134,11 @@ public class Othello extends Observable {
 	 */
 	public boolean move(int row, int col) {
 		MoveVisitor boardVisitor = new MoveVisitor();
+		HasMoveVisitor hasMoveVisitor = new HasMoveVisitor();
 		//Visitor that makes visits the board and attempts to make a move
 		if (boardVisitor.visit(board, row, col, this.whosTurn)) {
 			this.whosTurn = OthelloBoard.otherPlayer(this.whosTurn);
-			char allowedMove = board.hasMove();
+			char allowedMove = hasMoveVisitor.visit(board);
 			if (allowedMove != OthelloBoard.BOTH)
 				this.whosTurn = allowedMove;
 			this.numMoves++;
@@ -259,16 +255,29 @@ public class Othello extends Observable {
 	 */
 	public Othello copy() {
 		Othello o = new Othello();
-		o.board = this.board.copy();
+		CopyVisitor copy = new CopyVisitor();
+		o.board = copy.visit(board);
 		o.numMoves = this.numMoves;
 		o.whosTurn = this.whosTurn;
 		return o;
 	}
 	
+	/**
+	 * Fully resets the game - Used by our restart button
+	 * 
+	 *
+	 */
+	
 	public void resetOthello() {
 		board = new OthelloBoard(Othello.DIMENSION);
 		whosTurn = OthelloBoard.P1;
 		numMoves = 0;
+		
+		loser = OthelloBoard.EMPTY;
+		boards = new ArrayList<Othello>();
+		player1 = new Player(this, OthelloBoard.P1);
+		player2 = new Player(this, OthelloBoard.P2);
+		
 		this.notifyObservers();
 	}
 	

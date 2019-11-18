@@ -36,6 +36,11 @@ public class BoardSquare extends Button implements Observer{
 		this.setGraphic(this.othello.getImage(row,col));
 		this.setEffect(null);
 		
+		if (this.othello.getCount('X') == 2) {
+			this.prevTokenValue = this.othello.getToken(row, col);
+			
+		}
+		
 		if (othello.getToken(row, col) != this.prevTokenValue && othello.getToken(row, col) != ' ') {
 			FadeTransition ft = new FadeTransition(Duration.millis(2000), this);
 			ft.setFromValue(0);

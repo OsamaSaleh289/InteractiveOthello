@@ -30,7 +30,7 @@ TYPE     : USER STORY 1.04 : salehosa STATUS : Completed(NotStarted,InProgress, 
 NAME     : Token Counter
 OWNER    : Osama Saleh
 PRIORITY : (1,2,3)
-ESTIMATE : 2 hours     ACTUAL :  
+ESTIMATE : 2 hours     ACTUAL : 2 hours
 ISSUE    : When user play, the count for each player is on display. 
 This count shows the 
 current number of P1 tokens and P2 tokens on the board.
@@ -40,7 +40,7 @@ TYPE     : USER STORY 1.05 : salehosa: STATUS : Completed(NotStarted,InProgress,
 NAME     : Who Won
 OWNER    : Osama Saleh
 PRIORITY : (1,2,3)
-ESTIMATE : 1 hour    ACTUAL :  
+ESTIMATE : 1 hour    ACTUAL : 1 hour
 ISSUE    : When users play, the current status of the game is on display, showing the token
 of the winner of the game.
 --------------------------------------------------------------------------

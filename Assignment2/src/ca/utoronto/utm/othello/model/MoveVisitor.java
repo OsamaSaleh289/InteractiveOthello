@@ -1,11 +1,17 @@
-package ca.utoronto.utm.othello.viewcontroller;
+package ca.utoronto.utm.othello.model;
 
-import ca.utoronto.utm.othello.model.Othello;
-import ca.utoronto.utm.othello.model.OthelloBoard;
-
-public class MoveVisitor implements Visitor{
-	private boolean boardMoveSuccess;
-
+public class MoveVisitor implements MoveVisitorInterface{
+	
+	/**
+	 * Make a move for player at position (row,col) according to Othello rules,
+	 * making appropriate modifications to the board. Nothing is changed if this is
+	 * not a valid move.
+	 * 
+	 * @param row    starting row, in {0,...,dim-1} (typically {0,...,7})
+	 * @param col    starting col, in {0,...,dim-1} (typically {0,...,7})
+	 * @param player P1 or P2
+	 * @return true if player moved successfully at (row,col), false otherwise
+	 */
 	@Override
 	public boolean visit(OthelloBoard board, int row, int col, char player) {
 		if (!board.validCoordinate(row, col))

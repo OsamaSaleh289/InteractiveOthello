@@ -11,7 +11,14 @@ public class GameStatusTracker extends TextField implements Observer{
 	public GameStatusTracker(String text) {
 		this.setText(text);
 	}
-
+	
+	/**
+	 * 
+	 * Updates the status of whosTurn in the game and who won the game
+	 * 
+	 * @param Observable o
+	 * 
+	 */
 	@Override
 	public void update(Observable o) {
 		othello = (Othello) o;
