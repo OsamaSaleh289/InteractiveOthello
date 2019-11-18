@@ -38,22 +38,7 @@ public class OthelloBoard {
 	}
 	
 	public int getDimensions() {
-		
 		return this.dim;
-	}
-
-	/**
-	 * 
-	 * @return a copy of this
-	 */
-	public OthelloBoard copy() {
-		OthelloBoard ob = new OthelloBoard(this.dim);
-		for (int row = 0; row < this.dim; row++) {
-			for (int col = 0; col < this.dim; col++) {
-				ob.board[row][col] = this.board[row][col];
-			}
-		}
-		return ob;
 	}
 
 	/**
@@ -158,7 +143,7 @@ public class OthelloBoard {
 	 *         alternation P1 ... P1 P2 in direction (dx,dy), EMPTY if there is no
 	 *         alternation
 	 */
-	private char alternation(int row, int col, int drow, int dcol) {
+	public char alternation(int row, int col, int drow, int dcol) {
 		if (drow == 0 && dcol == 0)
 			return EMPTY;
 		char firstToken = this.get(row, col);
@@ -182,69 +167,15 @@ public class OthelloBoard {
 	 * @param dcol the col direction, in {-1,0,1}
 	 * @return P1,P2,EMPTY
 	 */
-	private char hasMove(int row, int col, int drow, int dcol) {
+	public char hasMove(int row, int col, int drow, int dcol) {
 		if (!this.validCoordinate(row, col) || this.board[row][col] != OthelloBoard.EMPTY)
 			return OthelloBoard.EMPTY;
 		return this.alternation(row + drow, col + dcol, drow, dcol);
 	}
 
-	/**
-	 * 
-	 * @return whether P1,P2 or BOTH have a move somewhere on the board, EMPTY if
-	 *         neither do.
-	 */
-	public char hasMove() {
-		char retVal = EMPTY;
-		for (int row = 0; row < this.dim; row++) {
-			for (int col = 0; col < this.dim; col++) {
-				for (int drow = -1; drow <= 1; drow++) {
-					for (int dcol = -1; dcol <= 1; dcol++) {
-						if (drow == 0 && dcol == 0)
-							continue;
-						char p = this.hasMove(row, col, drow, dcol);
-						if (p == P1 && retVal == P2)
-							return BOTH;
-						if (p == P2 && retVal == P1)
-							return BOTH;
-						if (retVal == EMPTY)
-							retVal = p;
-					}
-				}
-			}
-		}
-		return retVal;
-	}
+	
 
-	/**
-	 * Make a move for player at position (row,col) according to Othello rules,
-	 * making appropriate modifications to the board. Nothing is changed if this is
-	 * not a valid move.
-	 * 
-	 * @param row    starting row, in {0,...,dim-1} (typically {0,...,7})
-	 * @param col    starting col, in {0,...,dim-1} (typically {0,...,7})
-	 * @param player P1 or P2
-	 * @return true if player moved successfully at (row,col), false otherwise
-	 */
-	/*public boolean move(int row, int col, char player) {
-		MoveVisitor moveVisitor = new MoveVisitor();
-		return moveVisitor.visit(this, row, col, player);
-	}*/
-
-	/**
-	 * 
-	 * @param player P1 or P2
-	 * @return the number of tokens on the board for player
-	 */
-	/*public int getCount(char player) {
-		int count = 0;
-		for (int row = 0; row < this.dim; row++) {
-			for (int col = 0; col < this.dim; col++) {
-				if (board[row][col] == player)
-					count++;
-			}
-		}
-		return count;
-	}*/
+	
 	
 	/**
 	 * 
@@ -259,30 +190,4 @@ public class OthelloBoard {
 	
 	
 	
-	
-	/**
-	 * 
-	 * @param player P1 or P2
-	 * @return the number of tokens on the board for player
-	 */
-	/*public int getCount4x4(char player) {
-		int count = 0;
-		ArrayList<Integer> centre = new ArrayList<Integer>();
-		centre.add(2);
-		centre.add(3);
-		centre.add(4);
-		centre.add(5);
-		for (int row = 0; row < this.dim; row++) {
-			for (int col = 0; col < this.dim; col++) {
-				if (board[row][col] == player && centre.contains(row) && centre.contains(col))
-					count++;
-			}
-		}
-		return count;
-	}
-	
-	public void accept(Visitor v) {
-		v.visit(this);
-		
-	}*/
 }

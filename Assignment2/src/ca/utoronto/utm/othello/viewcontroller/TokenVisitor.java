@@ -4,7 +4,16 @@ import ca.utoronto.utm.othello.model.OthelloBoard;
 import ca.utoronto.utm.othello.viewcontroller.TokenGetterVisitorInterface;
 
 public class TokenVisitor implements TokenGetterVisitorInterface{
-
+	
+	/**
+	 * 
+	 * @param board
+	 * @param row
+	 * @param col
+	 * 
+	 * 
+	 * Return the token at position (row, col)
+	 */
 	@Override
 	public char visit(OthelloBoard board, int row, int col) {
 		// TODO Auto-generated method stub
