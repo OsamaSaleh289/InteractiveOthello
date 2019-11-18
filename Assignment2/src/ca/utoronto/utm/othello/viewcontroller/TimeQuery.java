@@ -6,6 +6,9 @@ import ca.utoronto.utm.othello.model.TimeTracker;
 import javafx.scene.control.TextInputDialog;
 
 public class TimeQuery {
+	/**
+	 * creates two dialogs that allow the user to set time
+	 */
 	public void run() {
 		TextInputDialog dialogp1 = new TextInputDialog();
 		dialogp1.setTitle("");

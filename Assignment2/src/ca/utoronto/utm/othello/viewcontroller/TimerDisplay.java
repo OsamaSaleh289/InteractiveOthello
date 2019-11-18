@@ -15,6 +15,9 @@ class TimerDisplay extends TextField implements Observer{
 	}
 
 	@Override
+	/**
+	 * updates the timer display with the current time
+	 */
 	public void update(Observable o) {
 		this.setText(timer.getMinutes() + ":" + timer.getSeconds() );
 	}
