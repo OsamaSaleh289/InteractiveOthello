@@ -1,0 +1,150 @@
+Commit ID: f1460bae23c7c59f6f0a9674092846f42541ce6b
+DOCUMENTATION	5 / 5
+	5: Most or all function they have proper Javadoc
+	4: 
+	3: some meaningful documentation, 50% of the criteria, done well.
+	2: 
+	1: nonsense/limited documentation
+
+CODING STYLE	4 / 5
+	5: Most or all function they have proper coding style
+	4: 
+	3: some meaningful coding style, 50% of the criteria, done well.
+	2:
+	1: nonsense/messy coding style
+
+GUI Functionality   9 / 9
+	[Y] User has option to select which opponent to play against (Human, Greedy or Random)
+	[Y] GUI displays number of P1 and P2 tokens on board
+	[Y] GUI properly displays who wins when game is over
+	[Y] Appropriate player token is placed when a spot is clicked
+	[Y] Appropriate tokens are flipped is when a player places their token
+	[Y] Undo working, a button click rewinds the game to the previous human move
+	[Y] Restart working, clicking on the button brings the game to the initial state
+	[Y] Timers working, each timer times one player, and the length of the timer can be specifed.
+	[Y] The better player strategy is implemnented and working correctly.
+
+Architecture   10 / 11
+	Strategy   3 / 3
+		Setting player strategy (Human, Greedy and Random)
+
+		[Y] There is a base strategy class and there are child strategy classes.
+		[Y] The player has a method to set its strategy and has a method to retrieve a move from the strategy.
+		[Y] Has strategy classes for Human, Greedy and Random Player  
+		
+	Factory   2 / 2
+		Constructing the different strategies
+
+		[Y] There exists a factory class, with a method similar to createProduct(String s).
+		[Y] Factory is used to return a Player Strategy
+		
+	Command   2 / 2
+		Objectifying moves
+
+		[Y] Command or Moves are objects.
+		[Y] There command/move objects are stored in a list in Othello.
+		
+	Visitor   3 / 4
+		Using visitors to visit places on the board
+		
+		[Y] There is a base class Visitor.
+		[N] OthelloBoard has an 'accept(Visitor v)'.
+		[Y] Each visitor class has a 'visit(OthelloBoard b)' method. 
+		[Y] There are at least two separate visitors, e.g., MoveVisitor and HashMoveVisitor.
+	
+sprintBacklogs   1 / 4
+	[N] User stories in springBacklog1 has all/majority of Status, Priorities, Estimates, Owners for user stories and Issues clearly defined
+	[N] User stories in springBacklog2 has all/majority of Status, Priorities, Estimates, Owners for user stories and Issues clearly defined
+	[Y] User stories in springBacklog3 has all/majority of Status, Priorities, Estimates, Owners for user stories and Issues clearly defined
+	[N] User stories in springBacklog4 has all/majority of Status, Priorities, Estimates, Owners for user stories and Issues clearly defined
+
+Git   0 / 4
+	[N] Branches on user stories (With reasonable naming convention)
+	[N] No/little code commits on master
+	[N] Merges back to master
+	[N] Git history looks relatively straightforward
+
+Members: Each member is given a fraction of the total amount of work
+	for the project. This is based on the user stories they worked on.
+	If all members appeared to work the same amount, each gets 25%.
+	If all members contribute equally, each gets 25/100.
+
+WORK BY UTORIDS 
+INDIVIDUAL: chenj628 19/100
+	BUG #0.03 - Configure and use system
+	BUG #9.99 - Architecture Document
+	USER STORY #1.011 - OthelloGUI Buttons Active Console View
+	USER STORY #1.06 - Change tokens to Images
+	USER STORY #1.101 - Hightlight AI Hint on board
+	USER STORY #1.102 - Menu AI Hint
+	USER STORY #1.10 - AI Hint
+INDIVIDUAL: salehosa 18/100
+	BUG #1.17 - Use Visitor for Othello board
+	USER STORY #1.01 - OthelloGUI Click Registration
+	USER STORY #1.04 - Token Counter
+	USER STORY #1.05 - Who Won
+	USER STORY #1.11 - Restart
+	USER STORY #1.13 - Animation
+INDIVIDUAL: watso166 39/100
+	BUG #0.02 - Configure and use system
+	BUG #1.078 - Observer/Observable
+	BUG #1.079 - Make the code MVC
+	BUG #1.081 - Strategy Design Pattern
+	BUG #1.103 - Hint Fixes
+	BUG #1.1041 - Hint Strategy Design Pattern
+	BUG #1.104 - OthelloController and Hint
+	BUG #1.131 - Animation
+	USER STORY #1.02 - Othello Board Human VS Human
+	USER STORY #1.071 - Opponent Chooser GUI Display
+	USER STORY #1.07 - Opponent Chooser GUI Selection
+	USER STORY #1.08 - Opponent Chooser Implementation
+	USER STORY #1.14 - Available moves
+	USER STORY #1.15 - Better strategy
+INDIVIDUAL: wronadom 24/100
+	BUG #0.01 - Configure and use system
+	BUG #1.021 - Check Architecture
+	BUG #1.91 - Timer Improvemnts
+	USER STORY #1.01 - OthelloGUI Click Registration
+	USER STORY #1.03 - Whos Next
+	USER STORY #1.091 - Othello Timer User Specified Time
+	USER STORY #1.09 - Othello Timer User Specified Time
+	USER STORY #1.12 - Undo
+
+DailyScrum
+	INDIVIDUAL: chenj628 1/1
+	INDIVIDUAL: salehosa 0/1
+	INDIVIDUAL: watso166 1/1
+	INDIVIDUAL: wronadom 0/1
+
+FINAL MARK FOR A2:
+chenj628: 30.74072798549033313524 / 40
+salehosa: 26.81873361976400543549 / 40
+watso166: 35.13403925279847984785 / 40
+wronadom: 29.17432229871973657135 / 40
+
+---------------------------------
+HOW THE FINAL MARK IS CALCULATED:
+
+group_mark = DOCUMENTATION + CODING STYLE + GUI FUNCTIONALITY + ARCHITECTURE + SPRINT BACKLOGS + GIT
+
+individual_mark = (WORK BY UTORID + 10 * DailyScrum) * 100 / 110
+
+final_grade = group_mark * (A ln(individual_mark + 1) + B) + C
+
+where:
+A = 0.29734
+B = 0.0070976
+C = 2
+
+The values of A, B, C are chosen so that:
+- if WORK BY UTORID is close to 0, then the student gets close to 0% of the group mark
+- if WORK BY UTORID is close to 25%, then the student gets close to 100% of the group mark
+- a WORK BY INDIVIDUAL of 100% led to a maximum of 105% over all students.
+- The average adjusted mark is similar to the average of the unadjusted marks, so marks are approximately conserved.
+
+NOTES: 
+- why did you remove starter code like PlayerGreedy or PlayerHuman?
+- naming convention for branches is not consistent (e.g. remotes/origin/UserStory1.08, remotes/origin/new_US1.12, remotes/origin/US1.11) 
+- Don’t branch of branches and then merge back to branch. Should be branching off master and then merge back to master
+- for springBacklog1/2/4 missing owner, priority, or estimate
+- remove uncommented code for cleaner code (lost marks for coding style)
