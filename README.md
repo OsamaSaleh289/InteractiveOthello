@@ -1,2 +1,2 @@
 # InteractiveOthello
-Interactive strategy game on JavaFX
+Interactive strategy game developed through JavaFX
